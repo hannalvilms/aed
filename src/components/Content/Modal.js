@@ -1,0 +1,2 @@
+require("react-bootstrap/ModalHeader");
+
