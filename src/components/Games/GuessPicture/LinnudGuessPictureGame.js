@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import PlayAgain from '../../Games/Quiz/PlayAgain';
 import MaismaaQuestion from "../Quiz/Question/MaismaaQuestion";
 import GuessPictureAnswer from "./GuessPictureAnswer";
@@ -34,25 +34,65 @@ export default class LinnudGuessPictureGame extends Component {
             clickedAnswer: 0,
             step: 1,
             score: 0,
-            userInput: '',
+            inputValue: '',
         };
         this.handleChange = this.handleChange.bind(this);
+        this.onHandleCheck = this.onHandleCheck.bind(this);
     }
+
+    static initState = () => {
+        return {
+            questions: {
+                1: 'Kes on pildil?',
+                2: 'Kes on pildil?'
+            },
+            answers: {
+                1: {
+                    1: "lind",
+                    image: Bird,
+                },
+                2: {
+                    2: 'lind2',
+                    image: Bird2,
+                }
+            },
+            correctAnswers: {
+                1: 'lind',
+                2: 'lind2'
+            },
+            correctAnswer: 0,
+            step: 1,
+            score: 0,
+            inputValue: '',
+        };
+    };
 
     handleChange(event) {
-        this.setState({userInput: event.target.userInput});
+        this.setState({inputValue: event.target.inputValue});
     }
-
+//uus mäng
     initGame = () => {
         this.setState({
             newGame: true
         });
     };
+//kasutaja inputi saamine
+    async updateInputValue(evt) {
+        await this.setState({
+            inputValue: evt.target.value
+        });
+    }
+//inputi tühjendamine
+     onHandleCheck() {
+        this.setState({
+            inputValue: ''
+        });
+    }
 
     // Checks if the answer is correct
     checkAnswer = answer => {
-        const { correctAnswers, step, score, userInput } = this.state;
-        if(answer === correctAnswers[step] && answer === userInput){
+        const { correctAnswers, step, score } = this.state;
+        if(correctAnswers[step] === this.state.inputValue){
             this.setState({
                 score: score + 1,
                 correctAnswer: correctAnswers[step],
@@ -83,7 +123,7 @@ export default class LinnudGuessPictureGame extends Component {
     };
 
     render() {
-        let { questions, answers, correctAnswer, clickedAnswer, step, score, userInput } = this.state;
+        let { questions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
         return (
             <div className="container-fluid pic-quiz-fluid">
                 <div className="container pic-quiz">
@@ -94,25 +134,36 @@ export default class LinnudGuessPictureGame extends Component {
                                     question={questions[step]}
                                 />
                                 <p>Küsimus {this.state.step}/{Object.keys(questions).length}</p>
-                                <img className="pic-quiz-img" src={answers[step].image}/>
+                                <img alt="guess-picture-img"
+                                     className="pic-quiz-img"
+                                     src={answers[step].image}
+                                />
                                 <GuessPictureAnswer
                                     answer={answers[step]}
                                     step={step}
-                                    checkAnswer={this.checkAnswer}
                                     correctAnswer={correctAnswer}
                                     clickedAnswer={clickedAnswer}
                                 />
-                                <input type="text" placeholder="Vastus" value={userInput} onChange={this.handleChange}/>
-                                <button className="pic-quiz-check" onClick={this.checkAnswer}>
+                                <input
+                                       id="mainInput"
+                                       onChange={evt => this.updateInputValue(evt)}
+                                       type="text"
+                                       value={this.state.inputValue}
+                                       disabled={!!clickedAnswer}
+                                />
+                                <button className="pic-quiz-check"
+                                        onClick={this.checkAnswer}
+                                        disabled={!!clickedAnswer}>
                                     Kontrolli
                                 </button>
                                 <br/>
                                 <button
+                                    type="submit"
                                     className="NextStep"
                                     disabled={
                                         !(clickedAnswer && Object.keys(questions).length >= step)
                                     }
-                                    onClick={() => this.nextStep(step)}>Järgmine küsimus</button>
+                                    onClick={() => {this.nextStep(step); this.onHandleCheck();}}>Järgmine küsimus</button>
                             </>) : (
                                 <div className="finalPage">
                                     <h1>You have completed the quiz!</h1>

@@ -4,13 +4,6 @@ const GuessPictureAnswer = (props) => {
     let answers = Object.keys(props.answer)
         .map((qAnswer, i) => (
             <li
-                className=
-                    {
-                        props.correctAnswer === qAnswer ?
-                            'correct' :
-                            props.clickedAnswer === qAnswer ?
-                                'incorrect' : ''
-                    }
                 onClick={() => props.checkAnswer(qAnswer)}
                 key={qAnswer}>
                 {props.answer[qAnswer]}
@@ -19,15 +12,9 @@ const GuessPictureAnswer = (props) => {
 
     return (
         <>
-            <ul disabled={!!props.clickedAnswer} className="Answers">
-
-            </ul>
+            <ul disabled={!!props.clickedAnswer} className="Answers"></ul>
             <div>
-                {
-                    props.correctAnswer ?
-                        'Õige vastus!' :
-                        props.clickedAnswer ? 'Vale vastus!' : ''
-                }
+                {props.correctAnswer ? 'Õige vastus!' : props.clickedAnswer ? 'Vale vastus!' : ''}
             </div>
         </>
     );

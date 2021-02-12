@@ -739,11 +739,11 @@ h2{
     border-radius: 20px;
     text-align: center;
     padding: 30px;
-    margin: 0;
-    position: absolute;
+    margin: 0 auto;
+   /* position: absolute;
     top: 48%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);*/
 }
 .quiz .Answers {
     columns: 2;
@@ -841,9 +841,11 @@ h2{
     border: 1px solid #015F78;
     background-color: #F4F4F4;
     outline: none;
+    margin-top: 10px;
 }
 .pic-quiz-check {
     margin-left: 5px;
+    margin-top: 10px;
     background-color: #F4F4F4;
     border-radius: 15px;
     padding: 5px 15px;
