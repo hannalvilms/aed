@@ -39,6 +39,7 @@ import '../src/styles/style.css';
 import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import LinnudHangman from "./components/Views/Games/LinnudHangman";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -67,6 +68,7 @@ ReactDOM.render(
        <Route path = "/memoryGame" component={MaismaaMemory}/>
        <Route path = "/wordSearch" component={MetsloomadWordSearch}/>
        <Route path = "/guessPicture" component={LinnudGuessPicture} />
+       <Route path = "/linnudHangman" component={LinnudHangman} />
    </BrowserRouter>,
   document.getElementById('root')
 );

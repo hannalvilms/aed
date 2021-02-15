@@ -711,10 +711,10 @@ h2{
 }
 
 /*Quiz game*/
-.quiz-fluid, .pic-quiz-fluid {
+.quiz-fluid, .pic-quiz-fluid, .hangman-fluid {
     padding-bottom: 200px;
 }
-.quiz, .pic-quiz {
+.quiz, .pic-quiz, .hangman {
     width: 550px;
     margin: 0 auto;
     text-align: center;
@@ -858,4 +858,91 @@ h2{
     background-color: #015F78;
 }
 
-
+/*Hangman*/
+.hangman {
+    height: 580px !important;
+    padding-top: 10px !important;
+    background-image: url('../images/game-images/bg6.jpg');
+}
+.hangman-word {
+    letter-spacing: 0.5em;
+    margin: 0 auto;
+    font-size: 1.5rem;
+}
+.hangman-letters button {
+    border-radius: 5px;
+    height: 35px;
+    width: 35px;
+    margin: 3px;
+    background-color: #FFF;
+    color: #2D2D2D;
+    border: 1px solid #3C3560;
+    font-size: 20px;
+}
+.hangman-letters button:disabled {
+    background-color: #D3D3D3;
+    text-decoration: line-through;
+}
+p.hangman-letters {
+    color: #F4F4F4;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.hangman h3 {
+    font-weight: 300;
+    padding-top: 15px;
+}
+.hangman img {
+    height: 200px;
+    margin: 15px;
+    border-radius: 10px;
+}
+.hangman button.reset {
+    background-color: #F09C90;
+    border-radius: 20px;
+    border: 1px solid #3C3560;
+    color: #2D2D2D;
+    font-weight: 300;
+    padding: 5px 25px;
+}
+.hangman button.reset:hover {
+    transition: all .4s ease-in;
+}
+.hangman button.reset:disabled {
+    background-color: #FAC4B9;
+}
+.result-content {
+    background-color:rgb(255,255,255); /*Fallback*/
+    background-color: rgba(255,255,255,0.8);
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: -450px;
+}
+.result-content h3{
+    padding-top: 25px;
+    margin: 0;
+}
+.result-content h2 {
+    font-weight: 300;
+    font-size: 1rem;
+    padding-top: 5px;
+    margin: 0;
+}
+.hangman .newGame {
+    margin-top: 340px;
+    background-color: #23AF37;
+    border-radius: 20px;
+    border: 1px solid #23AF37;
+    color: #F4F4F4;
+    font-weight: 300;
+    padding: 5px 20px;
+}
+.hangman .newGame:hover {
+    background-color: #F4F4F4;
+    border-radius: 20px;
+    border: 1px solid #23AF37;
+    color: #23AF37;
+    padding: 5px 20px;
+    transition: all .4s ease-in;
+}
