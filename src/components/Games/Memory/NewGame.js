@@ -5,7 +5,7 @@ export class NewGame extends Component {
   state = {
     visible: true,
   };
-
+//New game
   handleClick = () => {
     this.setState({ visible: !this.state.visible }, () => {
       this.props.play()

@@ -14,13 +14,11 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
 }
 #container {
     background-color: #FFF;
     min-height: 100%;
 }
-
 a {
     color: #2D2D2D !important;
 }
@@ -55,6 +53,7 @@ a:hover {
     display: none;
 }
 .fixed-nav {
+    /*position: -webkit-sticky; /*Safari*/
     position: sticky;
     top: 0;
     z-index: 1000000;
@@ -77,7 +76,7 @@ a:hover {
     width: 93px;
 }
 .header-text h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     font-weight: 300;
 }
 .header-text p {
@@ -231,7 +230,7 @@ a:hover {
     width: 89%;
 }
 .profile .overlay h4 {
-    margin: 30px 0 0 0;
+    margin: 25px 0 5px 0;
 }
 .profile .overlay p {
     margin: 0;
@@ -241,8 +240,16 @@ a:hover {
 }
 .img-result {
     opacity: 1 !important;
-    height: 40% !important;
     margin: 5px auto 0 auto;
+}
+.sort-results {
+    margin-bottom: 20px;
+    background-color: #F4F4F4 !important;
+    border: 1px solid #007270 !important;
+    color: #007270 !important;
+    padding: 5px 0 !important;
+    font-size: 13px !important;
+    width: 25%;
 }
 .change-profile .form-control[readonly] {
     background-color: #FAFAFA;
@@ -370,211 +377,13 @@ a:hover {
     background-color: #FFB832 !important;
     border: 1px solid #FFB832 !important;
     color: #2D2D2D !important;
-    margin-top: 30px !important;
+    margin-top: 10px !important;
 }
 
 button.contact-next:hover {
     background-color: #F4F4F4 !important;
     color: #FFB832 !important;
 }
-
-@media (max-width: 992px) {
-
-    .main-nav {
-        display: block !important;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        text-align: center;
-        background: #FFF;
-        opacity: 0;
-        z-index: -1;
-        visibility: hidden;
-        transition: all .999s;
-    }
-    .main-nav.is-open {
-        opacity: 1;
-        z-index: 100;
-        visibility: visible;
-        background-color: transparent;
-    }
-    .main-nav::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        right: 0;
-        background: rgb(236,251,251);
-        background: linear-gradient(125deg, rgba(236,251,251,1) 20%, rgba(0,114,112,1) 100%);
-        transform-origin: 0 0;
-        transition: all .999s;
-    }
-    .main-nav.is-open a {
-        transform: translateY(0);
-    }
-    .nav-link {
-        width: 100%;
-        margin: 20px auto 0 auto;
-        font-weight: 700 !important;
-        font-size: 40px !important;
-        text-decoration: underline;
-        color: #2D2D2D;
-    }
-    .nav-link:hover {
-        color: #2D2D2D;
-    }
-    .nav-link:first-of-type {
-        margin-top: 250px;
-    }
-
-    /*Login & register*/
-    .login, .register {
-        width: 100%;
-    }
-
-    /*Profile*/
-    .profile-menu {
-        border: none;
-        margin-right: 0;
-        padding-bottom: 30px !important;
-        display: flex;
-        justify-content: center;
-    }
-    .profile-menu a {
-        text-align: center;
-        margin: 0 15px;
-        border-bottom: 3px solid #FFB832;
-    }
-    .row.profile-results {
-        justify-content: center;
-        margin: 0 auto;
-    }
-    .change-profile {
-        justify-content: center;
-        margin: 0 auto;
-    }
-
-    /*Gamepage*/
-    #gamepage .content {
-        padding-top: 350px;
-    }
-
-    /*Error & Maintenance*/
-    .error .error-img {
-        width: 70%;
-    }
-
-    /*Contact*/
-    .contact {
-        padding-bottom: 50px;
-    }
-    .contact-text, .contact-img {
-        text-align: center;
-    }
-}
-
-@media (max-width: 992px) and (min-width: 768px) {
-    /*Header*/
-    .header-img {
-        margin-top: 70px;
-    }
-    .header-text {
-        margin-bottom: 140px;
-    }
-}
-
-@media (max-width: 768px) {
-    /*Header*/
-    .header {
-        text-align: center;
-    }
-    .header-text {
-        margin-bottom: 15px;
-    }
-    .header img {
-        width: 50%;
-        height: 100%;
-        padding-bottom: 50px;
-    }
-
-    /*Footer*/
-    .footer-links a {
-        margin: 0 10px !important;
-    }
-    .footer-links {
-        text-align: center;
-        font-size: 13px;
-    }
-    .footer-img {
-        text-align: center;
-        padding-bottom: 20px;
-    }
-    .footer-img img {
-        width: 15%;
-    }
-
-    /*Error & Maintenance page*/
-    .error .error-img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 576px) {
-    /*Content*/
-    .content-width {
-        width: 70% !important;
-    }
-    .content h3 {
-        width: 50%;
-    }
-
-    /*Error & Maintenance page*/
-    .error {
-        margin-top: 75px;
-    }
-    .error .error-img {
-        margin: auto;
-        width: 100%;
-    }
-
-    /*Games*/
-    .text-gamecontent {
-        text-align: left;
-    }
-    .quiz, .memory .container {
-        height: 700px !important;
-    }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-    /*Content*/
-    .overlay h4 {
-        margin-top: 40px;
-        margin-left: 30px;
-    }
-    .overlay p {
-        margin-left: 30px;
-    }
-    .content-width {
-        width: 60% !important;
-    }
-    .content h3 {
-        width: 40%;
-    }
-}
-
-@media (max-width: 411px) {
-    /*Gamepage*/
-    #gamepage .content {
-        padding-top: 350px;
-    }
-}
-
-
 
 /*Memory game*/
 .message{
@@ -667,12 +476,11 @@ h2{
     width: 170px;
     font-size: 1.2rem;
 }
-.btn:hover{
+.memory .btn:hover{
     background: #F4F4F4;
     border: 1px solid #23AF37;
     color: #23AF37 !important;
     cursor: pointer;
-    transform: scale(1.1);
 }
 .flex-container {
     display: flex;
@@ -711,10 +519,10 @@ h2{
 }
 
 /*Quiz game*/
-.quiz-fluid, .pic-quiz-fluid, .hangman-fluid {
+.quiz-fluid, .pic-quiz-fluid, .hangman-fluid, .dnd-fluid {
     padding-bottom: 200px;
 }
-.quiz, .pic-quiz, .hangman {
+.quiz, .pic-quiz, .hangman, .dnd {
     width: 550px;
     margin: 0 auto;
     text-align: center;
@@ -945,4 +753,228 @@ p.hangman-letters {
     color: #23AF37;
     padding: 5px 20px;
     transition: all .4s ease-in;
+}
+
+/*DND*/
+.dnd {
+    background-image: url(../images/game-images/bg4.jpg);
+}
+.animals .animal {
+    position: relative;
+    display: inline-block;
+}
+.foods img {
+    width: 80px;
+    height: 20px;
+    margin: 10px;
+}
+div.menu .menu-item.tile.tile-centered {
+    margin-top: 5px;
+}
+.menu.hero-list {
+    z-index: inherit;
+    transform: none;
+    min-height: 500px;
+}
+
+
+@media (max-width: 991px) {
+    .main-nav {
+        background: #FFF;
+        display: block !important;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        position: fixed;
+        opacity: 0;
+        text-align: center;
+        transition: all .999s;
+        visibility: hidden;
+        z-index: -1;
+    }
+    .main-nav.is-open {
+        opacity: 1;
+        z-index: 100;
+        visibility: visible;
+        background-color: transparent;
+    }
+    .main-nav::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        right: 0;
+        background: rgb(236,251,251);
+        background: linear-gradient(125deg, rgba(236,251,251,1) 20%, rgba(0,114,112,1) 100%);
+        transform-origin: 0 0;
+        transition: all .999s;
+    }
+    .main-nav.is-open a {
+        transform: translateY(0);
+    }
+    .nav-link {
+        width: 100%;
+        margin: 20px auto 0 auto;
+        font-weight: 700 !important;
+        font-size: 40px !important;
+        text-decoration: underline;
+        color: #2D2D2D;
+    }
+    .nav-link:hover {
+        color: #2D2D2D;
+    }
+    .nav-link:first-of-type {
+        margin-top: 250px;
+    }
+
+    /*Login & register*/
+    .login, .register {
+        width: 100%;
+    }
+
+    /*Profile*/
+    .profile-menu {
+        border: none;
+        margin-right: 0;
+        padding-bottom: 30px !important;
+        display: flex;
+        justify-content: center;
+    }
+    .profile-menu a {
+        text-align: center;
+        margin: 0 15px;
+        border-bottom: 3px solid #FFB832;
+    }
+    .row.profile-results {
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .change-profile {
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    /*Gamepage*/
+    #gamepage .content {
+        padding-top: 350px;
+    }
+
+    /*Error & Maintenance*/
+    .error .error-img {
+        width: 70%;
+    }
+
+    /*Contact*/
+    .contact {
+        padding-bottom: 50px;
+    }
+    .contact-text, .contact-img {
+        text-align: center;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    /*Header*/
+    .header-img {
+        margin-top: 70px;
+        margin-left: 30px;
+    }
+    .header-text {
+        margin-bottom: 140px;
+    }
+}
+
+@media (max-width: 768px) {
+    /*Header*/
+    .header {
+        text-align: center;
+    }
+    .header-text {
+        margin-bottom: 15px;
+    }
+    .header img {
+        width: 50%;
+        height: 100%;
+        padding-bottom: 50px;
+    }
+
+    /*Footer*/
+    .footer-links a {
+        margin: 0 10px !important;
+    }
+    .footer-links {
+        text-align: center;
+        font-size: 13px;
+    }
+    .footer-img {
+        text-align: center;
+        padding-bottom: 20px;
+    }
+    .footer-img img {
+        width: 15%;
+    }
+
+    /*Profile*/
+    .profile .sort {
+        text-align: center !important;
+    }
+
+    /*Error & Maintenance page*/
+    .error .error-img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+    /*Content*/
+    .content-width {
+        width: 70% !important;
+    }
+    .content h3 {
+        width: 50%;
+    }
+
+    /*Error & Maintenance page*/
+    .error {
+        margin-top: 75px;
+    }
+    .error .error-img {
+        margin: auto;
+        width: 100%;
+    }
+
+    /*Games*/
+    .text-gamecontent {
+        text-align: left;
+    }
+    .quiz, .memory .container {
+        height: 700px !important;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+    /*Content*/
+    .overlay h4 {
+        margin-top: 40px;
+        margin-left: 30px;
+    }
+    .overlay p {
+        margin-left: 30px;
+    }
+    .content-width {
+        width: 60% !important;
+    }
+    .content h3 {
+        width: 40%;
+    }
+}
+
+@media (max-width: 411px) {
+    /*Gamepage*/
+    #gamepage .content {
+        padding-top: 350px;
+    }
 }

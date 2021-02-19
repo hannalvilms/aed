@@ -38,6 +38,7 @@ export default class MaismaaQuizGame extends Component {
         score: 0
     };
 
+//Initial state for restarting the game
     static initState = () => {
         return {
             questions: {
@@ -73,13 +74,21 @@ export default class MaismaaQuizGame extends Component {
         };
     };
 
+//Set state for new game
     initGame = () => {
         this.setState({
             newGame: true
         });
     };
 
-    // Checks if the answer is correct
+//Reset the game
+    resetGame = () => {
+        this.setState(MaismaaQuizGame.initState(), () => {
+            this.initGame()
+        });
+    };
+
+// Checks if the answer is correct
     checkAnswer = answer => {
         const { correctAnswers, step, score } = this.state;
         if(answer === correctAnswers[step]){
@@ -96,18 +105,12 @@ export default class MaismaaQuizGame extends Component {
         }
     };
 
-    // To the next question
+// To the next question
     nextStep = (step) => {
         this.setState({
             step: step + 1,
             correctAnswer: 0,
             clickedAnswer: 0
-        });
-    };
-
-    resetGame = () => {
-        this.setState(MaismaaQuizGame.initState(), () => {
-            this.initGame()
         });
     };
 
@@ -119,10 +122,12 @@ export default class MaismaaQuizGame extends Component {
                     <div className="quiz-content">
                         {step <= Object.keys(questions).length ?
                             (<>
+                                {/*Questions*/}
                                 <MaismaaQuestion
                                     question={questions[step]}
                                 />
                                 <p>Küsimus {this.state.step}/{Object.keys(questions).length}</p>
+                                {/*Answers*/}
                                 <MaismaaAnswer
                                     answer={answers[step]}
                                     step={step}
@@ -130,6 +135,7 @@ export default class MaismaaQuizGame extends Component {
                                     correctAnswer={correctAnswer}
                                     clickedAnswer={clickedAnswer}
                                 />
+                                {/*Next question button*/}
                                 <button
                                     className="NextStep"
                                     disabled={
@@ -138,6 +144,7 @@ export default class MaismaaQuizGame extends Component {
                                     onClick={() => this.nextStep(step)}>Järgmine küsimus</button>
                             </>) : (
                                 <div className="finalPage">
+                                    {/*Result page*/}
                                     <h1>You have completed the quiz!</h1>
                                     <p>Tulemus {score}/{Object.keys(questions).length}</p>
                                     <PlayAgain again={this.resetGame} />

@@ -6,6 +6,7 @@ export default class Card extends Component {
     isFlipped: false
   };
 
+//Handle card flipping
   handleClick = e => {
     e.preventDefault();
     this.setState(prevState => ({ isFlipped: !prevState.isFlipped }));

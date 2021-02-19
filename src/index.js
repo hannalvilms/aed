@@ -31,7 +31,8 @@ import MaismaaMemory from "./components/Views/Games/MaismaaMemory";
 import MaismaaQuiz from './components/Views/Games/MaismaaQuiz';
 import MetsloomadWordSearch from "./components/Games/WordSearch/MetsloomadWordSearch";
 import LinnudGuessPicture from "./components/Views/Games/LinnudGuessPicture";
-
+import LinnudHangman from "./components/Views/Games/LinnudHangman";
+import MetsloomadDND from "./components/Views/Games/MetsloomadDND";
 
 //Styles
 import '../src/styles/style.css';
@@ -39,7 +40,6 @@ import '../src/styles/style.css';
 import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import LinnudHangman from "./components/Views/Games/LinnudHangman";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -69,6 +69,7 @@ ReactDOM.render(
        <Route path = "/wordSearch" component={MetsloomadWordSearch}/>
        <Route path = "/guessPicture" component={LinnudGuessPicture} />
        <Route path = "/linnudHangman" component={LinnudHangman} />
+       <Route path = "/dnd" component={MetsloomadDND} />
    </BrowserRouter>,
   document.getElementById('root')
 );

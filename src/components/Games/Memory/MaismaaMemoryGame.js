@@ -18,12 +18,14 @@ class MaismaaMemoryGame extends Component {
 
     state = MaismaaMemoryGame.initState();
 
+//Count the user clicks
     countClicks = () => {
         this.setState((prevState) => ({
             clicks : prevState.clicks + 1
         }));
     };
 
+//Generate card deck
     generateDeck = () => {
         let amount = 10;
         let cards = [];
@@ -56,6 +58,7 @@ class MaismaaMemoryGame extends Component {
         });
     };
 
+//Shuffle card
     shuffleCards = (a) => {
         for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
@@ -64,18 +67,21 @@ class MaismaaMemoryGame extends Component {
         return a;
     };
 
+//Reset the game
     resetGame = () => {
         this.setState(MaismaaMemoryGame.initState(), () => {
             this.initGame()
         });
     };
 
+//When user wins
     hasWon = () => {
         this.setState({
             won: true
         });
     };
 
+//Initialise the game state
     initGame = () => {
         this.generateDeck();
         this.setState({
@@ -92,20 +98,24 @@ class MaismaaMemoryGame extends Component {
                          style={{
                              visibility: this.props.visible ? "visible" : "hidden"
                          }}>
+                        {/*Users final score*/}
                         <div className="message" style={{
                             visibility: won ? "visible" : "hidden",
                             opacity: won ? "0.8" : "0",
                             backgroundColor: won ? "white" : "none"
                         }}>
-                            {won && (<h2 style={{
-                                visibility: this.props.visible ? "hidden" : "visible",
-                                opacity: this.props.visible ? "0" : "1",
-                                backgroundColor: this.props.visible ? "none" : "white"
-                            }}>Tulemus: {clicks}</h2>)}
+                        {won && (<h2 style={{
+                            visibility: this.props.visible ? "hidden" : "visible",
+                            opacity: this.props.visible ? "0" : "1",
+                            backgroundColor: this.props.visible ? "none" : "white"
+                        }}>Tulemus: {clicks}</h2>)}
                         </div>
+                        {/*Start game button*/}
                         <NewGame play={this.initGame} />
+                        {/*New game button*/}
                         {won && (<PlayAgain again={this.resetGame} />)}
                     </div>
+                    {/*Memory game board*/}
                     <div className="board-container">
                         {newGame ?
                             (

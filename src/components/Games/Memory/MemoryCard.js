@@ -32,7 +32,7 @@ export class MemoryCard extends Component {
               backgroundImage: `url(${imgUrl})`,
               backgroundSize: "contain",
               backgroundRepeat: "no-repeat", backgroundPosition: "center",
-              border: found ? "3px solid green" : "3px solid #3700B3",
+              border: found ? "2px solid #23AF37" : "2px solid #CC0E0E",
               cursor : found ? "" : "pointer",
             }}
           >

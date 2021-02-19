@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import $ from 'jquery';
 
 export default class ProfileDataContent extends Component {
     render() {
@@ -9,7 +8,7 @@ export default class ProfileDataContent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu my-auto">
-                            <Link to="/profile">Ajalugu</Link>
+                            <Link to="/profile">Tulemused</Link>
                             <a>Andmed</a>
                         </div>
                         <div className="row change-profile col-lg-8">

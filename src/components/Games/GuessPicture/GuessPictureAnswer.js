@@ -2,6 +2,7 @@ import React from 'react';
 
 const GuessPictureAnswer = (props) => {
     let answers = Object.keys(props.answer)
+        //Answers
         .map((qAnswer, i) => (
             <li
                 onClick={() => props.checkAnswer(qAnswer)}
@@ -11,6 +12,7 @@ const GuessPictureAnswer = (props) => {
         ));
 
     return (
+        //Show if chosen answer was correct or not
         <>
             <ul disabled={!!props.clickedAnswer} className="Answers"></ul>
             <div>

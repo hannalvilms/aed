@@ -2,6 +2,7 @@ import React from 'react'
 
 export default function PlayAgain({ again }) {
     return (
+        //Reset game button
         <div className="menu-item">
             <button className="btn" onClick={() => again()} style={{
                 visibility: again ? "visible" : "hidden"

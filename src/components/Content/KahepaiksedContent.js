@@ -11,7 +11,7 @@ export default class KahepaiksedContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid frog">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Maod, sisalikud ja kahepaiksed</h1>
                     </div>
                 </div>

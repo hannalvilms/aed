@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import $ from 'jquery';
 import logo from '../../images/logo.png';
 import LoggedMobilenav from "../Nav/LoggedMobilenav";
-import LoggedFrontpage from "../Views/LoggedFrontpage";
 
 export default class Navbar extends Component {
     componentDidMount() {
@@ -22,17 +21,14 @@ export default class Navbar extends Component {
             <div className="container-fluid mobile-nav">
                 <div className="container">
                     <nav className="row navbar navbar-expand-lg navbar-light">
-
                         <div className="navbar-header header-logo">
                             <Link to="/loggedFrontpage" ><img src={logo} alt="logo"/></Link>
                         </div>
-
                         <button className="hamburger hamburger--collapse toggle-menu menu-right"  type="button">
                             <span className="hamburger-box">
-                            <span className="hamburger-inner"></span>
+                                <span className="hamburger-inner"/>
                             </span>
                         </button>
-
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             </ul>

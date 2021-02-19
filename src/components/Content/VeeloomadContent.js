@@ -11,7 +11,7 @@ export default class VeeloomadContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid seal">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Veeloomad</h1>
                     </div>
                 </div>

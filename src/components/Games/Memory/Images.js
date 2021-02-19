@@ -57,7 +57,7 @@ export let images = [
     {
         url: Bird4
     },
-    /* {
+    {
         url: Bear
     },
     {
@@ -104,5 +104,5 @@ export let images = [
     },
     {
         url: Whale
-    }*/
+    }
 ];

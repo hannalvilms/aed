@@ -22,19 +22,14 @@ export default class Navbar extends Component {
             <div className="container-fluid mobile-nav">
                 <div className="container">
                     <nav className="row navbar navbar-expand-lg navbar-light">
-
-
-                            <div href={Frontpage} className="navbar-header header-logo">
-                                <Link to="/frontpage"> <img src={logo} alt="logo"/></Link>
-                            </div>
-
-
+                        <div href={Frontpage} className="navbar-header header-logo">
+                            <Link to="/frontpage"> <img src={logo} alt="logo"/></Link>
+                        </div>
                         <button className="hamburger hamburger--collapse toggle-menu menu-right"  type="button">
                             <span className="hamburger-box">
                             <span className="hamburger-inner"></span>
                             </span>
                         </button>
-
                         <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             </ul>
@@ -45,7 +40,7 @@ export default class Navbar extends Component {
                         </div>
                     </nav>
                 </div>
-                < Mobilenav />
+                < Mobilenav/>
             </div>
         )
     }

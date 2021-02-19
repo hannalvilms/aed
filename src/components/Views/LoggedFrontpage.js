@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Router, Route, Link, browserHistory, IndexRoute } from 'react-router-dom';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import LoggedHeader from "../../components/Header/LoggedHeader";
 import FrontpageContent from "../../components/Content/FrontpageContent";

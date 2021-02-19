@@ -12,7 +12,7 @@ export default class ContactContent extends Component {
                             <p>E-post: aed@academy.com</p>
                         </div>
                         <div className="col-lg-9 col-md-12 my-auto contact-img">
-                            <img src={Contact}/>
+                            <img src={Contact} alt="contact-img"/>
                         </div>
                     </div>
                 </div>

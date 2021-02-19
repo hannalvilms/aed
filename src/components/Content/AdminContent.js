@@ -9,7 +9,7 @@ export default class AdminContent extends Component {
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu my-auto">
                             <Link to="admin">Kasutajad</Link>
-                            <Link to="profile">Ajalugu</Link>
+                            <Link to="profile">Tulemused</Link>
                             <Link to="profileData">Andmed</Link>
                         </div>
                         <div className="row change-profile contact col-lg-8">
@@ -17,43 +17,61 @@ export default class AdminContent extends Component {
                                 <table className="table table-borderless">
                                     <tbody>
                                         <tr>
-                                            <td scope="row">1.</td>
+                                            <th scope="row">1.</th>
                                             <td>Eesnimi</td>
                                             <td>Perekonnanimi</td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">Kustuta</button>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">
+                                                    Kustuta
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td scope="row">2.</td>
+                                            <th scope="row">2.</th>
                                             <td>Eesnimi</td>
                                             <td>Perekonnanimi</td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">Kustuta</button>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">
+                                                    Kustuta
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td scope="row">3.</td>
+                                            <th scope="row">3.</th>
                                             <td>Eesnimi</td>
                                             <td>Perekonnanimi</td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">Kustuta</button>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">
+                                                    Kustuta
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td scope="row">4.</td>
+                                            <th scope="row">4.</th>
                                             <td>Eesnimi</td>
                                             <td>Perekonnanimi</td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">Kustuta</button>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">
+                                                    Kustuta
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td scope="row">5.</td>
+                                            <th scope="row">5.</th>
                                             <td>Eesnimi</td>
                                             <td>Perekonnanimi</td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">Kustuta</button>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger">
+                                                    Kustuta
+                                                </button>
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td colspan="3"></td>
-                                            <td className="table-button"><button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger contact-next">Järgmine</button>
+                                            <th colSpan="3"> </th>
+                                            <td className="table-button">
+                                                <button className="col-lg-8 col-md-12 col-sm-12 btn btn-danger contact-next">
+                                                    Järgmine
+                                                </button>
                                             </td>
                                         </tr>
                                     </tbody>

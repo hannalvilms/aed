@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import PlayAgain from '../../Games/Quiz/PlayAgain';
-import Bird from "../../../images/bird.jpg";
-import Bird2 from "../../../images/bird2.jpg";
-import {randomWord, randomWordTwo, randomWordThree} from "./LinnudWords";
+import {randomWord} from "./LinnudWords";
 
 import zero from "./images/step0.png";
 import rahn1 from "./images/rähn1.png";
@@ -11,7 +8,6 @@ import rahn3 from "./images/rähn3.png";
 import rahn4 from "./images/rähn4.png";
 import rahn5 from "./images/rähn5.png";
 import rahn6 from "./images/rähn6.png";
-
 import tuvi1 from "./images/tuvi1.png";
 import tuvi2 from "./images/tuvi2.png";
 import tuvi3 from "./images/tuvi3.png";
@@ -24,50 +20,18 @@ export default class LinnudGuessPictureGame extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            questions: {
-                1: 'Arva linnu nimi',
-                2: 'Arva linnu nimi',
-                3: 'Arva linnu nimi'
-            },
-            answers: {
-                1: {
-                    1: randomWord()
-                }
-            },
-            correctAnswers: {
-                1: randomWord()
-            },
-            correctAnswer: 0,
-            clickedAnswer: 0,
-            step: 1,
             score: 0,
-
             mistake: 0,
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6
         };
         this.correctImg();
-        this.handleChange = this.handleChange.bind(this);
     }
 
+    //Initial state for restarting the game
     static initState = () => {
         return {
-            questions: {
-                1: 'Arva linnu nimi',
-                2: 'Arva linnu nimi',
-                3: 'Arva linnu nimi'
-            },
-            answers: {
-                1: {
-                    1: randomWord()
-                }
-            },
-            correctAnswers: {
-                1: randomWord()
-            },
-            correctAnswer: 0,
-            step: 1,
             score: 0,
             mistake: 0,
             guessed: new Set(),
@@ -77,6 +41,7 @@ export default class LinnudGuessPictureGame extends Component {
         };
     };
 
+    //Changes score, starts new game
     nextGuess = () => {
         this.resetGame();
         this.setState({
@@ -88,6 +53,7 @@ export default class LinnudGuessPictureGame extends Component {
         });
     };
 
+    //Show correct images
     correctImg() {
         if(this.state.answer === "RÄHN") {
             console.log("rähn");
@@ -99,17 +65,14 @@ export default class LinnudGuessPictureGame extends Component {
         }
     }
 
-    handleChange(event) {
-        this.setState({inputValue: event.target.inputValue});
-    }
-
-    //uus mäng
+    //Set state for new game
     initGame = () => {
         this.setState({
             newGame: true
         });
     };
 
+    //Reset the game
     resetGame = () => {
         this.setState(LinnudGuessPictureGame.initState(), () => {
             this.initGame();
@@ -117,12 +80,14 @@ export default class LinnudGuessPictureGame extends Component {
         });
     };
 
+    //Shows answer in _'s
     guessedWord() {
         return this.state.answer
             .split("")
             .map((bingo) => (this.state.guessed.has(bingo) ? bingo : "_"));
     }
 
+    //Adds guessed letters and mistake points
     handleGuess(value) {
         let letter = value;
         this.setState((st) => ({
@@ -131,6 +96,7 @@ export default class LinnudGuessPictureGame extends Component {
         }));
     }
 
+    //Generates alphabet
     generateButtons() {
         return "ABCDEFGHIJKLMNOPQRSŠZŽTUVWÕÄÖÜXY".split("").map((letter) => (
             <button
@@ -145,7 +111,8 @@ export default class LinnudGuessPictureGame extends Component {
     }
 
     render() {
-        let { questions, step, score, mistake, answer, maxWrong, images } = this.state;
+        {/*States and const's*/}
+        let {score, mistake, answer, maxWrong, images } = this.state;
         const gameOver = mistake >= maxWrong;
         const altText = `${mistake}/${maxWrong} wrong guesses`;
         const isWinner = this.guessedWord().join("") === answer;
@@ -160,61 +127,57 @@ export default class LinnudGuessPictureGame extends Component {
             <div className="container-fluid hangman-fluid">
                 <div className="container hangman">
                     <div className="hangman-content">
-                        {step <= Object.keys(questions).length ?
-                            (<>
-                                <span className="d-xl-none d-lg-none" style={{
-                                    visibility: gameOver ? 'hidden' : 'visible'
-                                }}>
-                                    Valesid pakkumisi: {mistake}
-                                </span>
-                                <br/>
-                                <span style={{
-                                    visibility: gameOver ? 'hidden' : 'visible'
-                                }}>
-                                    Arvatud sõnu: {score}
-                                </span>
-                                <h3 style={{
-                                    visibility: gameOver ? 'hidden' : 'visible'
-                                }}>Arva linnu nimi</h3>
-                                <p className="hangman-word">
-                                    {!gameOver ? this.guessedWord() : answer}{" "}
-                                </p>
-                                <div>
-                                    <img src={images[mistake]} alt={altText} />
-                                </div>
-                                <p className="hangman-letters col-lg-12" style={{
-                                    color: gameOver ? '#2D2D2D' : '#F4F4F4'
-                                }}>{gameStat}</p>
-                                <div>
-                                    <p>
-                                        <button
-                                            className="reset"
-                                            onClick={this.nextGuess}
-                                            disabled={!(isWinner)}
-                                            style={{
-                                                visibility: gameOver ? 'hidden' : 'visible',
-                                            }}
-                                        >
-                                            Uus sõna
-                                        </button>
-                                    </p>
-                                </div>
-                                <div className="result-content" style={{
-                                    visibility: gameOver ? 'visible' : 'hidden'
-                                }}
+                        {/*Mistakes*/}
+                        <span style={{
+                            visibility: gameOver ? 'hidden' : 'visible'
+                        }}>
+                            Valesid pakkumisi: {mistake}
+                        </span>
+                        <br/>
+                        {/*Guessed words*/}
+                        <span style={{
+                            visibility: gameOver ? 'hidden' : 'visible'
+                        }}>
+                            Arvatud sõnu: {score}
+                        </span>
+                        <h3 style={{
+                            visibility: gameOver ? 'hidden' : 'visible'
+                        }}>Arva linnu nimi</h3>
+                        {/*Hangman word*/}
+                        <p className="hangman-word">
+                            {!gameOver ? this.guessedWord() : answer}{" "}
+                        </p>
+                        {/*Hint images*/}
+                        <div>
+                            <img src={images[mistake]} alt={altText} />
+                        </div>
+                        {/*Alphabet*/}
+                        <p className="hangman-letters col-lg-12" style={{
+                            color: gameOver ? '#2D2D2D' : '#F4F4F4'
+                        }}>{gameStat}</p>
+                        <div>
+                            <p>
+                                <button
+                                    className="reset"
+                                    onClick={this.nextGuess}
+                                    disabled={!(isWinner)}
+                                    style={{
+                                        visibility: gameOver ? 'hidden' : 'visible',
+                                    }}
                                 >
-                                    <h3>Tulemus: {score}</h3>
-                                    <h2>Linnu nimi oli:</h2>
-                                    <button className="newGame" onClick={this.resetGame}>Uus mäng</button>
-                                </div>
-                            </>) : (
-                                <div className="finalPage">
-                                    <h1>You have completed the quiz!</h1>
-                                    <p>Tulemus {score}/{Object.keys(questions).length}</p>
-                                    <PlayAgain again={this.resetGame} />
-                                </div>
-                            )
-                        }
+                                    Uus sõna
+                                </button>
+                            </p>
+                        </div>
+                        {/*Result page when game is finished*/}
+                        <div className="result-content" style={{
+                            visibility: gameOver ? 'visible' : 'hidden'
+                        }}
+                        >
+                            <h3>Tulemus: {score}</h3>
+                            <h2>Linnu nimi oli:</h2>
+                            <button className="newGame" onClick={this.resetGame}>Uus mäng</button>
+                        </div>
                         <br/>
                     </div>
                 </div>

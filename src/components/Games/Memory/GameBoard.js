@@ -7,6 +7,7 @@ export class GameBoard extends Component {
     memoryCards: []
   };
 
+//Change the state of memory cards
   componentDidUpdate(prevProps, prevState) {
     if (prevState.memoryCards !== this.state.memoryCards) {
       this.setState({
@@ -15,17 +16,20 @@ export class GameBoard extends Component {
     }
   }
 
+//Add card state to memory cards
   componentDidMount() {
     this.setState({
       memoryCards: this.props.cards
     });
   }
 
+//Count the flipped cards
   countFlippedCards = () => {
     const { memoryCards } = this.state;
     return memoryCards.filter(({ flipped, found }) => flipped && !found).length;
   };
 
+//Card flipping
   flipCard = (id, cb) => {
     this.setState(prevState => (
       {
@@ -39,6 +43,7 @@ export class GameBoard extends Component {
     );
   };
 
+//Handle card flip
   handleFlip = id => {
     switch (this.countFlippedCards()) {
       case 0:
@@ -55,6 +60,7 @@ export class GameBoard extends Component {
     }
   };
 
+//When cards match
   isMatch = () => {
     const { memoryCards } = this.state;
     const flippedCards = memoryCards.filter(card => card.flipped && !card.found);
@@ -83,7 +89,7 @@ export class GameBoard extends Component {
     }
   };
 
-
+//When user wins
   hasWon = () => {
     const { memoryCards } = this.state;
     let won = memoryCards.every(card => card.found);
@@ -92,7 +98,7 @@ export class GameBoard extends Component {
     }
   };
 
-
+//Generade card board
   createBoard = () =>
     this.state.memoryCards.length ? (
       this.state.memoryCards.map(card => (
