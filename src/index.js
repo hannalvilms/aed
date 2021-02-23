@@ -40,6 +40,8 @@ import '../src/styles/style.css';
 import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import PrivacyPolicy from "./components/Views/PrivacyPolicy";
+import Conditions from "./components/Views/Conditions";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -70,6 +72,8 @@ ReactDOM.render(
        <Route path = "/guessPicture" component={LinnudGuessPicture} />
        <Route path = "/linnudHangman" component={LinnudHangman} />
        <Route path = "/dnd" component={MetsloomadDND} />
+       <Route path = "/privacyPolicy" component={PrivacyPolicy} />
+       <Route path = "/conditions" component={Conditions} />
    </BrowserRouter>,
   document.getElementById('root')
 );

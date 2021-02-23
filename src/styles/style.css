@@ -385,6 +385,25 @@ button.contact-next:hover {
     color: #FFB832 !important;
 }
 
+/*Privacy Policy and Terms of Conditions */
+.policy, .conditions {
+    padding: 75px 0 150px 0;
+}
+.policy h1, .conditions h1 {
+    padding-bottom: 15px;
+}
+.policy h3, .conditions h3 {
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+.policy p, .conditions p {
+    text-align: justify;
+}
+.conditions-text, .policy-text {
+    padding-bottom: 20px;
+}
+
 /*Memory game*/
 .message{
     color: #fff;
@@ -547,10 +566,6 @@ h2{
     text-align: center;
     padding: 30px;
     margin: 0 auto;
-   /* position: absolute;
-    top: 48%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
 }
 .quiz .Answers {
     columns: 2;

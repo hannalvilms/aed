@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FooterLogo from '../../images/logo-hele1.png';
 
 export default class Footer extends Component {
@@ -11,9 +12,9 @@ export default class Footer extends Component {
                             <img src={FooterLogo} alt="footer-logo"/>
                         </div>
                         <div className="footer-links col-lg-10 col-md-10 col-sm-12 col-xs-12 my-auto ">
-                            <a>Privaatsuspoliitika</a>
-                            <a>Kasutustingimused</a>
-                            <a>Kontakt</a>
+                            <Link to="/privacyPolicy">Privaatsuspoliitika</Link>
+                            <Link to="/conditions">Kasutustingimused</Link>
+                            <Link to="/contact">Kontakt</Link>
                         </div>
                     </div>
                 </div>
