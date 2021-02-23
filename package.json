@@ -15,6 +15,8 @@
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-card-flip": "^1.0.11",
+    "react-dnd": "^13.0.0",
+    "react-dnd-html5-backend": "^12.1.0",
     "react-dom": "^17.0.1",
     "react-router": "^5.2.0",
     "react-scripts": "4.0.1",
@@ -46,6 +48,7 @@
     ]
   },
   "devDependencies": {
+    "immutability-helper": "^3.1.1",
     "react-flip-move": "^3.0.4",
     "react-router-dom": "^5.2.0"
   }

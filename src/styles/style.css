@@ -453,12 +453,11 @@ h2{
     height: 100px;
     width: 100px;
     border-radius: 20px;
-    border: 1.5px solid transparent;
+    border: 1px solid transparent;
     transition: all .3s ease-in;
 }
 .memoryCard.front:hover{
     cursor: pointer;
-    border: 1.5px solid rgb(40,111,251);
 }
 .memory .btn {
     background: #23AF37;
@@ -582,7 +581,7 @@ h2{
     pointer-events: none;
     opacity: 0.7;
 }
-.quiz .NextStep, .pic-quiz .NextStep {
+.quiz .NextStep, .pic-quiz .NextStep, .dnd .NextStep {
     background-color: #23AF37;
     border: 1px solid #23AF37;
     border-radius: 15px;
@@ -758,25 +757,70 @@ p.hangman-letters {
 /*DND*/
 .dnd {
     background-image: url(../images/game-images/bg4.jpg);
+    height: 600px;
+    width: 65%;
 }
-.animals .animal {
-    position: relative;
-    display: inline-block;
+.dnd h1, .dnd h3, .dnd p {
+    font-weight: 300;
 }
-.foods img {
-    width: 80px;
-    height: 20px;
+.dnd .metsloomadDND {
+    height: 7.5rem;
+    width: 7.5rem;
+    margin: 0 auto 1rem auto;
+    border-radius: 20px;
+    background-position: center;
+    background-size: cover;
+}
+.dnd .metsloomadDND:nth-of-type(1) {
+    background-image: url(../components/Games/DND/img/bird.png);
+}
+.dnd .metsloomadDND:nth-of-type(2) {
+    background-image: url(../components/Games/DND/img/hedgehog.png);
+}
+.dnd .metsloomadDND:nth-of-type(3) {
+    background-image: url(../components/Games/DND/img/bear.png);
+}
+.dnd .metsloomadDND:nth-of-type(4) {
+    background-image: url(../components/Games/DND/img/cow.png);
+}
+.dnd .metsloomadDND:nth-of-type(5) {
+    background-image: url(../components/Games/DND/img/bird5.png);
+}
+.dnd .metsloomadDND:nth-of-type(6) {
+    background-image: url(../components/Games/DND/img/lynx.png);
+}
+.dnd .metsloomadDND:nth-of-type(7) {
+    background-image: url(../components/Games/DND/img/deer.png);
+}
+.dnd .metsloomadDND:nth-of-type(8) {
+    background-image: url(../components/Games/DND/img/fox.png);
+}
+.dnd .metsloomadDND:nth-of-type(9) {
+    background-image: url(../components/Games/DND/img/moose.png);
+}
+.dnd .metsloomadDND:nth-of-type(10) {
+    background-image: url(../components/Games/DND/img/squirrel.png);
+}
+.dnd-content {
+    margin-top: 45px;
+    columns: 5;
+}
+.dnd .guessed {
+    border: 3px solid #23AF37;
+}
+.food {
+    columns: 5;
+}
+.food-item {
+    background-color: white;
+    cursor: move;
+    float: left;
+    padding: 5px;
     margin: 10px;
+    width: 100px;
+    border-radius: 13px;
+    border: 1px solid #7E98ED;
 }
-div.menu .menu-item.tile.tile-centered {
-    margin-top: 5px;
-}
-.menu.hero-list {
-    z-index: inherit;
-    transform: none;
-    min-height: 500px;
-}
-
 
 @media (max-width: 991px) {
     .main-nav {
@@ -873,6 +917,11 @@ div.menu .menu-item.tile.tile-centered {
     }
     .contact-text, .contact-img {
         text-align: center;
+    }
+
+    /*Games*/
+    .dnd {
+        width: 100% !important;
     }
 }
 
