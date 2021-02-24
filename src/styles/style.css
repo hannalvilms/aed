@@ -405,9 +405,6 @@ button.contact-next:hover {
 }
 
 /*Memory game*/
-.message{
-    color: #fff;
-}
 .react-card-flip {
     margin: 0 auto;
 }
@@ -452,17 +449,14 @@ h2{
     top: 0;
     position: absolute;
     bottom: 0;
-    right: 0;
-    height: 100%;
     width: 100%;
-    border: 2px solid #020219;
-    padding-top: 200px;
-    padding-bottom: 350px;
+    padding-top: 170px;
 }
 .memory .container {
     padding: 0;
     position: relative;
     height: 550px !important;
+    width: 65% !important;
 }
 .memory .flips {
     padding-top: 10px !important;
@@ -478,23 +472,25 @@ h2{
 .memoryCard.front:hover{
     cursor: pointer;
 }
-.memory .btn {
-    background: #23AF37;
-    border: 1px solid #23AF37;
+.memory .NextStep {
     color: #F4F4F4;
     font-weight: 300;
-    transition: all .4s ease-in;
+    transition: .4s ease-in;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
     margin: auto;
-    height: 50px;
+    height: 40px;
     width: 170px;
     font-size: 1.2rem;
+    background-color: #23AF37;
+    border: 1px solid #23AF37;
+    border-radius: 15px;
+    padding: 5px 15px;
 }
-.memory .btn:hover{
+.memory .NextStep:hover{
     background: #F4F4F4;
     border: 1px solid #23AF37;
     color: #23AF37 !important;
@@ -518,34 +514,17 @@ h2{
     margin: 0 auto;
     text-align: center;
 }
-.memory {
-    padding-bottom: 200px;
-}
-@media only screen and(max-width: 768px){
-    .board-container{
-        width: 100%;
-        margin: 50px auto;
-    }
-    .flex-container{
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .memoryCard{
-        height: 50px;
-        width: 80px;
-    }
-}
 
 /*Quiz game*/
-.quiz-fluid, .pic-quiz-fluid, .hangman-fluid, .dnd-fluid {
+.memory, .quiz-fluid, .pic-quiz-fluid, .hangman-fluid, .dnd-fluid, .guess-sound-fluid {
     padding-bottom: 200px;
 }
-.quiz, .pic-quiz, .hangman, .dnd {
-    width: 550px;
+.quiz, .pic-quiz, .hangman, .dnd, .guess-sound {
+    width: 65% !important;
     margin: 0 auto;
     text-align: center;
     background-size: cover;
-    padding: 50px;
+    padding: 25px;
     border-radius: 20px;
     opacity: 1;
     z-index: 0;
@@ -578,17 +557,17 @@ h2{
     padding: 10px;
     border-radius: 20px;
 }
-.Answers li:hover{
+.quiz .Answers li:hover{
     cursor: pointer;
     background-color: #FFD032;
 }
-.Answers .correct,
-.Answers .correct:hover {
+.quiz .Answers .correct,
+.quiz .Answers .correct:hover {
     background-color: #23AF37 !important;
     color: #fff;
 }
-.Answers .incorrect,
-.Answers .incorrect:hover {
+.quiz .Answers .incorrect,
+.quiz .Answers .incorrect:hover {
     background-color: #F81818 !important;
     color: #fff;
 }
@@ -709,6 +688,9 @@ p.hangman-letters {
     color: #F4F4F4;
     font-size: 1.25rem;
     font-weight: 300;
+    margin-left: auto;
+    margin-right: auto;
+    width: 700px;
 }
 .hangman h3 {
     font-weight: 300;
@@ -773,7 +755,7 @@ p.hangman-letters {
 .dnd {
     background-image: url(../images/game-images/bg4.jpg);
     height: 600px;
-    width: 65%;
+    padding-top: 50px;
 }
 .dnd h1, .dnd h3, .dnd p {
     font-weight: 300;
@@ -819,22 +801,92 @@ p.hangman-letters {
 .dnd-content {
     margin-top: 45px;
     columns: 5;
+    overflow: inherit !important;
 }
 .dnd .guessed {
     border: 3px solid #23AF37;
 }
 .food {
+    background-color:rgb(255,255,255); /*Fallback*/
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 20px;
     columns: 5;
+    overflow: inherit !important;
+    padding: 20px 5px;
 }
 .food-item {
     background-color: white;
     cursor: move;
-    float: left;
     padding: 5px;
-    margin: 10px;
+    margin: 0 auto 10px auto;
     width: 100px;
     border-radius: 13px;
     border: 1px solid #7E98ED;
+}
+
+/*Guess Sounds*/
+.guess-sound {
+    background-image: url(../images/game-images/bg2.jpg);
+}
+.guess-sound h1 {
+    font-weight: 300;
+    padding-top: 20px;
+}
+.guess-sound-next p {
+    float: left;
+    margin-top: 7px;
+    margin-left: 3px;
+}
+.guess-sound .Answers {
+    columns: 3;
+    list-style: none;
+    padding-left: 0;
+}
+.guess-sound .Answers li:hover {
+    background-color: transparent !important;
+}
+.guess-sound .Answers img {
+    border: 3px solid transparent;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    width: 150px;
+}
+.guess-sound .Answers img:hover {
+    border: 3px solid #FFD032;
+}
+.guess-sound .Answers .incorrect img {
+    border: 3px solid #F81818;
+}
+.guess-sound .Answers .correct img {
+    border: 3px solid #23AF37;
+}
+.guess-sound .Answers .incorrect {
+    background-color: transparent !important;
+}
+.guess-sound-next button {
+    float: right;
+    margin: 0 !important;
+}
+.guess-sound-content {
+    background-color:rgb(255,255,255); /*Fallback*/
+    background-color: rgba(255,255,255,0.8);
+    width: 100%;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: -25px;
+}
+.play {
+    width: 40px;
+    float: left;
+}
+
+@media (max-width: 1015px){
+    .quiz {
+        height: 650px;
+    }
+    p.hangman-letters {
+        width: 580px;
+    }
 }
 
 @media (max-width: 991px) {
@@ -935,8 +987,13 @@ p.hangman-letters {
     }
 
     /*Games*/
-    .dnd {
+    .memory .container, .quiz, .pic-quiz, .hangman, .dnd, .guess-sound {
         width: 100% !important;
+    }
+
+    .quiz {
+        height: 600px;
+        padding: 50px;
     }
 }
 
@@ -990,6 +1047,57 @@ p.hangman-letters {
     .error .error-img {
         width: 100%;
     }
+
+    /*Games*/
+    /*Memory*/
+    .memory .card {
+        min-width: auto;
+    }
+    .memory .container {
+        height: 650px !important;
+    }
+    /*Quiz*/
+    .quiz {
+        padding: 25px;
+    }
+    p.hangman-letters {
+        width: 500px;
+    }
+    /*DND*/
+    .dnd {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    .dnd-content {
+        width: 97% !important;
+    }
+    .dnd .metsloomadDND {
+        height: 6rem;
+        width: 6rem;
+    }
+    .dnd .food {
+        padding-left: 0;
+    }
+    .food-item {
+        margin: 0 auto 5px auto;
+        padding: 3px;
+        width: 90px;
+    }
+}
+
+@media only screen and(max-width: 768px){
+    .board-container{
+        width: 100%;
+        margin: 50px auto;
+    }
+    .flex-container{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .memoryCard{
+        height: 50px;
+        width: 80px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1014,8 +1122,26 @@ p.hangman-letters {
     .text-gamecontent {
         text-align: left;
     }
-    .quiz, .memory .container {
-        height: 700px !important;
+    /*Memory*/
+    .memory .container {
+        height: 750px !important;
+    }
+    .quiz {
+        height: 600px !important;
+    }
+    .memory .message {
+        padding-top: 270px;
+    }
+    /*Hangman*/
+    p.hangman-letters {
+        width: 250px;
+    }
+    .hangman {
+        height: 750px !important;
+    }
+    .hangman .result-content {
+        height: 550px;
+        margin-top: -480px;
     }
 }
 
@@ -1036,9 +1162,39 @@ p.hangman-letters {
     }
 }
 
+@media (max-width: 520px) {
+    /*Memory*/
+    .memory .container {
+        height: 850px !important;
+    }
+    .memory .board-container {
+        padding: 40px 0 0 0 !important;
+    }
+
+    /*Quiz*/
+    .quiz-content, .pic-quiz-content {
+        width: 100%;
+    }
+    /*DND*/
+    .dnd .metsloomadDND {
+        height: 5rem;
+        width: 5rem;
+    }
+    .food-item {
+        width: 80px;
+    }
+}
 @media (max-width: 411px) {
     /*Gamepage*/
     #gamepage .content {
         padding-top: 350px;
+    }
+    /*DND*/
+    .dnd .metsloomadDND {
+        height: 4rem;
+        width: 4rem;
+    }
+    .food-item {
+        width: 70px;
     }
 }

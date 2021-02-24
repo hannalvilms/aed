@@ -16,7 +16,7 @@ export class NewGame extends Component {
     const { visible } = this.state;
     return (
       <div className="menu-item">
-        <button className="btn btn-play"
+        <button className="NextStep btn-play"
           onClick={this.handleClick}
           style={{ visibility: visible ? "visible" : "hidden"}}>
           Alusta mängu

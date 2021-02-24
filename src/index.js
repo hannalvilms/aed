@@ -42,6 +42,7 @@ import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import PrivacyPolicy from "./components/Views/PrivacyPolicy";
 import Conditions from "./components/Views/Conditions";
+import LinnudGuessSound from "./components/Views/Games/LinnudGuessSound";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -74,6 +75,7 @@ ReactDOM.render(
        <Route path = "/dnd" component={MetsloomadDND} />
        <Route path = "/privacyPolicy" component={PrivacyPolicy} />
        <Route path = "/conditions" component={Conditions} />
+       <Route path = "/guessSound" component={LinnudGuessSound} />
    </BrowserRouter>,
   document.getElementById('root')
 );
