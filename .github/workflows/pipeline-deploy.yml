@@ -33,7 +33,7 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: 21098
-          rm: true
+          overwrite: true
           source: "build/*"
           target: "${{ secrets.REMOTE_DIR }}"
           strip_components: 1
