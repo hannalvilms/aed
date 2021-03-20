@@ -34,5 +34,5 @@ jobs:
           password: ${{ secrets.REMOTE_PASSWORD }}
           port: 21098
           rm: true
-          source: "build/"
+          source: "build/*"
           target: "${{ secrets.REMOTE_DIR }}"
