@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Route } from 'react-router-dom';
 //Views
-import App from './App';
 import Frontpage from './components/Views/Frontpage';
 import Admin from "./components/Views/Admin";
 import LoggedFrontpage from "./components/Views/LoggedFrontpage";
@@ -29,7 +28,6 @@ import reportWebVitals from './reportWebVitals';
 import Game from "./components/Views/Game";
 import MaismaaMemory from "./components/Views/Games/MaismaaMemory";
 import MaismaaQuiz from './components/Views/Games/MaismaaQuiz';
-import MetsloomadWordSearch from "./components/Games/WordSearch/MetsloomadWordSearch";
 import LinnudGuessPicture from "./components/Views/Games/LinnudGuessPicture";
 import LinnudHangman from "./components/Views/Games/LinnudHangman";
 import MetsloomadDND from "./components/Views/Games/MetsloomadDND";
@@ -69,7 +67,6 @@ ReactDOM.render(
        <Route path = "/gamepage" component={Game}/>
        <Route path = "/maismaaQuiz" component={MaismaaQuiz}/>
        <Route path = "/memoryGame" component={MaismaaMemory}/>
-       <Route path = "/wordSearch" component={MetsloomadWordSearch}/>
        <Route path = "/guessPicture" component={LinnudGuessPicture} />
        <Route path = "/linnudHangman" component={LinnudHangman} />
        <Route path = "/dnd" component={MetsloomadDND} />

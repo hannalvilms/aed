@@ -19,7 +19,7 @@ export default class Navbar extends Component {
                     <div className="error">
                         <img class="error-img" src={Error} alt="error"/>
                         <h2>Lehte ei leitud!</h2>
-                        <h3 className="error-back"><img class="error-arrow" src={Back} /> Tagasi</h3>
+                        <h3 className="error-back"><img class="error-arrow"  alt="back" src={Back} /> Tagasi</h3>
                     </div>
                 </div>
             </div>

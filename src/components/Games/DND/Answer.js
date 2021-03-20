@@ -10,6 +10,7 @@ export const Answer = memo(function Food({ name, type, isDropped }) {
         }),
     }), [name, type]);
 
+    // eslint-disable-next-line jsx-a11y/aria-role
     return (<div ref={drag} role="Answer" className="food-item" style={{ opacity }}>
         {isDropped ? <s>{name}</s> : name}
     </div>);

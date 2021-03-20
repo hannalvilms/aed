@@ -57,10 +57,12 @@ export default class LinnudGuessPictureGame extends Component {
     correctImg() {
         if(this.state.answer === "RÄHN") {
             console.log("rähn");
+            // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, rahn1, rahn2, rahn3, rahn4, rahn5, rahn6]
         }
         if (this.state.answer === "TUVI") {
             console.log("tuvi");
+            // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, tuvi1, tuvi2, tuvi3, tuvi4, tuvi5, tuvi6]
         }
     }
@@ -111,6 +113,7 @@ export default class LinnudGuessPictureGame extends Component {
     }
 
     render() {
+        // eslint-disable-next-line no-lone-blocks
         {/*States and const's*/}
         let {score, mistake, answer, maxWrong, images } = this.state;
         const gameOver = mistake >= maxWrong;

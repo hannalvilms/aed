@@ -9,7 +9,7 @@ export default class ProfileDataContent extends Component {
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu my-auto">
                             <Link to="/profile">Tulemused</Link>
-                            <a>Andmed</a>
+                            <p>Andmed</p>
                         </div>
                         <div className="row change-profile col-lg-8">
                             <form className="row col-lg-12">

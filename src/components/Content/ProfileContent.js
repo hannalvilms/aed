@@ -4,7 +4,7 @@ import Trees from "../../images/trees.jpg";
 import One from "../../images/one-star.png";
 import Two from "../../images/two-stars.png";
 import Three from "../../images/three-stars.png";
-import Four from "../../images/four-stars.png";
+//import Four from "../../images/four-stars.png";
 import Five from "../../images/five-stars.png";
 export default class ProfileContent extends Component {
     render() {
@@ -13,7 +13,7 @@ export default class ProfileContent extends Component {
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu my-auto">
-                            <a>Tulemused</a>
+                            <p>Tulemused</p>
                             <Link to="/profileData">Andmed</Link>
                         </div>
                         <div className="row profile-results col-lg-8 col-sm-12">
