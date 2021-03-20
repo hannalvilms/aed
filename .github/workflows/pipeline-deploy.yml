@@ -1,4 +1,3 @@
-# .github/workflows/ssh_deploy.yml
 
 name: Deploy to aed server
 
