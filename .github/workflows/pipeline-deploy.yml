@@ -1,23 +1,23 @@
 # .github/workflows/ssh_deploy.yml
 
-name: Deploy Eleventy via SSH
+name: Deploy to aed server
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, 
+      # Checks-out your repository under $GITHUB_WORKSPACE,
       # so your workflow can access it
       - uses: actions/checkout@master
 
-      # Build your static website with Eleventy
-      - name: Build Eleventy
+      # Build
+      - name: Build aed
         uses: TartanLlama/actions-eleventy@master
         with:
           args: --output html
