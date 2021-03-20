@@ -28,8 +28,9 @@ jobs:
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_KEY }}
-          passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
+          password: ${{ secrets.REMOTE_PASSWORD }}
+          #key: ${{ secrets.SSH_KEY }}
+          #passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           port: 21098
           rm: true
           source: "html/"
