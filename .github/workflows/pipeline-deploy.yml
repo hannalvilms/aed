@@ -9,18 +9,21 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE,
-      # so your workflow can access it
-      - uses: actions/checkout@master
 
-      # Build
-      - name: Build aed
-        uses: TartanLlama/actions-eleventy@master
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 14.x, 15.x]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          args: --output html
-          install_dependencies: true
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run build --if-present
 
       # Copying files and artifacts via SSH
       - name: Copying files to server
@@ -29,9 +32,7 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
-          #key: ${{ secrets.SSH_KEY }}
-          #passphrase: ${{ secrets.SSH_KEY_PASSPHRASE }}
           port: 21098
           rm: true
-          source: "html/"
+          source: "build/"
           target: "${{ secrets.REMOTE_DIR }}"
