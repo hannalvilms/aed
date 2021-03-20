@@ -514,7 +514,7 @@ h2{
     margin: 0 auto;
     text-align: center;
 }
-
+/*Games*/
 /*Quiz game*/
 .memory, .quiz-fluid, .pic-quiz-fluid, .hangman-fluid, .dnd-fluid, .guess-sound-fluid {
     padding-bottom: 200px;
@@ -575,7 +575,7 @@ h2{
     pointer-events: none;
     opacity: 0.7;
 }
-.quiz .NextStep, .pic-quiz .NextStep, .dnd .NextStep {
+.quiz .NextStep, .pic-quiz .NextStep, .dnd .NextStep, .guess-sound .NextStep {
     background-color: #23AF37;
     border: 1px solid #23AF37;
     border-radius: 15px;
@@ -585,7 +585,7 @@ h2{
     margin-top: 15px;
     margin-bottom: 15px;
 }
-.quiz .NextStep:hover {
+.quiz .NextStep:hover, .guess-sound .NextStep:hover {
     background-color: #F4F4F4 !important;
     color: #23AF37 !important;
     cursor: pointer;
@@ -827,20 +827,30 @@ p.hangman-letters {
 /*Guess Sounds*/
 .guess-sound {
     background-image: url(../images/game-images/bg2.jpg);
+    height: 700px;
 }
 .guess-sound h1 {
     font-weight: 300;
     padding-top: 20px;
 }
-.guess-sound-next p {
-    float: left;
-    margin-top: 7px;
-    margin-left: 3px;
+.guess-sound-content {
+    background-color:rgb(255,255,255); /*Fallback*/
+    background-color: rgba(255,255,255,0.4);
+    width: 100%;
+    height: 640px;
+    border-radius: 20px;
+}
+.guess-sound-content .finalPage {
+    padding-top: 150px;
 }
 .guess-sound .Answers {
-    columns: 3;
+    columns: 4;
     list-style: none;
-    padding-left: 0;
+    padding: 10px;
+    margin-bottom: 0;
+}
+.guess-sound .Answers li {
+    width: 100%;
 }
 .guess-sound .Answers li:hover {
     background-color: transparent !important;
@@ -849,7 +859,7 @@ p.hangman-letters {
     border: 3px solid transparent;
     border-radius: 20px;
     margin-bottom: 15px;
-    width: 150px;
+    width: 90%;
 }
 .guess-sound .Answers img:hover {
     border: 3px solid #FFD032;
@@ -863,21 +873,25 @@ p.hangman-letters {
 .guess-sound .Answers .incorrect {
     background-color: transparent !important;
 }
-.guess-sound-next button {
-    float: right;
-    margin: 0 !important;
+.guess-sound audio {
+    outline: none;
 }
-.guess-sound-content {
-    background-color:rgb(255,255,255); /*Fallback*/
-    background-color: rgba(255,255,255,0.8);
-    width: 100%;
-    height: 500px;
-    border-radius: 20px;
-    margin-top: -25px;
+.guess-sound .author {
+    text-align: center;
+    font-size: 12px;
 }
 .play {
     width: 40px;
     float: left;
+}
+
+@media (max-width: 1200px) {
+    .guess-sound {
+        height: 580px;
+    }
+    .guess-sound-content {
+        height: 530px;
+    }
 }
 
 @media (max-width: 1015px){
@@ -1070,6 +1084,7 @@ p.hangman-letters {
     }
     .dnd-content {
         width: 97% !important;
+        padding-left: 5px;
     }
     .dnd .metsloomadDND {
         height: 6rem;
@@ -1077,11 +1092,22 @@ p.hangman-letters {
     }
     .dnd .food {
         padding-left: 0;
+        padding-right: 0;
     }
     .food-item {
         margin: 0 auto 5px auto;
         padding: 3px;
         width: 90px;
+    }
+    /*GuessSound*/
+    .guess-sound {
+        height: 525px;
+    }
+    .guess-sound-content {
+        height: 475px;
+    }
+    .guess-sound-content .finalPage {
+        padding-top: 100px;
     }
 }
 
@@ -1142,6 +1168,11 @@ p.hangman-letters {
     .hangman .result-content {
         height: 550px;
         margin-top: -480px;
+    }
+
+    /*GuessSound*/
+    .guess-sound-content {
+        padding: 5px;
     }
 }
 
