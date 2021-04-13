@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import GameBoard from "../../Games/Memory/GameBoard";
 import NewGame from "../../Games/Memory/NewGame";
 import PlayAgain from '../../Games/Memory/PlayAgain';
-import { images } from '../../Games/Memory/Images';
+import { maismaaImages } from './Images';
 
 
 class MaismaaMemoryGame extends Component {
@@ -29,7 +29,7 @@ class MaismaaMemoryGame extends Component {
     generateDeck = () => {
         let amount = 10;
         let cards = [];
-        let image = images;
+        let image = maismaaImages;
         image = image.sort(() => Math.random() - 0.5);
 
         for (let i = 0; i < amount; i++) {

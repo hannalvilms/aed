@@ -31,7 +31,13 @@ import MaismaaQuiz from './components/Views/Games/MaismaaQuiz';
 import LinnudGuessPicture from "./components/Views/Games/LinnudGuessPicture";
 import LinnudHangman from "./components/Views/Games/LinnudHangman";
 import MetsloomadDND from "./components/Views/Games/MetsloomadDND";
-
+import KoduloomadDND from './components/Views/Games/KoduloomadDND';
+import MaismaaloomadDND from './components/Views/Games/MaismaaloomadDND';
+import VeeloomadDND from './components/Views/Games/VeeloomadDND';
+import ToitumineDND from "./components/Views/Games/ToitumineDND";
+import KaladGuessPicture from "./components/Views/Games/KaladGuessPicture";
+import KoduloomadGuessPicture from "./components/Views/Games/KoduloomadGuessPicture";
+import MaismaaGuessPicture from "./components/Views/Games/MaismaaGuessPicture";
 //Styles
 import '../src/styles/style.css';
 import '../src/styles/style.css';
@@ -41,6 +47,16 @@ import 'bootstrap/dist/css/bootstrap.css';
 import PrivacyPolicy from "./components/Views/PrivacyPolicy";
 import Conditions from "./components/Views/Conditions";
 import LinnudGuessSound from "./components/Views/Games/LinnudGuessSound";
+import KahepaiksedGuessPicture from "./components/Views/Games/KahepaiksedGuessPicture";
+import MetsloomadGuessPicture from "./components/Views/Games/MetsloomadGuessPicture";
+import ValisehitusGuessPicture from "./components/Views/Games/ValisehitusGuessPicture";
+import VeeloomadGuessPicture from "./components/Views/Games/VeeloomadGuessPicture";
+import KoduloomadHangman from "./components/Views/Games/KoduloomadHangman";
+import ToitumineHangman from "./components/Views/Games/ToitumineHangman";
+import KaladMemory from "./components/Views/Games/KaladMemory";
+import KoduloomadMemory from "./components/Views/Games/KoduloomadMemory";
+import LinnudMemory from "./components/Views/Games/LinnudMemory";
+import MetsloomadMemory from "./components/Views/Games/MetsloomadMemory";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -65,11 +81,34 @@ ReactDOM.render(
        <Route path = "/valisehitus" component={Valisehitus} />
        <Route path = "/veeloomad" component={Veeloomad}/>
        <Route path = "/gamepage" component={Game}/>
+
        <Route path = "/maismaaQuiz" component={MaismaaQuiz}/>
+
        <Route path = "/memoryGame" component={MaismaaMemory}/>
+       <Route path = "/kaladMemory" component={KaladMemory}/>
+       <Route path = "/koduloomadMemory" component={KoduloomadMemory}/>
+       <Route path = "/linnudMemory" component={LinnudMemory}/>
+       <Route path = "/metsloomadMemory" component={MetsloomadMemory}/>
+
        <Route path = "/guessPicture" component={LinnudGuessPicture} />
+       <Route path = "/kahepaiksedGuessPicture" component={KahepaiksedGuessPicture} />
+       <Route path = "/kaladGuessPicture" component={KaladGuessPicture}/>
+       <Route path = "/koduloomadGuessPicture" component={KoduloomadGuessPicture}/>
+       <Route path = "/maismaaGuessPicture" component={MaismaaGuessPicture}/>
+       <Route path = "/metsloomadGuessPicture" component={MetsloomadGuessPicture}/>
+       <Route path = "/valisehitusGuessPicture" component={ValisehitusGuessPicture}/>
+       <Route path = "/veeloomadGuessPicture" component={VeeloomadGuessPicture}/>
+
        <Route path = "/linnudHangman" component={LinnudHangman} />
+       <Route path = "/koduloomadHangman" component={KoduloomadHangman}/>
+       <Route path = "/toitumineHangman" component={ToitumineHangman}/>
+
+       <Route path = "/koduloomadDND" component={KoduloomadDND} />
        <Route path = "/dnd" component={MetsloomadDND} />
+       <Route path = "/maismaaloomadDND" component={MaismaaloomadDND} />
+       <Route path = "/veeloomadDND" component={VeeloomadDND} />
+       <Route path = "/toitumineDND" component={ToitumineDND} />
+
        <Route path = "/privacyPolicy" component={PrivacyPolicy} />
        <Route path = "/conditions" component={Conditions} />
        <Route path = "/guessSound" component={LinnudGuessSound} />

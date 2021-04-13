@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 //import { Link } from 'react-router-dom';
 
 export default class LoginContent extends Component {
@@ -19,6 +19,7 @@ export default class LoginContent extends Component {
                 })
         })()
     }
+
     render() {
         return (
             <div className="container-fluid adjust-height">
@@ -38,7 +39,7 @@ export default class LoginContent extends Component {
                                 </div>
                             </div>
                             <div className="login-input">
-                                <input type="password" className="form-control" id="validationCustom03" placeholder="Parool" required/>
+                                <input  type="password" className="form-control" id="validationCustom03" placeholder="Parool" required/>
                                 <div className="invalid-feedback">
                                     Sisesta parool.
                                 </div>

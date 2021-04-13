@@ -51,8 +51,12 @@
     ]
   },
   "devDependencies": {
+    "axios": "^0.21.1",
     "immutability-helper": "^3.1.1",
     "react-flip-move": "^3.0.4",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "reactstrap": "^8.9.0",
+    "sweetalert2": "^10.16.0",
+    "universal-cookie": "^4.0.4"
   }
 }

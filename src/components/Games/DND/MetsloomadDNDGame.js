@@ -7,13 +7,13 @@ import update from 'immutability-helper';
 
 export const MetsloomadDNDGame = () => {
     const [animals, setAnimals] = useState([
-        { accepts: [MetsloomadItemTypes.LIND], lastDroppedItem: null },
+        { accepts: [MetsloomadItemTypes.MAGER], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.SIIL], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.KARU], lastDroppedItem: null },
-        { accepts: [MetsloomadItemTypes.LEHM], lastDroppedItem: null },
-        { accepts: [MetsloomadItemTypes.LIND2], lastDroppedItem: null },
+        { accepts: [MetsloomadItemTypes.METSKITS], lastDroppedItem: null },
+        { accepts: [MetsloomadItemTypes.METSSIGA], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.ILVES], lastDroppedItem: null },
-        { accepts: [MetsloomadItemTypes.HIRV], lastDroppedItem: null },
+        { accepts: [MetsloomadItemTypes.HUNT], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.REBANE], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.PODER], lastDroppedItem: null },
         { accepts: [MetsloomadItemTypes.ORAV], lastDroppedItem: null },
@@ -21,15 +21,15 @@ export const MetsloomadDNDGame = () => {
 
     const [answers] = useState([
         { name: 'Ilves', type: MetsloomadItemTypes.ILVES },
-        { name: 'Hirv', type: MetsloomadItemTypes.HIRV },
+        { name: 'Metssiga', type: MetsloomadItemTypes.METSSIGA },
         { name: 'Rebane', type: MetsloomadItemTypes.REBANE },
         { name: 'Põder', type: MetsloomadItemTypes.PODER },
         { name: 'Orav', type: MetsloomadItemTypes.ORAV },
-        { name: 'Lind', type: MetsloomadItemTypes.LIND },
-        { name: 'Siil', type: MetsloomadItemTypes.SIIL },
+        { name: 'Hunt', type: MetsloomadItemTypes.HUNT },
+        { name: 'Metskits', type: MetsloomadItemTypes.METSKITS },
         { name: 'Karu', type: MetsloomadItemTypes.KARU },
-        { name: 'Lehm', type: MetsloomadItemTypes.LEHM },
-        { name: 'Lind2', type: MetsloomadItemTypes.LIND2 },
+        { name: 'Siil', type: MetsloomadItemTypes.SIIL },
+        { name: 'Mäger', type: MetsloomadItemTypes.MAGER },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -39,7 +39,6 @@ export const MetsloomadDNDGame = () => {
     function addScore() {
         setScore(score + 1);
     }
-
 
     function isDropped(boxName) {
         return droppedBoxNames.indexOf(boxName) > -1;

@@ -4,7 +4,7 @@ import { useDrop } from 'react-dnd';
 
 export const Animal = memo(
     function Animals({ accept, lastDroppedItem, onDrop }) {
-        const [drop] = useDrop(() => ({
+        const [{ isOver, canDrop }, drop] = useDrop(() => ({
             accept,
             drop: onDrop,
             collect: (monitor) => ({

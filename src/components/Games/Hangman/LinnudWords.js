@@ -1,7 +1,16 @@
 //word array
 const linnud = [
-    "RÄHN",
+    "PÄÄSUKE",
+    "LÕOKE",
+    "KULDNOKK",
+    "TOONEKURG",
+    "RASVATIHANE",
     "TUVI",
+    "RÄHN",
+    "LEEVIKE",
+    "VARES",
+    "KAJAKAS",
+    "LUIK",
 ];
 
 //Generate random word from array

@@ -2,9 +2,18 @@ import React, { Component } from 'react';
 import PlayAgain from '../../Games/Quiz/PlayAgain';
 import MaismaaQuestion from "../Quiz/Question/MaismaaQuestion";
 import GuessPictureAnswer from "./GuessPictureAnswer";
-import Bird from "../../../images/bird.jpg";
-import Bird2 from "../../../images/bird2.jpg";
-
+import Paasuke from "../img/paasuke.jpg";
+import Looke from "../img/looke.jpeg";
+import Kuldnokk from "../img/kuldnokk.jpg";
+import Toonekurg from "../img/toonekurg.jpg";
+import Rasvatihane from "../img/rasvatihane.jpg";
+import Leevike from "../img/leevike.jpg";
+import Vares from "../img/vares.jpg";
+import Kajakas from "../img/kajakas.jpg";
+import Tuvi from "../img/tuvi.jpg";
+import Rahn from "../img/rähn.jpg";
+import Luik from "../img/luik.jpg";
+import Hani from "../img/hani.jpg";
 
 export default class LinnudGuessPictureGame extends Component {
 
@@ -13,21 +22,69 @@ export default class LinnudGuessPictureGame extends Component {
         this.state = {
             questions: {
                 1: 'Kes on pildil?',
-                2: 'Kes on pildil?'
+                2: 'Kes on pildil?',
+                3: 'Kes on pildil?',
+                4: 'Kes on pildil?',
+                5: 'Kes on pildil?',
+                6: 'Kes on pildil?',
+                7: 'Kes on pildil?',
+                8: 'Kes on pildil?',
+                9: 'Kes on pildil?',
+                10: 'Kes on pildil?',
+                11: 'Kes on pildil?',
+                12: 'Kes on pildil?',
             },
             answers: {
                 1: {
-                    1: "lind",
-                    image: Bird,
+                    1: "pääsuke", image: Paasuke,
                 },
                 2: {
-                    2: 'lind2',
-                    image: Bird2,
+                    2: 'lõoke', image: Looke,
+                },
+                3: {
+                    3: 'kuldnokk', image: Kuldnokk,
+                },
+                4: {
+                    4: 'toonekurg', image: Toonekurg,
+                },
+                5: {
+                    5: 'rasvatihane', image: Rasvatihane,
+                },
+                6: {
+                    6: 'leevike', image: Leevike,
+                },
+                7: {
+                    7: 'vares', image: Vares,
+                },
+                8: {
+                    8: 'tuvi', image: Tuvi,
+                },
+                9: {
+                    9: 'rähn', image: Rahn,
+                },
+                10: {
+                    10: 'kajakas', image: Kajakas,
+                },
+                11: {
+                    11: 'luik', image: Luik,
+                },
+                12: {
+                    12: 'hani', image: Hani,
                 }
             },
             correctAnswers: {
-                1: 'lind',
-                2: 'lind2'
+                1: 'pääsuke',
+                2: 'lõoke',
+                3: 'kuldnokk',
+                4: 'toonekurg',
+                5: 'rasvatihane',
+                6: 'leevike',
+                7: 'vares',
+                8: 'tuvi',
+                9: 'rähn',
+                10: 'kajakas',
+                11: 'luik',
+                12: 'hani',
             },
             correctAnswer: 0,
             clickedAnswer: 0,
@@ -44,21 +101,69 @@ export default class LinnudGuessPictureGame extends Component {
         return {
             questions: {
                 1: 'Kes on pildil?',
-                2: 'Kes on pildil?'
+                2: 'Kes on pildil?',
+                3: 'Kes on pildil?',
+                4: 'Kes on pildil?',
+                5: 'Kes on pildil?',
+                6: 'Kes on pildil?',
+                7: 'Kes on pildil?',
+                8: 'Kes on pildil?',
+                9: 'Kes on pildil?',
+                10: 'Kes on pildil?',
+                11: 'Kes on pildil?',
+                12: 'Kes on pildil?',
             },
             answers: {
                 1: {
-                    1: "lind",
-                    image: Bird,
+                    1: "pääsuke", image: Paasuke,
                 },
                 2: {
-                    2: 'lind2',
-                    image: Bird2,
+                    2: 'lõoke', image: Looke,
+                },
+                3: {
+                    3: 'kuldnokk', image: Kuldnokk,
+                },
+                4: {
+                    4: 'toonekurg', image: Toonekurg,
+                },
+                5: {
+                    5: 'rasvatihane', image: Rasvatihane,
+                },
+                6: {
+                    6: 'leevike', image: Leevike,
+                },
+                7: {
+                    7: 'vares', image: Vares,
+                },
+                8: {
+                    8: 'tuvi', image: Tuvi,
+                },
+                9: {
+                    9: 'rähn', image: Rahn,
+                },
+                10: {
+                    10: 'kajakas', image: Kajakas,
+                },
+                11: {
+                    11: 'luik', image: Luik,
+                },
+                12: {
+                    12: 'hani', image: Hani,
                 }
             },
             correctAnswers: {
-                1: 'lind',
-                2: 'lind2'
+                1: 'pääsuke',
+                2: 'lõoke',
+                3: 'kuldnokk',
+                4: 'toonekurg',
+                5: 'rasvatihane',
+                6: 'leevike',
+                7: 'vares',
+                8: 'tuvi',
+                9: 'rähn',
+                10: 'kajakas',
+                11: 'luik',
+                12: 'hani',
             },
             correctAnswer: 0,
             step: 1,
@@ -92,7 +197,7 @@ export default class LinnudGuessPictureGame extends Component {
 // Checks if the answer is correct
     checkAnswer = answer => {
         const { correctAnswers, step, score } = this.state;
-        if(correctAnswers[step] === this.state.inputValue){
+        if(correctAnswers[step] === this.state.inputValue.toLowerCase()){
             this.setState({
                 score: score + 1,
                 correctAnswer: correctAnswers[step],
@@ -173,7 +278,7 @@ export default class LinnudGuessPictureGame extends Component {
                             </>) : (
                                 <div className="finalPage">
                                     {/*Result page and new game*/}
-                                    <h1>You have completed the quiz!</h1>
+                                    <h1>Testi lõpp!</h1>
                                     <p>Tulemus {score}/{Object.keys(questions).length}</p>
                                     <PlayAgain again={this.resetGame} />
                                 </div>

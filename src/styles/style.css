@@ -183,7 +183,7 @@ a:hover {
 .login h3, .register h3 {
     margin-bottom: 40px;
 }
-.login button, .register button {
+.login button, .register .btn {
     background-color: #007270;
     color: #F4F4F4;
     margin-top: 35px;
@@ -193,7 +193,7 @@ a:hover {
     box-shadow: 0 1px 2px #888;
     padding: 6px 22px;
 }
-.login button:hover, .register button:hover {
+.login button:hover, .register .btn:hover {
     background-color: #F4F4F4;
     color: #007270;
 }
@@ -760,7 +760,9 @@ p.hangman-letters {
 .dnd h1, .dnd h3, .dnd p {
     font-weight: 300;
 }
-.dnd .metsloomadDND {
+.dnd .metsloomadDND, .dnd .koduloomadDND,
+.dnd .maismaaloomadDND, .dnd .veeloomadDND,
+.dnd .toitumineDND {
     height: 7.5rem;
     width: 7.5rem;
     margin: 0 auto 1rem auto;
@@ -769,35 +771,164 @@ p.hangman-letters {
     background-size: cover;
 }
 .dnd .metsloomadDND:nth-of-type(1) {
-    background-image: url(../components/Games/DND/img/bird.png);
+    background-image: url(../components/Games/img/mager.jpg);
 }
 .dnd .metsloomadDND:nth-of-type(2) {
-    background-image: url(../components/Games/DND/img/hedgehog.png);
+    background-image: url(../components/Games/img/hedgehog.png);
 }
 .dnd .metsloomadDND:nth-of-type(3) {
-    background-image: url(../components/Games/DND/img/bear.png);
+    background-image: url(../components/Games/img/bear.png);
 }
 .dnd .metsloomadDND:nth-of-type(4) {
-    background-image: url(../components/Games/DND/img/cow.png);
+    background-image: url(../components/Games/img/metskits.jpg);
 }
 .dnd .metsloomadDND:nth-of-type(5) {
-    background-image: url(../components/Games/DND/img/bird5.png);
+    background-image: url(../components/Games/img/metssiga.jpg);
 }
 .dnd .metsloomadDND:nth-of-type(6) {
-    background-image: url(../components/Games/DND/img/lynx.png);
+    background-image: url(../components/Games/img/lynx.png);
 }
 .dnd .metsloomadDND:nth-of-type(7) {
-    background-image: url(../components/Games/DND/img/deer.png);
+    background-image: url(../components/Games/img/hunt.jpg);
 }
 .dnd .metsloomadDND:nth-of-type(8) {
-    background-image: url(../components/Games/DND/img/fox.png);
+    background-image: url(../components/Games/img/fox.png);
 }
 .dnd .metsloomadDND:nth-of-type(9) {
-    background-image: url(../components/Games/DND/img/moose.png);
+    background-image: url(../components/Games/img/poder.jpg);
 }
 .dnd .metsloomadDND:nth-of-type(10) {
-    background-image: url(../components/Games/DND/img/squirrel.png);
+    background-image: url(../components/Games/img/squirrel.png);
 }
+
+
+.dnd .koduloomadDND:nth-of-type(1) {
+    background-image: url(../components/Games/img/kass.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(2) {
+    background-image: url(../components/Games/img/kana.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(3) {
+    background-image: url(../components/Games/img/lammas.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(4) {
+    background-image: url(../components/Games/img/cow.png);
+}
+.dnd .koduloomadDND:nth-of-type(5) {
+    background-image: url(../components/Games/img/kalkun.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(6) {
+    background-image: url(../components/Games/img/hani.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(7) {
+    background-image: url(../components/Games/img/papagoi.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(8) {
+    background-image: url(../components/Games/img/siga.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(9) {
+    background-image: url(../components/Games/img/kits.jpg);
+}
+.dnd .koduloomadDND:nth-of-type(10) {
+    background-image: url(../components/Games/img/janes.jpg);
+}
+
+
+.dnd .maismaaloomadDND:nth-of-type(1) {
+    background-image: url(../components/Games/img/nastik.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(2) {
+    background-image: url(../components/Games/img/mutt.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(3) {
+    background-image: url(../components/Games/img/metssiga.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(4) {
+    background-image: url(../components/Games/img/mager.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(5) {
+    background-image: url(../components/Games/img/kits.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(6) {
+    background-image: url(../components/Games/img/kana.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(7) {
+    background-image: url(../components/Games/img/hunt.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(8) {
+    background-image: url(../components/Games/img/kass.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(9) {
+    background-image: url(../components/Games/img/merisiga.jpg);
+}
+.dnd .maismaaloomadDND:nth-of-type(10) {
+    background-image: url(../components/Games/img/siga.jpg);
+}
+
+
+.dnd .veeloomadDND:nth-of-type(1) {
+    background-image: url(../components/Games/img/saarmas.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(2) {
+    background-image: url(../components/Games/img/kobras.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(3) {
+    background-image: url(../components/Games/img/hyljes.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(4) {
+    background-image: url(../components/Games/img/kiil.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(5) {
+    background-image: url(../components/Games/img/liuskur.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(6) {
+    background-image: url(../components/Games/img/ujur.jpeg);
+}
+.dnd .veeloomadDND:nth-of-type(7) {
+    background-image: url(../components/Games/img/vesiamblik.jpeg);
+}
+.dnd .veeloomadDND:nth-of-type(8) {
+    background-image: url(../components/Games/img/vesihark.jpeg);
+}
+.dnd .veeloomadDND:nth-of-type(9) {
+    background-image: url(../components/Games/img/delfiin.jpg);
+}
+.dnd .veeloomadDND:nth-of-type(10) {
+    background-image: url(../components/Games/img/vaal.jpg);
+}
+
+
+.dnd .toitumineDND:nth-of-type(1) {
+    background-image: url(../components/Games/img/vasikas.jpg);
+}
+.dnd .toitumineDND:nth-of-type(2) {
+    background-image: url(../components/Games/img/tall.jpg);
+}
+.dnd .toitumineDND:nth-of-type(3) {
+    background-image: url(../components/Games/img/porsas.jpg);
+}
+.dnd .toitumineDND:nth-of-type(4) {
+    background-image: url(../components/Games/img/tibu.jpg);
+}
+.dnd .toitumineDND:nth-of-type(5) {
+    background-image: url(../components/Games/img/varss.jpg);
+}
+.dnd .toitumineDND:nth-of-type(6) {
+    background-image: url(../components/Games/img/kutsikas.jpg);
+}
+.dnd .toitumineDND:nth-of-type(7) {
+    background-image: url(../components/Games/img/maimud.jpg);
+}
+.dnd .toitumineDND:nth-of-type(8) {
+    background-image: url(../components/Games/img/rebasekutsikas.jpg);
+}
+.dnd .toitumineDND:nth-of-type(9) {
+    background-image: url(../components/Games/img/parditibu.jpg);
+}
+.dnd .toitumineDND:nth-of-type(10) {
+    background-image: url(../components/Games/img/kitsetall.jpg);
+}
+
 .dnd-content {
     margin-top: 45px;
     columns: 5;
@@ -822,6 +953,10 @@ p.hangman-letters {
     width: 100px;
     border-radius: 13px;
     border: 1px solid #7E98ED;
+}
+.toitumine .food-item {
+    width: 125px;
+    font-size: 14px;
 }
 
 /*Guess Sounds*/
@@ -1086,13 +1221,21 @@ p.hangman-letters {
         width: 97% !important;
         padding-left: 5px;
     }
-    .dnd .metsloomadDND {
+    .dnd .metsloomadDND,
+    .dnd .koduloomadDND,
+    .dnd .maismaaloomadDND,
+    .dnd .veeloomadDND,
+    .dnd .toitumineDND {
         height: 6rem;
         width: 6rem;
     }
     .dnd .food {
         padding-left: 0;
         padding-right: 0;
+    }
+    .toitumine .food-item {
+        width: 90px;
+        font-size: 12px;
     }
     .food-item {
         margin: 0 auto 5px auto;
@@ -1207,12 +1350,20 @@ p.hangman-letters {
         width: 100%;
     }
     /*DND*/
-    .dnd .metsloomadDND {
+    .dnd .metsloomadDND,
+    .dnd .koduloomadDND,
+    .dnd .maismaaloomadDND,
+    .dnd .veeloomadDND,
+    .dnd .toitumineDND {
         height: 5rem;
         width: 5rem;
     }
     .food-item {
         width: 80px;
+    }
+    .toitumine .food-item {
+        width: 80px;
+        font-size: 10px;
     }
 }
 @media (max-width: 411px) {
@@ -1221,7 +1372,11 @@ p.hangman-letters {
         padding-top: 350px;
     }
     /*DND*/
-    .dnd .metsloomadDND {
+    .dnd .metsloomadDND,
+    .dnd .koduloomadDND,
+    .dnd .maismaaloomadDND,
+    .dnd .veeloomadDND,
+    .dnd .toitumineDND {
         height: 4rem;
         width: 4rem;
     }
