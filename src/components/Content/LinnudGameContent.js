@@ -9,7 +9,7 @@ export default class LinnudGameContent extends Component {
                 <div className="container">
                     <div className="row game-content">
                         <div className="col-lg-6 col-sm-6">
-                            <Link to="/linnud"><p className="lead"><img className="arrow-back" alt="arrow-back"src={Back}/> Tagasi</p></Link>
+                            <Link to="/linnud"><p className="lead"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         </div>
                         <div className="col-lg-6 col-sm-6 text-gamecontent">
                             <h4>Linnud</h4>

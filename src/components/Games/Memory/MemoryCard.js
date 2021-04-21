@@ -19,7 +19,8 @@ export class MemoryCard extends Component {
             onClick={this.flipCard}
             style={{
                 backgroundImage: `url(${MemoryQuestionmark})`,
-                borderRadius: `20px`
+                borderRadius: `20px`,
+                backgroundPosition: `center`
             }}
             key="front"
           />
@@ -30,7 +31,7 @@ export class MemoryCard extends Component {
             style={{
                 backgroundColor: `#FFF`,
               backgroundImage: `url(${imgUrl})`,
-              backgroundSize: "contain",
+              backgroundSize: "cover",
               backgroundRepeat: "no-repeat", backgroundPosition: "center",
               border: found ? "2px solid #23AF37" : "2px solid #CC0E0E",
               cursor : found ? "" : "pointer",

@@ -8,8 +8,12 @@ export default class Kahepaiksed extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <KahepaiksedContent />
-                <Footer />
+                <div className="stretch-games">
+                    <KahepaiksedContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

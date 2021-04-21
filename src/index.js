@@ -22,12 +22,13 @@ import Register from "./components/Views/Register";
 import Toitumine from "./components/Views/Toitumine";
 import Valisehitus from "./components/Views/Valisehitus";
 import Veeloomad from "./components/Views/Veeloomad";
+import PrivacyPolicy from "./components/Views/PrivacyPolicy";
+import Conditions from "./components/Views/Conditions";
 import reportWebVitals from './reportWebVitals';
 
 //Games
 import Game from "./components/Views/Game";
 import MaismaaMemory from "./components/Views/Games/MaismaaMemory";
-import MaismaaQuiz from './components/Views/Games/MaismaaQuiz';
 import LinnudGuessPicture from "./components/Views/Games/LinnudGuessPicture";
 import LinnudHangman from "./components/Views/Games/LinnudHangman";
 import MetsloomadDND from "./components/Views/Games/MetsloomadDND";
@@ -38,14 +39,6 @@ import ToitumineDND from "./components/Views/Games/ToitumineDND";
 import KaladGuessPicture from "./components/Views/Games/KaladGuessPicture";
 import KoduloomadGuessPicture from "./components/Views/Games/KoduloomadGuessPicture";
 import MaismaaGuessPicture from "./components/Views/Games/MaismaaGuessPicture";
-//Styles
-import '../src/styles/style.css';
-import '../src/styles/style.css';
-import '../src/styles/hamburgers.css';
-import '../src/styles/hamburgers.min.css';
-import 'bootstrap/dist/css/bootstrap.css';
-import PrivacyPolicy from "./components/Views/PrivacyPolicy";
-import Conditions from "./components/Views/Conditions";
 import LinnudGuessSound from "./components/Views/Games/LinnudGuessSound";
 import KahepaiksedGuessPicture from "./components/Views/Games/KahepaiksedGuessPicture";
 import MetsloomadGuessPicture from "./components/Views/Games/MetsloomadGuessPicture";
@@ -57,6 +50,21 @@ import KaladMemory from "./components/Views/Games/KaladMemory";
 import KoduloomadMemory from "./components/Views/Games/KoduloomadMemory";
 import LinnudMemory from "./components/Views/Games/LinnudMemory";
 import MetsloomadMemory from "./components/Views/Games/MetsloomadMemory";
+import KahepaiksedSecondQuiz from "./components/Views/Games/KahepaiksedSecondQuiz";
+import KahepaiksedQuiz from "./components/Views/Games/KahepaiksedQuiz";
+import KaladQuiz from "./components/Views/Games/KaladQuiz";
+import ToitumineQuiz from "./components/Views/Games/ToitumineQuiz";
+import ValisehitusQuiz from "./components/Views/Games/ValisehitusQuiz";
+import VeeloomadQuiz from "./components/Views/Games/VeeloomadQuiz";
+
+//Styles
+import '../src/styles/style.css';
+import '../src/styles/style.css';
+import '../src/styles/hamburgers.css';
+import '../src/styles/hamburgers.min.css';
+import 'bootstrap/dist/css/bootstrap.css';
+import {PrivateRoute} from "./PrivateRoute";
+
 
 ReactDOM.render(
    <BrowserRouter>
@@ -74,7 +82,7 @@ ReactDOM.render(
        <Route path = "/linnud" component={Linnud} />
        <Route path = "/login" component={Login}/>
        <Route path = "/maintenance" component={Maintenance}/>
-       <Route path = "/maismaaloomad" component={Maismaaloomad}/>
+       <PrivateRoute path = "/maismaaloomad" component={Maismaaloomad}/>
        <Route path = "/metsloomad" component={Metsloomad}/>
        <Route path = "/register" component={Register} />
        <Route path = "/toitumine" component={Toitumine}/>
@@ -82,7 +90,12 @@ ReactDOM.render(
        <Route path = "/veeloomad" component={Veeloomad}/>
        <Route path = "/gamepage" component={Game}/>
 
-       <Route path = "/maismaaQuiz" component={MaismaaQuiz}/>
+       <Route path = "/maodSisalikudQuiz" component={KahepaiksedSecondQuiz} />
+       <Route path = "/kahepaiksedQuiz" component={KahepaiksedQuiz} />
+       <Route path = "/kaladQuiz" component={KaladQuiz} />
+       <Route path = "/toitumineQuiz" component={ToitumineQuiz} />
+       <Route path = "/valisehitusQuiz" component={ValisehitusQuiz} />
+       <Route path = "/veeloomadQuiz" component={VeeloomadQuiz} />
 
        <Route path = "/memoryGame" component={MaismaaMemory}/>
        <Route path = "/kaladMemory" component={KaladMemory}/>
@@ -90,7 +103,7 @@ ReactDOM.render(
        <Route path = "/linnudMemory" component={LinnudMemory}/>
        <Route path = "/metsloomadMemory" component={MetsloomadMemory}/>
 
-       <Route path = "/guessPicture" component={LinnudGuessPicture} />
+       <Route path = "/linnudGuessPicture" component={LinnudGuessPicture} />
        <Route path = "/kahepaiksedGuessPicture" component={KahepaiksedGuessPicture} />
        <Route path = "/kaladGuessPicture" component={KaladGuessPicture}/>
        <Route path = "/koduloomadGuessPicture" component={KoduloomadGuessPicture}/>
@@ -104,7 +117,7 @@ ReactDOM.render(
        <Route path = "/toitumineHangman" component={ToitumineHangman}/>
 
        <Route path = "/koduloomadDND" component={KoduloomadDND} />
-       <Route path = "/dnd" component={MetsloomadDND} />
+       <Route path = "/metsloomadDND" component={MetsloomadDND} />
        <Route path = "/maismaaloomadDND" component={MaismaaloomadDND} />
        <Route path = "/veeloomadDND" component={VeeloomadDND} />
        <Route path = "/toitumineDND" component={ToitumineDND} />

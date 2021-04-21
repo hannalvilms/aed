@@ -1,9 +1,14 @@
 import React from 'react';
 import { useState, useCallback } from 'react';
 import { Animal } from './Animal';
-import { Answer } from './Answer';
+import {Answer, scoree} from './Answer';
 import { MetsloomadItemTypes } from './MetsloomadItemTypes';
 import update from 'immutability-helper';
+import OneStar from '../../../images/one-star.png';
+import TwoStars from '../../../images/two-stars.png';
+import ThreeStars from '../../../images/three-stars.png';
+import FourStars from '../../../images/four-stars.png';
+import FiveStars from '../../../images/five-stars.png';
 
 export const MetsloomadDNDGame = () => {
     const [animals, setAnimals] = useState([
@@ -38,6 +43,7 @@ export const MetsloomadDNDGame = () => {
 
     function addScore() {
         setScore(score + 1);
+        return null;
     }
 
     function isDropped(boxName) {
@@ -56,11 +62,28 @@ export const MetsloomadDNDGame = () => {
         }));
     }, [droppedBoxNames, animals]);
 
+    let img = FiveStars
+    if (scoree <= 39) {
+        img = FiveStars
+    }
+    if (scoree >= 39 && scoree <= 53) {
+        img = FourStars
+    }
+    if (scoree >= 53 && scoree <= 59) {
+        img = ThreeStars
+    }
+    if (scoree >= 59 && scoree <= 70) {
+        img = TwoStars
+    }
+    if (scoree > 70) {
+        img = OneStar
+    }
+
     return (
-        <div className="container-fluid dnd-fluid">
+        <div className="container-fluid dnd-fluid" >
             <div className="container dnd">
                 <h3>Lohista looma nimi õige pildi peale</h3>
-                <p>Tulemus: {score}</p>
+                <p>Tulemus: {scoree}</p>
                 {score < 10 ?
                     (<>
                         <div className="dnd-content" style={{ overflow: 'hidden', clear: 'both' }}>
@@ -84,6 +107,8 @@ export const MetsloomadDNDGame = () => {
                     </>) : (
                         <div className="finalPage">
                             <h1>Tubli!</h1>
+                            <p>Hinne:</p>
+                            <img alt="result in stars"  className="result-img" src={img}/>
                         </div>
                     )
                 }

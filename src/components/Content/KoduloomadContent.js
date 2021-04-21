@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import Cow from "../../images/cow.jpg";
 import Lambs from "../../images/lambs.jpg";
 import Horses from "../../images/horse.jpg";
+import Rabbits from "../../images/rabbits.jpg";
 import Back from "../../images/back.svg";
+import {initial} from "../Games/DND/Answer";
 
 export default class KoduloomadContent extends Component {
     render() {
@@ -22,26 +24,41 @@ export default class KoduloomadContent extends Component {
                                 <h3>Mängud</h3>
                             </div>
                             <div className="row teemad">
-                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Cow} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
+                                    <img src={Cow} alt="lehm"/>
+                                    <Link to="/koduloomadDND">
+                                        <div className="overlay">
+                                            <h4>Lohistamine</h4>
+                                            <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Lambs} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
+                                    <img src={Lambs} alt="lambad"/>
+                                    <Link to="/koduloomadGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Horses} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <Link to="/koduloomadHangman">
+                                        <div className="overlay">
+                                            <h4>Poomine</h4>
+                                            <p>Arva ära sõna.</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                    <img src={Rabbits} alt="jänesed"/>
+                                    <Link to="/koduloomadMemory">
+                                        <div className="overlay">
+                                            <h4>Memory</h4>
+                                            <p>Leia õiged paarid.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

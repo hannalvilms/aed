@@ -8,8 +8,12 @@ export default class Metsloomad extends Component {
         return (
             <div>
                 <LoggedNavbar />
+                <div className="stretch-games">
                 <MetsloomadContent />
-                <Footer />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

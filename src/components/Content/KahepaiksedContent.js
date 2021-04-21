@@ -23,25 +23,31 @@ export default class KahepaiksedContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Snake} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                    <img src={Snake} alt="madu"/>
+                                    <Link to="/kahepaiksedGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Geko} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
+                                    <img src={Geko} alt="geko"/>
+                                    <Link to="/maodSisalikudQuiz">
+                                        <div className="overlay">
+                                            <h4>Test (Maod ja sisalikud)</h4>
+                                            <p>Vali õige vastus.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Frog} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <Link to="/kahepaiksedQuiz">
+                                        <div className="overlay">
+                                            <h4>Test (Kahepaiksed)</h4>
+                                            <p>Vali õige vastus.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

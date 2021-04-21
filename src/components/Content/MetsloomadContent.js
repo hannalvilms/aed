@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Lynx from "../../images/lynx.jpg";
 import Moose from "../../images/moose.jpg";
-import Horse from "../../images/horse2.jpg";
+import Hunt from "../../components/Games/img/hunt.jpg";
 import Back from "../../images/back.svg";
+import {initial} from "../Games/DND/Answer";
 
 export default class MetsloomadContent extends Component {
     render() {
@@ -23,25 +24,31 @@ export default class MetsloomadContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Lynx} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                    <img src={Lynx} alt="ilves"/>
+                                    <Link to="/metsloomadGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
+                                    <img src={Moose} alt="põder"/>
+                                    <Link to="/metsloomadDND">
+                                        <div className="overlay">
+                                            <h4>Lohistamine</h4>
+                                            <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Moose} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Horse} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <img src={Hunt} alt="hunt"/>
+                                    <Link to="/metsloomadMemory">
+                                        <div className="overlay">
+                                            <h4>Memory</h4>
+                                            <p>Leia õiged paarid.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

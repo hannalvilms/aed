@@ -16,8 +16,23 @@ html, body {
     padding: 0;
 }
 #container {
-    background-color: #FFF;
+    background-color: #ECFBFB !important;
     min-height: 100%;
+}
+.stretch {
+    top: 450px;
+}
+.stretch-games {
+    top: 70px;
+}
+.stretch-games .footer {
+    bottom:auto;
+}
+.stretch, .stretch-games {
+    width: 100%;
+    bottom: 0;
+    position: absolute;
+    background: #FFF;
 }
 a {
     color: #2D2D2D !important;
@@ -53,8 +68,8 @@ a:hover {
     display: none;
 }
 .fixed-nav {
-    /*position: -webkit-sticky; /*Safari*/
-    position: sticky;
+    position: fixed;
+    bottom: 0;
     top: 0;
     z-index: 1000000;
 }
@@ -76,7 +91,7 @@ a:hover {
     width: 93px;
 }
 .header-text h1 {
-    font-size: 3.2rem;
+    font-size: 3rem;
     font-weight: 300;
 }
 .header-text p {
@@ -94,11 +109,20 @@ a:hover {
 
 /*Front page content*/
 .content {
-    background-color: #FFF;
     padding-bottom: 150px;
+    background-color: #FFF;
+    height: auto !important;
+    min-height: 100%;
+    /*position: absolute;
+    top: 500px;
+    bottom: 90px;*/
 }
 .content .col-lg-4 {
     margin-bottom: 30px;
+}
+.content .container {
+    background-color: #FFF;
+    padding: 0 50px 150px;
 }
 .content h3 {
     border-bottom: 3px solid #FFB832;
@@ -154,6 +178,10 @@ a:hover {
     font-size: 0.9rem;
     margin: 0 10px;
 }
+.footer-stretch {
+    position: absolute;
+    width: 100%;
+}
 
 /*Login & register*/
 .login, .register{
@@ -206,7 +234,7 @@ a:hover {
 /*Profile*/
 .profile {
     margin: 7% auto;
-    padding-bottom: 150px;
+    padding-bottom: 200px;
 }
 .profile img {
     border-radius: 20px;
@@ -220,17 +248,26 @@ a:hover {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    text-align: right !important;
 }
 .profile-menu {
     border-right: 3px solid #FFB832;
     margin-right: 50px;
+    text-align: right !important;
 }
 .profile .overlay {
-    width: 89%;
+    width: 80%;
+    margin: auto;
+    background-color: rgba(255,255,255,0.8);
+    left: 15px;
+    right: 15px;
+    bottom: 25px;
+    height: 85%;
 }
 .profile .overlay h4 {
     margin: 25px 0 5px 0;
+}
+.profile .overlay h4, .profile .overlay h6 {
+    font-weight: 400;
 }
 .profile .overlay p {
     margin: 0;
@@ -241,6 +278,7 @@ a:hover {
 .img-result {
     opacity: 1 !important;
     margin: 5px auto 0 auto;
+    width: 50%;
 }
 .sort-results {
     margin-bottom: 20px;
@@ -274,12 +312,14 @@ a:hover {
 
 /*Gamepage*/
 .jumbotron {
-    position: absolute;
     top: 0;
     padding-bottom: 100px !important;
     width: 100%;
     background-size: cover;
     background-position: center;
+    position: inherit !important;
+    margin-top: -70px !important;
+    margin-bottom: 0 !important;
 }
     /*Jumbotron background Images*/
     .squirrel {
@@ -309,13 +349,12 @@ a:hover {
     .hedgehog {
         background-image: linear-gradient(to bottom, rgba(255,255,255,0.8) 0%,rgba(255,255,255,0.8) 100%), url(../images/hedgehog.jpg);
     }
-
+#gamepage {
+    min-height: 100%;
+}
 .gamepage-header {
     padding-top: 75px;
     opacity: 1 !important;
-}
-#gamepage .content {
-    padding-top: 300px;
 }
 .arrow-back {
     height: 17px;
@@ -450,7 +489,7 @@ h2{
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-top: 170px;
+    padding-top: 100px;
 }
 .memory .container {
     padding: 0;
@@ -463,8 +502,8 @@ h2{
     padding-left: 10px;
 }
 .memoryCard{
-    height: 100px;
-    width: 100px;
+    height: 110px;
+    width: 110px;
     border-radius: 20px;
     border: 1px solid transparent;
     transition: all .3s ease-in;
@@ -505,7 +544,7 @@ h2{
     flex-wrap: wrap;
 }
 .card{
-    flex: 1 0 calc(21% - 1em);
+    flex: 1 0 calc(17%);
     padding: 6px 0 6px 0;
     background-color: transparent !important;
     border: 0 !important;
@@ -513,6 +552,9 @@ h2{
 .memory-menu{
     margin: 0 auto;
     text-align: center;
+}
+.result-stars {
+    color: #000 !important;
 }
 /*Games*/
 /*Quiz game*/
@@ -554,7 +596,7 @@ h2{
     list-style-type: none;
     background-color: #FFB832;
     margin-bottom: 10px;
-    padding: 10px;
+    padding: 8px 5px;
     border-radius: 20px;
 }
 .quiz .Answers li:hover{
@@ -590,7 +632,10 @@ h2{
     color: #23AF37 !important;
     cursor: pointer;
 }
-
+.result-img {
+    margin-bottom: 30px;
+    height: auto !important;
+}
 /*WordSearch Game*/
 .wordSearch {
     margin: 0 auto;
@@ -695,6 +740,7 @@ p.hangman-letters {
 .hangman h3 {
     font-weight: 300;
     padding-top: 15px;
+    font-size: 1.5em;
 }
 .hangman img {
     height: 200px;
@@ -719,7 +765,7 @@ p.hangman-letters {
     background-color:rgb(255,255,255); /*Fallback*/
     background-color: rgba(255,255,255,0.8);
     width: 100%;
-    height: 500px;
+    height: 530px;
     border-radius: 20px;
     margin-top: -450px;
 }
@@ -734,7 +780,7 @@ p.hangman-letters {
     margin: 0;
 }
 .hangman .newGame {
-    margin-top: 340px;
+    margin-top: 25px;
     background-color: #23AF37;
     border-radius: 20px;
     border: 1px solid #23AF37;
@@ -749,6 +795,12 @@ p.hangman-letters {
     color: #23AF37;
     padding: 5px 20px;
     transition: all .4s ease-in;
+}
+.hangman-results {
+    margin-top: 310px;
+}
+.hangman-results p, .hangman-results img {
+    margin: 0;
 }
 
 /*DND*/
@@ -972,7 +1024,7 @@ p.hangman-letters {
     background-color:rgb(255,255,255); /*Fallback*/
     background-color: rgba(255,255,255,0.4);
     width: 100%;
-    height: 640px;
+    height: 655px;
     border-radius: 20px;
 }
 .guess-sound-content .finalPage {
@@ -982,10 +1034,12 @@ p.hangman-letters {
     columns: 4;
     list-style: none;
     padding: 10px;
-    margin-bottom: 0;
+    margin: 15px auto;
 }
 .guess-sound .Answers li {
-    width: 100%;
+    width: 165px;
+    height: 120px;
+    margin: 0 auto 30px;
 }
 .guess-sound .Answers li:hover {
     background-color: transparent !important;
@@ -993,8 +1047,8 @@ p.hangman-letters {
 .guess-sound .Answers img {
     border: 3px solid transparent;
     border-radius: 20px;
-    margin-bottom: 15px;
-    width: 90%;
+    width: inherit;
+    height: inherit;
 }
 .guess-sound .Answers img:hover {
     border: 3px solid #FFD032;
@@ -1022,10 +1076,23 @@ p.hangman-letters {
 
 @media (max-width: 1200px) {
     .guess-sound {
-        height: 580px;
+        height: 680px;
     }
     .guess-sound-content {
-        height: 530px;
+        height: 630px;
+    }
+    .guess-sound .Answers li {
+        width: 140px;
+        height: 110px;
+    }
+    .guess-sound .Answers {
+        margin: 10px auto;
+    }
+    .overlay h4 {
+        margin: 30px 20px 10px 20px;
+    }
+    .overlay p {
+        margin: 0 20px;
     }
 }
 
@@ -1090,6 +1157,11 @@ p.hangman-letters {
         margin-top: 250px;
     }
 
+    /*Content*/
+    .stretch {
+        top: 550px;
+    }
+
     /*Login & register*/
     .login, .register {
         width: 100%;
@@ -1108,6 +1180,9 @@ p.hangman-letters {
         margin: 0 15px;
         border-bottom: 3px solid #FFB832;
     }
+    .profile-menu p {
+        margin-bottom: 5px;
+    }
     .row.profile-results {
         justify-content: center;
         margin: 0 auto;
@@ -1115,11 +1190,6 @@ p.hangman-letters {
     .change-profile {
         justify-content: center;
         margin: 0 auto;
-    }
-
-    /*Gamepage*/
-    #gamepage .content {
-        padding-top: 350px;
     }
 
     /*Error & Maintenance*/
@@ -1146,10 +1216,10 @@ p.hangman-letters {
     }
 }
 
-@media (max-width: 992px) and (min-width: 768px) {
+@media (max-width: 991px) and (min-width: 768px) {
     /*Header*/
     .header-img {
-        margin-top: 70px;
+        margin-top: 50px;
         margin-left: 30px;
     }
     .header-text {
@@ -1157,7 +1227,7 @@ p.hangman-letters {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     /*Header*/
     .header {
         text-align: center;
@@ -1169,6 +1239,14 @@ p.hangman-letters {
         width: 50%;
         height: 100%;
         padding-bottom: 50px;
+    }
+
+    /*Content*/
+    .content .col-sm-10 {
+        margin: 5px auto;
+    }
+    .stretch {
+        top: 550px;
     }
 
     /*Footer*/
@@ -1203,7 +1281,7 @@ p.hangman-letters {
         min-width: auto;
     }
     .memory .container {
-        height: 650px !important;
+        height: 680px !important;
     }
     /*Quiz*/
     .quiz {
@@ -1244,13 +1322,17 @@ p.hangman-letters {
     }
     /*GuessSound*/
     .guess-sound {
-        height: 525px;
+        height: 625px;
     }
     .guess-sound-content {
-        height: 475px;
+        height: 575px;
     }
     .guess-sound-content .finalPage {
         padding-top: 100px;
+    }
+    .guess-sound .Answers li {
+        width: 110px;
+        height: 80px;
     }
 }
 
@@ -1271,11 +1353,14 @@ p.hangman-letters {
 
 @media (max-width: 576px) {
     /*Content*/
-    .content-width {
-        width: 70% !important;
-    }
     .content h3 {
         width: 50%;
+    }
+    .content .container {
+        padding: 0 120px 50px;
+    }
+    .stretch {
+        top: 600px;
     }
 
     /*Error & Maintenance page*/
@@ -1293,7 +1378,7 @@ p.hangman-letters {
     }
     /*Memory*/
     .memory .container {
-        height: 750px !important;
+        height: 950px !important;
     }
     .quiz {
         height: 600px !important;
@@ -1309,13 +1394,20 @@ p.hangman-letters {
         height: 750px !important;
     }
     .hangman .result-content {
-        height: 550px;
+        height: 600px;
         margin-top: -480px;
+    }
+    .hangman-results {
+        margin-top: 360px;
     }
 
     /*GuessSound*/
     .guess-sound-content {
         padding: 5px;
+    }
+    .guess-sound .Answers li {
+        width: 90px;
+        height: 70px;
     }
 }
 
@@ -1329,7 +1421,7 @@ p.hangman-letters {
         margin-left: 30px;
     }
     .content-width {
-        width: 60% !important;
+        width: 90% !important;
     }
     .content h3 {
         width: 40%;
@@ -1337,9 +1429,32 @@ p.hangman-letters {
 }
 
 @media (max-width: 520px) {
+    /*Header*/
+    .header-text h1 {
+        font-size: 2.5rem;
+    }
+    /*Content*/
+    .content .container {
+        padding: 0 70px 50px;
+    }
+    .stretch {
+        top: 650px;
+    }
+    /*Profile*/
+    .profile .overlay {
+        height: 80%;
+    }
+    .profile .overlay h4 {
+        margin: 10px 0 5px 0;
+        font-size: 20px;
+    }
+    /*Jumbotron*/
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
     /*Memory*/
     .memory .container {
-        height: 850px !important;
+        height:950px !important;
     }
     .memory .board-container {
         padding: 40px 0 0 0 !important;
@@ -1365,11 +1480,33 @@ p.hangman-letters {
         width: 80px;
         font-size: 10px;
     }
+    /*GuessSound*/
+    .guess-sound .Answers li {
+        width: 70px;
+        height: 50px;
+    }
 }
 @media (max-width: 411px) {
-    /*Gamepage*/
-    #gamepage .content {
-        padding-top: 350px;
+    /*Header*/
+    .header-text h1 {
+        font-size: 1.7rem;
+    }
+    .header-text p {
+        font-size: 1.3rem;
+    }
+    /*Content*/
+    .content .container {
+        padding: 0 30px 50px;
+    }
+    .stretch {
+        top: 450px;
+    }
+    .overlay h4 {
+        font-size: 1.2rem;
+    }
+    /*Footer*/
+    .footer-links {
+        display: grid;
     }
     /*DND*/
     .dnd .metsloomadDND,

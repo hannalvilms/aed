@@ -1,56 +1,82 @@
-import React, {Component} from 'react';
-//import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import axios from 'axios';
+import {withRouter} from "react-router";
 
-export default class LoginContent extends Component {
-    componentDidMount() {
-        (function () {
-            // Fetch all the forms we want to apply custom Bootstrap validation styles to
-            let forms = document.querySelectorAll('.needs-validation');
-            // Loop over them and prevent submission
-            Array.prototype.slice.call(forms)
-                .forEach(function (form) {
-                    form.addEventListener('submit', function (event) {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation()
-                        }
-                        form.classList.add('was-validated')
-                    }, false)
-                })
-        })()
+class Login extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            email : '',
+            password: '',
+        }
+    }
+
+
+    onSubmit(e){
+        e.preventDefault();
+        const {email , password} = this.state ;
+        axios.post('http://localhost:8000/api/login', {
+            email,
+            password
+        })
+            .then(response=> {
+                console.log('success', response);
+                this.setState({err: false});
+                this.props.history.push("/loggedFrontpage");
+
+            })
+            .catch(error=> {
+                console.log('error', error);
+                this.refs.email.value="";
+                this.refs.password.value="";
+                this.setState({err: true});
+                alert('E-mail või parool on vale!');
+            });
+    }
+
+    onChange(e){
+        const {name, value} = e.target;
+        this.setState({[name]: value});
     }
 
     render() {
+
+       // let error = this.state.err ;
+       // let msg = (!error) ? 'Login Successful' : 'Wrong Credentials' ;
+       // let name = (!error) ? 'alert alert-success' : 'alert alert-danger' ;
         return (
             <div className="container-fluid adjust-height">
                 <div className="container">
                     <div className="row login">
-                        <form className="col-lg-12 needs-validation" noValidate>
+                        <form className="form-horizontal col-lg-12" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                             <h3>Logi sisse</h3>
-                            <div className="alert alert-danger" role="alert">
-                                Vale kasutajanimi või parool!
-                            </div>
                             <div className="login-input">
-                                <div className="input-group has-validation">
-                                    <input type="text" className="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" placeholder="Kasutajanimi" required/>
-                                    <div className="invalid-feedback">
-                                        Sisesta kasutajanimi
-                                    </div>
+                                <div className="input-group">
+                                    <input placeholder="E-mail" id="email" type="email" ref="email" className="form-control" name="email"  onChange={this.onChange.bind(this)} required />
                                 </div>
                             </div>
+
                             <div className="login-input">
-                                <input  type="password" className="form-control" id="validationCustom03" placeholder="Parool" required/>
-                                <div className="invalid-feedback">
-                                    Sisesta parool.
+                                <div className="input-group">
+                                    <input placeholder="Parool" id="password" type="password" ref="password" className="form-control" name="password"  onChange={this.onChange.bind(this)}  required />
                                 </div>
                             </div>
-                            <div className="col-12">
-                                <button className="" type="submit">Loo konto</button>
-                            </div>
+
+                                <div className="col-12">
+                                    <button type="submit">
+                                        Logi sisse
+                                    </button>
+                                </div>
+
                         </form>
+
                     </div>
                 </div>
             </div>
-        )
+
+        );
     }
 }
+
+export default withRouter(Login);

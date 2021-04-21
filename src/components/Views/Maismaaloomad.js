@@ -8,8 +8,12 @@ export default class Maismaaloomad extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <MaismaaloomadContent />
-                <Footer />
+                <div className="stretch-games">
+                    <MaismaaloomadContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

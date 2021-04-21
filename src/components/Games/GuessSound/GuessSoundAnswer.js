@@ -1,22 +1,24 @@
 import React from 'react';
 
 const MaismaaAnswer = (props) => {
-    let answers = Object.keys(props.answer)
-        .map((qAnswer) => (
-            <li
 
-                className=
-                    {
-                        props.correctAnswer === qAnswer ?
-                            'correct' :
-                            props.clickedAnswer === qAnswer ?
-                                'incorrect' : ''
-                    }
-                onClick={() => props.checkAnswer(qAnswer)}
-                key={qAnswer}>
-                <img src={props.answer[qAnswer]} alt="answer"/>
-            </li>
-        ));
+    let answers = Object.keys(props.answer)
+    .map((qAnswer) => (
+        <li
+            className=
+                {
+                    props.correctAnswer === qAnswer ?
+                        'correct' :
+                        props.clickedAnswer === qAnswer ?
+                            'incorrect' : ''
+                }
+            onClick={() => props.checkAnswer(qAnswer)}
+            key={qAnswer}
+        >
+            <img src={props.answer[qAnswer]} alt="answer"/>
+            <p>{props.name[qAnswer]}</p>
+        </li>
+    ));
 
     return (
         <>

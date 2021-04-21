@@ -8,8 +8,12 @@ export default class Koduloomad extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <KoduloomadContent />
-                <Footer />
+                <div className="stretch-games">
+                    <KoduloomadContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

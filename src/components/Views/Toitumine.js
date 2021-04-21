@@ -8,8 +8,12 @@ export default class Toitumine extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <ToitumineContent />
-                <Footer />
+                <div className="stretch-games">
+                    <ToitumineContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

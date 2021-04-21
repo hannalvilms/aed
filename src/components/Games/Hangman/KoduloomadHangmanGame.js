@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {randomWord} from "./KoduloomadWords";
-
 import zero from "./images/step0.png";
 import lehm1 from "./images/lehm1.png"; import lehm2 from "./images/lehm2.png"; import lehm3 from "./images/lehm3.png"; import lehm4 from "./images/lehm4.png"; import lehm5 from "./images/lehm5.png"; import lehm6 from "./images/lehm6.png";
 import lammas1 from "./images/lammas1.png"; import lammas2 from "./images/lammas2.png"; import lammas3 from "./images/lammas3.png"; import lammas4 from "./images/lammas4.png"; import lammas5 from "./images/lammas5.png"; import lammas6 from "./images/lammas6.png";
@@ -12,6 +11,11 @@ import kalkun1 from "./images/kalkun1.png"; import kalkun2 from "./images/kalkun
 import merisiga1 from "./images/merisiga1.png"; import merisiga2 from "./images/merisiga2.png"; import merisiga3 from "./images/merisiga3.png"; import merisiga4 from "./images/merisiga4.png"; import merisiga5 from "./images/merisiga5.png"; import merisiga6 from "./images/merisiga6.png";
 import hamster1 from "./images/hamster1.png"; import hamster2 from "./images/hamster2.png"; import hamster3 from "./images/hamster3.png"; import hamster4 from "./images/hamster4.png"; import hamster5 from "./images/hamster5.png"; import hamster6 from "./images/hamster6.png";
 import papagoi1 from "./images/papagoi1.png"; import papagoi2 from "./images/papagoi2.png"; import papagoi3 from "./images/papagoi3.png"; import papagoi4 from "./images/papagoi4.png"; import papagoi5 from "./images/papagoi5.png"; import papagoi6 from "./images/papagoi6.png";
+import OneStar from '../../../images/one-star.png';
+import TwoStars from '../../../images/two-stars.png';
+import ThreeStars from '../../../images/three-stars.png';
+import FourStars from '../../../images/four-stars.png';
+import FiveStars from '../../../images/five-stars.png';
 
 export default class KoduloomadHangmanGame extends Component {
 
@@ -22,7 +26,8 @@ export default class KoduloomadHangmanGame extends Component {
             mistake: 0,
             guessed: new Set(),
             answer: randomWord(),
-            maxWrong: 6
+            maxWrong: 6,
+            result: OneStar
         };
         this.correctImg();
     }
@@ -35,7 +40,8 @@ export default class KoduloomadHangmanGame extends Component {
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6,
-            images: [zero]
+            images: [zero],
+            result: OneStar
         };
     };
 
@@ -47,19 +53,38 @@ export default class KoduloomadHangmanGame extends Component {
             mistake: 0,
             guessed: new Set(),
             answer: randomWord(),
-            maxWrong: 6
+            maxWrong: 6,
+            result: this.state.result
         });
     };
+
+    setResult = () => {
+        if (this.state.score >= 9) {
+            this.setState({
+                result: FiveStars
+            })
+        } else if (this.state.score >= 7) {
+            this.setState({
+                result: FourStars
+            })
+        } else if (this.state.score >= 4) {
+            this.setState({
+                result: ThreeStars
+            })
+        } else if (this.state.score >= 2) {
+            this.setState({
+                result: TwoStars
+            })
+        }
+    }
 
     //Show correct images
     correctImg() {
         if(this.state.answer === "LAMMAS") {
-            console.log("rähn");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, lammas1, lammas2, lammas3, lammas4, lammas5, lammas6]
         }
         if (this.state.answer === "LEHM") {
-            console.log("lehm");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, lehm1, lehm2, lehm3, lehm4, lehm5, lehm6]
         }
@@ -200,7 +225,10 @@ export default class KoduloomadHangmanGame extends Component {
                             <p>
                                 <button
                                     className="reset"
-                                    onClick={this.nextGuess}
+                                    onClick={() => {
+                                        this.nextGuess();
+                                        this.setResult();
+                                    }}
                                     disabled={!(isWinner)}
                                     style={{
                                         visibility: gameOver ? 'hidden' : 'visible',
@@ -217,6 +245,10 @@ export default class KoduloomadHangmanGame extends Component {
                         >
                             <h3>Tulemus: {score}</h3>
                             <h2>Looma nimi oli:</h2>
+                            <div className="hangman-results">
+                                <p>Hinne:</p>
+                                <img alt='result in stars' className="result-img" src={this.state.result}/>
+                            </div>
                             <button className="newGame" onClick={this.resetGame}>Uus mäng</button>
                         </div>
                         <br/>

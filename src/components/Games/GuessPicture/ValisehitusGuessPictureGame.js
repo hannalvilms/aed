@@ -7,6 +7,11 @@ import Jasemed from "../img/jäsemed.jpg";
 import Pea from "../img/pea.jpg";
 import Kael from "../img/kael.jpg";
 import Saba from "../img/saba.jpg";
+import OneStar from '../../../images/one-star.png';
+import TwoStars from '../../../images/two-stars.png';
+import ThreeStars from '../../../images/three-stars.png';
+import FourStars from '../../../images/four-stars.png';
+import FiveStars from '../../../images/five-stars.png';
 
 export default class ValisehitusGuessPictureGame extends Component {
 
@@ -49,6 +54,7 @@ export default class ValisehitusGuessPictureGame extends Component {
             step: 1,
             score: 0,
             inputValue: '',
+            result: OneStar
         };
         this.handleChange = this.handleChange.bind(this);
         this.onHandleCheck = this.onHandleCheck.bind(this);
@@ -92,6 +98,7 @@ export default class ValisehitusGuessPictureGame extends Component {
             step: 1,
             score: 0,
             inputValue: '',
+            result: OneStar
         };
     };
 
@@ -150,6 +157,26 @@ export default class ValisehitusGuessPictureGame extends Component {
         });
     };
 
+    setResult = () => {
+        if(this.state.score === 5) {
+            this.setState({
+                result: FiveStars
+            })
+        } else if (this.state.score === 5) {
+            this.setState({
+                result: FourStars
+            })
+        } else if (this.state.score === 3) {
+            this.setState({
+                result: ThreeStars
+            })
+        } else if (this.state.score === 2) {
+            this.setState({
+                result: TwoStars
+            })
+        }
+    }
+
     render() {
         let { questions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
         return (
@@ -197,12 +224,18 @@ export default class ValisehitusGuessPictureGame extends Component {
                                     disabled={
                                         !(clickedAnswer && Object.keys(questions).length >= step)
                                     }
-                                    onClick={() => {this.nextStep(step); this.onHandleCheck();}}>Järgmine küsimus</button>
+                                    onClick={() => {
+                                        this.nextStep(step);
+                                        this.onHandleCheck();
+                                        this.setResult();
+                                    }}>Järgmine küsimus</button>
                             </>) : (
                                 <div className="finalPage">
                                     {/*Result page and new game*/}
-                                    <h1>Testi lõpp!</h1>
+                                    <h1>Mängu lõpp!</h1>
                                     <p>Tulemus {score}/{Object.keys(questions).length}</p>
+                                    <p>Hinne:</p>
+                                    <img alt='result in stars' className="result-img" src={this.state.result}/>
                                     <PlayAgain again={this.resetGame} />
                                 </div>
                             )

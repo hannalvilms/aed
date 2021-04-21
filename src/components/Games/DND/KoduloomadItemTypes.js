@@ -1,7 +1,7 @@
 export const KoduloomadItemTypes = {
-    KASS: 'kass',
-    KANA: 'kana',
-    LAMMAS: 'lammas',
+    KASS: 'Kass',
+    KANA: 'Kana',
+    LAMMAS: 'Lammas',
     LEHM: 'lehm',
     KALKUN: 'kalkun',
     HANI: 'hani',

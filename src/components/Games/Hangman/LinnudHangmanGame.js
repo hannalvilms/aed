@@ -13,7 +13,11 @@ import leevike1 from "./images/leevike1.png"; import leevike2 from "./images/lee
 import vares1 from "./images/vares1.png"; import vares2 from "./images/vares2.png"; import vares3 from "./images/vares3.png"; import vares4 from "./images/vares4.png"; import vares5 from "./images/vares5.png"; import vares6 from "./images/vares6.png";
 import luik1 from "./images/luik1.png"; import luik2 from "./images/luik2.png"; import luik3 from "./images/luik3.png"; import luik4 from "./images/luik4.png"; import luik5 from "./images/luik5.png"; import luik6 from "./images/luik6.png";
 import kajakas1 from "./images/kajakas1.png"; import kajakas2 from "./images/kajakas2.png"; import kajakas3 from "./images/kajakas3.png"; import kajakas4 from "./images/kajakas4.png"; import kajakas5 from "./images/kajakas5.png"; import kajakas6 from "./images/kajakas6.png";
-
+import OneStar from '../../../images/one-star.png';
+import TwoStars from '../../../images/two-stars.png';
+import ThreeStars from '../../../images/three-stars.png';
+import FourStars from '../../../images/four-stars.png';
+import FiveStars from '../../../images/five-stars.png';
 
 export default class LinnudGuessPictureGame extends Component {
 
@@ -24,7 +28,8 @@ export default class LinnudGuessPictureGame extends Component {
             mistake: 0,
             guessed: new Set(),
             answer: randomWord(),
-            maxWrong: 6
+            maxWrong: 6,
+            result: OneStar
         };
         this.correctImg();
     }
@@ -37,7 +42,8 @@ export default class LinnudGuessPictureGame extends Component {
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6,
-            images: [zero]
+            images: [zero],
+            result: OneStar
         };
     };
 
@@ -52,6 +58,26 @@ export default class LinnudGuessPictureGame extends Component {
             maxWrong: 6
         });
     };
+
+    setResult = () => {
+        if (this.state.score >= 9) {
+            this.setState({
+                result: FiveStars
+            })
+        } else if (this.state.score >= 7) {
+            this.setState({
+                result: FourStars
+            })
+        } else if (this.state.score >= 4) {
+            this.setState({
+                result: ThreeStars
+            })
+        } else if (this.state.score >= 2) {
+            this.setState({
+                result: TwoStars
+            })
+        }
+    }
 
     //Show correct images
     correctImg() {
@@ -207,7 +233,10 @@ export default class LinnudGuessPictureGame extends Component {
                             <p>
                                 <button
                                     className="reset"
-                                    onClick={this.nextGuess}
+                                    onClick={() => {
+                                        this.nextGuess();
+                                        this.setResult();
+                                    }}
                                     disabled={!(isWinner)}
                                     style={{
                                         visibility: gameOver ? 'hidden' : 'visible',
@@ -224,6 +253,10 @@ export default class LinnudGuessPictureGame extends Component {
                         >
                             <h3>Tulemus: {score}</h3>
                             <h2>Linnu nimi oli:</h2>
+                            <div className="hangman-results">
+                                <p>Hinne:</p>
+                                <img alt='result in stars' className="result-img" src={this.state.result}/>
+                            </div>
                             <button className="newGame" onClick={this.resetGame}>Uus mäng</button>
                         </div>
                         <br/>

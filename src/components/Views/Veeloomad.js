@@ -8,8 +8,12 @@ export default class Veeloomad extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <VeeloomadContent />
-                <Footer />
+                <div className="stretch-games">
+                    <VeeloomadContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

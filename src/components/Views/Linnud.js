@@ -8,8 +8,12 @@ export default class Linnud extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <LinnudContent />
-                <Footer />
+                <div className="stretch-games">
+                    <LinnudContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

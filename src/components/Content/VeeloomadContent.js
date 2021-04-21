@@ -4,6 +4,7 @@ import Whale from "../../images/whale.jpg";
 import Dolphin from "../../images/dolphin.jpg";
 import Seal from "../../images/seal.jpg";
 import Back from "../../images/back.svg";
+import {initial} from "../Games/DND/Answer";
 
 export default class VeeloomadContent extends Component {
     render() {
@@ -22,26 +23,32 @@ export default class VeeloomadContent extends Component {
                                 <h3>Mängud</h3>
                             </div>
                             <div className="row teemad">
-                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Whale} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
+                                    <img src={Whale} alt="vaal"/>
+                                    <Link to="/veeloomadDND">
+                                        <div className="overlay">
+                                            <h4>Lohistamine</h4>
+                                            <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Dolphin} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
+                                    <img src={Dolphin} alt="delfiin"/>
+                                    <Link to="/veeloomadGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Seal} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <img src={Seal} alt="hüljes"/>
+                                    <Link to="/veeloomadQuiz">
+                                        <div className="overlay">
+                                            <h4>Test</h4>
+                                            <p>Vali õige vastus.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

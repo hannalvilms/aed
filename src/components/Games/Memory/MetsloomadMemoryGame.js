@@ -3,7 +3,11 @@ import GameBoard from "../../Games/Memory/GameBoard";
 import NewGame from "../../Games/Memory/NewGame";
 import PlayAgain from '../../Games/Memory/PlayAgain';
 import { metsloomadImages } from './Images';
-
+import OneStar from '../../../images/one-star.png';
+import TwoStars from '../../../images/two-stars.png';
+import ThreeStars from '../../../images/three-stars.png';
+import FourStars from '../../../images/four-stars.png';
+import FiveStars from '../../../images/five-stars.png';
 
 class MetsloomadMemoryGame extends Component {
     static initState = () => {
@@ -12,7 +16,8 @@ class MetsloomadMemoryGame extends Component {
             won: false,
             cards: [],
             clicks : 0,
-            visible: true
+            visible: true,
+            result: OneStar
         };
     };
 
@@ -23,6 +28,24 @@ class MetsloomadMemoryGame extends Component {
         this.setState((prevState) => ({
             clicks : prevState.clicks + 1
         }));
+
+        if(this.state.clicks <= 30) {
+            this.setState({
+                result: FiveStars
+            })
+        } else if (this.state.clicks >= 30) {
+            this.setState({
+                result: FourStars
+            })
+        } else if (this.state.clicks >= 40) {
+            this.setState({
+                result: ThreeStars
+            })
+        } else if (this.state.clicks >= 50) {
+            this.setState({
+                result: TwoStars
+            })
+        }
     };
 
 //Generate card deck
@@ -101,14 +124,19 @@ class MetsloomadMemoryGame extends Component {
                         {/*Users final score*/}
                         <div className="message" style={{
                             visibility: won ? "visible" : "hidden",
-                            opacity: won ? "0.8" : "0",
-                            backgroundColor: won ? "white" : "none"
+                            backgroundColor: won ? "rgba(255,255,255,0.8)" : "none"
                         }}>
-                            {won && (<h2 style={{
+                            {won && (
+                                <h2 style={{
                                 visibility: this.props.visible ? "hidden" : "visible",
-                                opacity: this.props.visible ? "0" : "1",
-                                backgroundColor: this.props.visible ? "none" : "white"
-                            }}>Tulemus: {clicks}</h2>)}
+                                opacity: this.props.visible ? "0" : "1"
+                            }}>
+                                    Tulemus: {clicks}
+                                </h2>
+
+                            )}
+                            <p className='result-stars'>Hinne:</p>
+                            <img alt='stars' className="result-img" src={this.state.result}/>
                         </div>
                         {/*Start game button*/}
                         <NewGame play={this.initGame} />

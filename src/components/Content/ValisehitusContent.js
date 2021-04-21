@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Dog from "../../images/dog2.jpg";
 import Dragonfly from "../../images/dragonfly.jpg";
-import Bee from "../../images/bee2.jpg";
 import Back from "../../images/back.svg";
 
 export default class ValisehitusContent extends Component {
@@ -23,25 +22,22 @@ export default class ValisehitusContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Dog} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                    <img src={Dog} alt="koer"/>
+                                    <Link to="/valisehitusGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                   <img src={Dragonfly} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Bee} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                   <img src={Dragonfly} alt="kiil"/>
+                                    <Link to="/valisehitusQuiz">
+                                        <div className="overlay">
+                                            <h4>Test</h4>
+                                            <p>Vali õige vastus.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

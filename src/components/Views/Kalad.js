@@ -8,8 +8,12 @@ export default class Kalad extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <KaladContent />
-                <Footer />
+                <div className="stretch-games">
+                    <KaladContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )

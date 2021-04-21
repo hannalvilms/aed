@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Bird1 from "../../images/bird5.jpg";
 import Bird2 from "../../images/bird3.jpg";
 import Bird3 from "../../images/bird2.jpg";
+import Bird4 from "../../components/Games/img/toonekurg.jpg";
 import Back from "../../images/back.svg";
 
 export default class LinnudContent extends Component {
@@ -23,25 +24,40 @@ export default class LinnudContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Bird1} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                    <img src={Bird1} alt="rasvathinae"/>
+                                    <Link to="/linnudMemory">
+                                        <div className="overlay">
+                                            <h4>Memory</h4>
+                                            <p>Leia õiged paarid.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Bird2} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
+                                    <img src={Bird2} alt="lõoke"/>
+                                    <Link to="/guessSound">
+                                        <div className="overlay">
+                                            <h4>Heli arvamine</h4>
+                                            <p>Kuula heli ning arva, kellele see kuulub.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Bird3} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <img src={Bird3} alt="rähn"/>
+                                    <Link to="/linnudGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                    <img src={Bird4} alt="toonekurg"/>
+                                    <Link to="/linnudHangman">
+                                        <div className="overlay">
+                                            <h4>Poomine</h4>
+                                            <p>Arva ära sõna.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

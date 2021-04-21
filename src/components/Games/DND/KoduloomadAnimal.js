@@ -3,6 +3,7 @@ import { memo } from 'react';
 import { useDrop } from 'react-dnd';
 
 export const KoduloomadAnimal = memo(
+
     function Animals({ accept, lastDroppedItem, onDrop }) {
         // eslint-disable-next-line jsx-a11y/aria-role
         const [{ isOver, canDrop }, drop] = useDrop(() => ({
@@ -13,7 +14,6 @@ export const KoduloomadAnimal = memo(
                 canDrop: monitor.canDrop(),
             }),
         }), [accept, onDrop]);
-
         return (
             // eslint-disable-next-line jsx-a11y/aria-role
             <div ref={drop} role="Animal" id="Animal"

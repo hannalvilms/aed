@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import LinnudHangmanGame from '../../Games/Hangman/LinnudHangmanGame';
-import MaismaaGameContent from "../../Content/MaismaaGameContent";
+import LinnudGameContent from "../../Content/LinnudGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
 import Footer from "../../Footer/Footer";
 
@@ -9,7 +9,7 @@ export default class LinnudHangman extends Component {
         return (
             <div id="profile">
                 <LoggedNav />
-                <MaismaaGameContent />
+                <LinnudGameContent />
                 <LinnudHangmanGame />
                 <Footer />
             </div>

@@ -5,6 +5,7 @@ import logo from '../../images/logo.png';
 import LoggedMobilenav from "../Nav/LoggedMobilenav";
 
 export default class Navbar extends Component {
+
     componentDidMount() {
         const $hamburger = $(".hamburger");
         const $layout = $(".main-nav");
@@ -16,6 +17,7 @@ export default class Navbar extends Component {
             $mobilenav.toggleClass("fixed-nav");
         });
     }
+
     render() {
         return (
             <div className="container-fluid mobile-nav">

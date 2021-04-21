@@ -23,25 +23,31 @@ export default class KaladContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Fish1} alt="orav"/>
-                                    <div className="overlay">
-                                        <h4>Memory mäng</h4>
-                                        <p>Ava kaardid ning leia õiged paarid.</p>
-                                    </div>
+                                    <img src={Fish1} alt="kala"/>
+                                    <Link to="/kaladGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Fish2} alt="karu"/>
-                                    <div className="overlay">
-                                        <h4>Loomahääled</h4>
-                                        <p>Kuula loomahääli ning arva, millise loomaga on tegu.</p>
-                                    </div>
+                                    <img src={Fish2} alt="kala"/>
+                                    <Link to="/kaladMemory">
+                                        <div className="overlay">
+                                            <h4>Memory</h4>
+                                            <p>Leia õiged paarid.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Fish3} alt="konn"/>
-                                    <div className="overlay">
-                                        <h4>Test</h4>
-                                        <p>Vali õige vastus.</p>
-                                    </div>
+                                    <img src={Fish3} alt="kala"/>
+                                    <Link to="/kaladQuiz">
+                                        <div className="overlay">
+                                            <h4>Test</h4>
+                                            <p>Vali õige vastus.</p>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import MaismaaQuizGame from '../../Games/Quiz/MaismaaQuizGame';
-import MaismaaGameContent from "../../Content/MaismaaGameContent";
+import KaladQuizGame from '../../Games/Quiz/KaladQuizGame';
+import KaladGameContent from "../../Content/KaladGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
 import Footer from "../../Footer/Footer";
 
-export default class MaismaaQuiz extends Component {
+export default class KaladQuiz extends Component {
     render() {
         return (
             <div id="profile">
                 <LoggedNav />
-                <MaismaaGameContent />
-                <MaismaaQuizGame />
+                <KaladGameContent />
+                <KaladQuizGame />
                 <Footer />
             </div>
         )

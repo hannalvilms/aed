@@ -11,6 +11,11 @@ import parditibu1 from "./images/parditibu1.png"; import parditibu2 from "./imag
 import varss1 from "./images/varss1.png"; import varss2 from "./images/varss2.png"; import varss3 from "./images/varss3.png"; import varss4 from "./images/varss4.png"; import varss5 from "./images/varss5.png"; import varss6 from "./images/varss6.png";
 import koerakutsikas1 from "./images/koerakutsikas1.png"; import koerakutsikas2 from "./images/koerakutsikas2.png"; import koerakutsikas3 from "./images/koerakutsikas3.png"; import koerakutsikas4 from "./images/koerakutsikas4.png"; import koerakutsikas5 from "./images/koerakutsikas5.png"; import koerakutsikas6 from "./images/koerakutsikas6.png";
 import rebasekutsikas1 from "./images/rebasekutsikas1.png"; import rebasekutsikas2 from "./images/rebasekutsikas2.png"; import rebasekutsikas3 from "./images/rebasekutsikas3.png"; import rebasekutsikas4 from "./images/rebasekutsikas4.png"; import rebasekutsikas5 from "./images/rebasekutsikas5.png"; import rebasekutsikas6 from "./images/rebasekutsikas6.png";
+import FiveStars from "../../../images/five-stars.png";
+import FourStars from "../../../images/four-stars.png";
+import ThreeStars from "../../../images/three-stars.png";
+import TwoStars from "../../../images/two-stars.png";
+import OneStar from "../../../images/one-star.png";
 
 export default class ToitumineHangmanGame extends Component {
 
@@ -21,7 +26,8 @@ export default class ToitumineHangmanGame extends Component {
             mistake: 0,
             guessed: new Set(),
             answer: randomWord(),
-            maxWrong: 6
+            maxWrong: 6,
+            result: OneStar
         };
         this.correctImg();
     }
@@ -34,7 +40,8 @@ export default class ToitumineHangmanGame extends Component {
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6,
-            images: [zero]
+            images: [zero],
+            result: OneStar
         };
     };
 
@@ -49,6 +56,26 @@ export default class ToitumineHangmanGame extends Component {
             maxWrong: 6
         });
     };
+
+    setResult = () => {
+        if (this.state.score >= 9) {
+            this.setState({
+                result: FiveStars
+            })
+        } else if (this.state.score >= 7) {
+            this.setState({
+                result: FourStars
+            })
+        } else if (this.state.score >= 4) {
+            this.setState({
+                result: ThreeStars
+            })
+        } else if (this.state.score >= 2) {
+            this.setState({
+                result: TwoStars
+            })
+        }
+    }
 
     //Show correct images
     correctImg() {
@@ -194,7 +221,10 @@ export default class ToitumineHangmanGame extends Component {
                             <p>
                                 <button
                                     className="reset"
-                                    onClick={this.nextGuess}
+                                    onClick={() => {
+                                        this.nextGuess();
+                                        this.setResult();
+                                    }}
                                     disabled={!(isWinner)}
                                     style={{
                                         visibility: gameOver ? 'hidden' : 'visible',
@@ -211,6 +241,10 @@ export default class ToitumineHangmanGame extends Component {
                         >
                             <h3>Tulemus: {score}</h3>
                             <h2>Looma nimi oli:</h2>
+                            <div className="hangman-results">
+                                <p>Hinne:</p>
+                                <img alt='result in stars' className="result-img" src={this.state.result}/>
+                            </div>
                             <button className="newGame" onClick={this.resetGame}>Uus mäng</button>
                         </div>
                         <br/>

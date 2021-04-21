@@ -10,8 +10,12 @@ export default class Frontpage extends Component {
             <div id="container">
                 <Navbar />
                 <Header />
-                <FrontpageContent />
-                <Footer />
+                <div className="stretch">
+                    <FrontpageContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
         )
     }

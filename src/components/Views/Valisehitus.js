@@ -8,8 +8,12 @@ export default class Valisehitus extends Component {
         return (
             <div>
                 <LoggedNavbar />
-                <ValisehitusContent />
-                <Footer />
+                <div className="stretch-games">
+                    <ValisehitusContent />
+                    <div className="footer-stretch">
+                        <Footer />
+                    </div>
+                </div>
             </div>
 
         )
