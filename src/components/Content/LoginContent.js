@@ -9,9 +9,10 @@ class Login extends Component {
         this.state = {
             email : '',
             password: '',
+            isLoggedIn: false,
+            user: {}
         }
     }
-
 
     onSubmit(e){
         e.preventDefault();
@@ -22,15 +23,32 @@ class Login extends Component {
         })
             .then(response=> {
                 console.log('success', response);
-                this.setState({err: false});
+                let userData = {
+                    token: response.data.token,
+                    timestamp: new Date().toString()
+                };
+                let appState = {
+                    isLoggedIn: true,
+                    user: userData
+                };
+                // save app state with user date in local storage
+                localStorage["appState"] = JSON.stringify(appState);
+                this.setState({
+                    isLoggedIn: appState.isLoggedIn,
+                    user: appState.user
+                });
                 this.props.history.push("/loggedFrontpage");
-
             })
             .catch(error=> {
                 console.log('error', error);
                 this.refs.email.value="";
                 this.refs.password.value="";
                 this.setState({err: true});
+                localStorage["appState"] = JSON.stringify('');
+                this.setState({
+                    isLoggedIn: false,
+                    user: null
+                });
                 alert('E-mail või parool on vale!');
             });
     }

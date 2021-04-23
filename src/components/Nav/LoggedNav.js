@@ -18,6 +18,20 @@ export default class Navbar extends Component {
         });
     }
 
+    logoutUser = () => {
+        let appState = {
+            isLoggedIn: false,
+            user: {}
+        };
+        // save app state with user date in local storage
+        console.log(JSON.stringify(appState))
+        localStorage["appState"] = JSON.stringify(appState);
+        this.setState({
+            isLoggedIn: appState.isLoggedIn,
+            user: appState.user
+        });
+    };
+
     render() {
         return (
             <div className="container-fluid mobile-nav">
@@ -37,7 +51,7 @@ export default class Navbar extends Component {
                             <div className="nav navbar-right">
                                 <Link to="/loggedFrontpage" className="nav-link btn btn-primary btn-xs">Materjalid</Link>
                                 <Link to="/profile" className="nav-link btn btn-primary btn-xs">Konto</Link>
-                                <Link to="/frontpage" className="nav-link btn btn-primary btn-xs">Logi välja</Link>
+                                <Link to="/frontpage" onClick={this.logoutUser} className="nav-link btn btn-primary btn-xs">Logi välja</Link>
                             </div>
                         </div>
                     </nav>
