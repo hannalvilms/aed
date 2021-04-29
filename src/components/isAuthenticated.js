@@ -1,3 +1,4 @@
+import React from 'react';
 let value = JSON.parse(localStorage.getItem('appState'));
 export function isAuthenticated() {
     console.log(value)
