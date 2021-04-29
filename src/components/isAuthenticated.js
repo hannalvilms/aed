@@ -2,9 +2,6 @@
 import React from 'react';
 let value = JSON.parse(localStorage.getItem('appState'));
 export function isAuthenticated() {
-    console.log(value)
-    console.log(value.isLoggedIn)
-
     /*if (value !== null && value.isLoggedIn !== null){
         console.log('k,s')
         return true;
