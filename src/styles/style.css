@@ -136,7 +136,7 @@ a:hover {
     max-width: 100%;
     display: block;
     height: auto;
-    opacity: 30%;
+    opacity: 0.3;
 }
 .overlay {
     border-radius: 20px;
