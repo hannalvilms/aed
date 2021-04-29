@@ -17,12 +17,13 @@ class Login extends Component {
     onSubmit(e){
         e.preventDefault();
         const {email , password} = this.state ;
-        axios.post('http://localhost:8000/api/login', {
+        axios.post('https://aed.academy/aed-back/api/login', {
             email,
             password
         })
             .then(response=> {
                 console.log('success', response);
+                console.log(password)
                 let userData = {
                     token: response.data.token,
                     timestamp: new Date().toString()
@@ -38,6 +39,7 @@ class Login extends Component {
                     user: appState.user
                 });
                 this.props.history.push("/loggedFrontpage");
+                window.location.reload();
             })
             .catch(error=> {
                 console.log('error', error);
@@ -67,7 +69,7 @@ class Login extends Component {
             <div className="container-fluid adjust-height">
                 <div className="container">
                     <div className="row login">
-                        <form className="form-horizontal col-lg-12" role="form" method="POST" onSubmit= {this.onSubmit.bind(this)}>
+                        <form className="form-horizontal col-lg-12" method="POST" onSubmit= {this.onSubmit.bind(this)}>
                             <h3>Logi sisse</h3>
                             <div className="login-input">
                                 <div className="input-group">

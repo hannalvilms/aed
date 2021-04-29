@@ -13,13 +13,12 @@ export default class Header extends Component {
         let token = user.user.token;
         console.log(token)
 
-        axios.get(`http://localhost:8000/api/users`, {
+        axios.get(`https://aed.academy/aed-back/api/users`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
             .then((res) => {
-                console.log(res.data);
                 this.setState({
                     user: [res.data.name]
                 });

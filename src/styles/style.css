@@ -254,7 +254,7 @@ a:hover {
     margin-right: 50px;
     text-align: right !important;
 }
-.profile .overlay {
+.results .overlay {
     width: 80%;
     margin: auto;
     background-color: rgba(255,255,255,0.8);
@@ -262,14 +262,15 @@ a:hover {
     right: 15px;
     bottom: 25px;
     height: 85%;
+    text-align: center;
 }
-.profile .overlay h4 {
+.results .overlay h4 {
     margin: 25px 0 5px 0;
 }
-.profile .overlay h4, .profile .overlay h6 {
+.results .overlay h4, .results .overlay h6 {
     font-weight: 400;
 }
-.profile .overlay p {
+.results .overlay p {
     margin: 0;
 }
 .profile-results {
@@ -405,12 +406,25 @@ a:hover {
 }
 
 /*Admin view*/
+.admin-names {
+    margin: 0 auto;
+}
+.admin-names tbody .row {
+    margin-left: 0;
+}
+.admin-names table {
+    margin-left: 15px;
+}
 .contact button {
     margin-top: 0;
     padding: 3px 15px;
 }
 .table-button {
+    margin: 0 auto;
     padding-top: 5px !important;
+}
+.table-button button {
+    max-width: initial;
 }
 .contact-next {
     background-color: #FFB832 !important;
@@ -1094,6 +1108,10 @@ p.hangman-letters {
     .overlay p {
         margin: 0 20px;
     }
+    /*Admin*/
+    .admin-names button {
+        padding: 3px 5px;
+    }
 }
 
 @media (max-width: 1015px){
@@ -1372,6 +1390,20 @@ p.hangman-letters {
         width: 100%;
     }
 
+    /*Admin*/
+    .admin-names {
+        text-align: center;
+        margin: 0 auto !important;
+    }
+    .admin-names form {
+        padding: 0;
+    }
+    .admin-names table {
+        margin-left: 0;
+    }
+    .admin-names tbody .row {
+        padding: 0;
+    }
     /*Games*/
     .text-gamecontent {
         text-align: left;
@@ -1441,10 +1473,10 @@ p.hangman-letters {
         top: 650px;
     }
     /*Profile*/
-    .profile .overlay {
+    .results .overlay {
         height: 80%;
     }
-    .profile .overlay h4 {
+    .results .overlay h4 {
         margin: 10px 0 5px 0;
         font-size: 20px;
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {randomWord} from "./LinnudWords";
+import {randomWord, gameId} from "./LinnudWords";
 
 import zero from "./images/step0.png";
 import paasuke1 from "./images/paasuke1.png"; import paasuke2 from "./images/paasuke2.png"; import paasuke3 from "./images/paasuke3.png"; import paasuke4 from "./images/paasuke4.png"; import paasuke5 from "./images/paasuke5.png"; import paasuke6 from "./images/paasuke6.png";
@@ -18,6 +18,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import axios from "axios";
 
 export default class LinnudGuessPictureGame extends Component {
 
@@ -46,6 +47,30 @@ export default class LinnudGuessPictureGame extends Component {
             result: OneStar
         };
     };
+
+    saveResult(result) {
+        let user = JSON.parse(localStorage.getItem('appState'))
+        let token = user.user.token;
+        const headers = {
+            'Content-Type' : 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Accept' : 'application/json',
+            'Authorization': `Bearer ${token}`
+        }
+        const data = { gameId, result }
+        console.log(token)
+        console.log(result)
+        axios.post(`https://aed.academy/aed-back/api/add-result`, data, {
+            headers: headers,
+        })
+            .then(response=> {
+                console.log('success', response);
+            })
+            .catch(error=> {
+                console.log('error', error);
+            }
+        );
+    }
 
     //Changes score, starts new game
     nextGuess = () => {
@@ -77,6 +102,7 @@ export default class LinnudGuessPictureGame extends Component {
                 result: TwoStars
             })
         }
+        this.saveResult(this.state.score)
     }
 
     //Show correct images
@@ -195,6 +221,7 @@ export default class LinnudGuessPictureGame extends Component {
             gameStat = "Arvasid sõna ära!";
         }
         if (gameOver) {
+            this.saveResult(score);
             gameStat = "Kahjuks ei arvanud sa sõna ära!";
         }
         return (

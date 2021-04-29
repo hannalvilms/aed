@@ -17,5 +17,6 @@ const linnud = [
 function randomWord() {
     return linnud[Math.floor(Math.random() * linnud.length)];
 }
+const gameId = 16;
 
-export { randomWord };
+export { randomWord, gameId };

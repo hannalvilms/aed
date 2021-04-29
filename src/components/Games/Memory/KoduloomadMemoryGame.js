@@ -29,7 +29,7 @@ class KoduloomadMemoryGame extends Component {
             clicks : prevState.clicks + 1
         }));
 
-        if(this.state.clicks <= 30) {
+        if(this.state.clicks < 30) {
             this.setState({
                 result: FiveStars
             })

@@ -66,13 +66,13 @@ export const KoduloomadDNDGame = () => {
     if (scoree <= 39) {
         img = FiveStars
     }
-    if (scoree >= 39 && scoree <= 53) {
+    if (scoree > 39 && scoree <= 53) {
         img = FourStars
     }
-    if (scoree >= 53 && scoree <= 59) {
+    if (scoree > 53 && scoree <= 59) {
         img = ThreeStars
     }
-    if (scoree >= 59 && scoree <= 70) {
+    if (scoree > 59 && scoree <= 70) {
         img = TwoStars
     }
     if (scoree > 70) {
