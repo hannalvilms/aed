@@ -59,11 +59,11 @@ export default class LinnudGuessPictureGame extends Component {
             'Accept' : 'application/json',
             'Authorization': `Bearer ${token}`
         }
-        //const data = { gameId, result }
-        const data = new FormData();
+        const data = { gameId, result, newGrade }
+        /*const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
-        data.append('grade', newGrade);
+        data.append('grade', newGrade);*/
         axios.post(API + `/api/add-result`, data, {
             headers: headers,
         })
