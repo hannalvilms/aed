@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {randomWord, gameId} from "./LinnudWords";
+import {randomWord} from "./LinnudWords";
 import zero from "./images/step0.png";
 import paasuke1 from "./images/paasuke1.png"; import paasuke2 from "./images/paasuke2.png"; import paasuke3 from "./images/paasuke3.png"; import paasuke4 from "./images/paasuke4.png"; import paasuke5 from "./images/paasuke5.png"; import paasuke6 from "./images/paasuke6.png";
 import looke1 from "./images/looke1.png"; import looke2 from "./images/looke2.png"; import looke3 from "./images/looke3.png"; import looke4 from "./images/looke4.png"; import looke5 from "./images/looke5.png"; import looke6 from "./images/looke6.png";
@@ -31,7 +31,8 @@ export default class LinnudGuessPictureGame extends Component {
             answer: randomWord(),
             maxWrong: 6,
             result: OneStar,
-            grade: 1
+            grade: 1,
+            game_id: 16
         };
         this.correctImg();
     }
@@ -46,11 +47,12 @@ export default class LinnudGuessPictureGame extends Component {
             maxWrong: 6,
             images: [zero],
             result: OneStar,
-            grade: 1
+            grade: 1,
+            game_id: 16
         };
     };
 
-    saveResult(result, newGrade) {
+    saveResult(resultt, gradee) {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         const headers = {
@@ -59,7 +61,10 @@ export default class LinnudGuessPictureGame extends Component {
             'Accept' : 'application/json',
             'Authorization': `Bearer ${token}`
         }
-        const data = { gameId, result, newGrade }
+        let {game_id, result, grade} = this.state;
+        result = resultt;
+        grade = gradee;
+        const data = { game_id, result, grade }
         /*const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
