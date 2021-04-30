@@ -19,7 +19,7 @@ import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
 import axios from "axios";
 import {API} from '../../../url';
-
+let gameId = 16;
 export default class LinnudGuessPictureGame extends Component {
 
     constructor(props) {
@@ -32,7 +32,6 @@ export default class LinnudGuessPictureGame extends Component {
             maxWrong: 6,
             result: OneStar,
             grade: 1,
-            game_id: 16
         };
         this.correctImg();
     }
@@ -48,7 +47,6 @@ export default class LinnudGuessPictureGame extends Component {
             images: [zero],
             result: OneStar,
             grade: 1,
-            game_id: 16
         };
     };
 
@@ -61,10 +59,7 @@ export default class LinnudGuessPictureGame extends Component {
             'Accept' : 'application/json',
             'Authorization': `Bearer ${token}`
         }
-        let {game_id, result, grade} = this.state;
-        result = resultt;
-        grade = gradee;
-        const data = { game_id, result, grade }
+        const data = { gameId, resultt, gradee }
         /*const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
