@@ -50,7 +50,7 @@ export default class LinnudGuessPictureGame extends Component {
         };
     };
 
-    saveResult(resultt, gradee) {
+    saveResult(result, newGrade) {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         const headers = {
@@ -59,11 +59,11 @@ export default class LinnudGuessPictureGame extends Component {
             'Accept' : 'application/json',
             'Authorization': `Bearer ${token}`
         }
-        const data = { gameId, resultt, gradee }
-        /*const data = new FormData();
+        //const data = { gameId, resultt, gradee }
+        const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
-        data.append('grade', newGrade);*/
+        data.append('grade', newGrade);
         axios.post(API + `/api/add-result`, data, {
             headers: headers,
         })
@@ -115,8 +115,8 @@ export default class LinnudGuessPictureGame extends Component {
                 grade: 1
             })
         }
-        console.log(this.state.grade)
-        this.saveResult(this.state.score, this.state.grade)
+        //console.log(this.state.grade)
+        //this.saveResult(this.state.score, this.state.grade)
     }
 
     //Show correct images
@@ -235,7 +235,7 @@ export default class LinnudGuessPictureGame extends Component {
             gameStat = "Arvasid sõna ära!";
         }
         if (gameOver) {
-            this.saveResult(score);
+            this.saveResult(this.state.score, this.state.grade);
             gameStat = "Kahjuks ei arvanud sa sõna ära!";
         }
         return (
