@@ -114,7 +114,8 @@ export default class MaismaaGuessPictureGame extends Component {
             step: 1,
             score: 0,
             inputValue: '',
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
         this.handleChange = this.handleChange.bind(this);
         this.onHandleCheck = this.onHandleCheck.bind(this);
@@ -208,7 +209,8 @@ export default class MaismaaGuessPictureGame extends Component {
             step: 1,
             score: 0,
             inputValue: '',
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
@@ -270,19 +272,23 @@ export default class MaismaaGuessPictureGame extends Component {
     setResult = () => {
         if(this.state.score >= 13) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.score >= 10) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.score >= 7) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.score >= 2) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
     }

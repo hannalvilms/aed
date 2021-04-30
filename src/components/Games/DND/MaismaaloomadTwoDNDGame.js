@@ -1,8 +1,8 @@
 import React from 'react';
 import { useState, useCallback } from 'react';
-import { VeeloomadAnimal } from './VeeloomadAnimal';
+import { MaismaaloomadTwoAnimal } from './MaismaaloomadTwoAnimal';
 import {Answer, scoree} from './Answer';
-import { VeeloomadItemTypes } from './VeeloomadItemTypes';
+import { MaismaaloomadItemTypesTwo } from './MaismaaloomadItemTypes';
 import update from 'immutability-helper';
 import OneStar from '../../../images/one-star.png';
 import TwoStars from '../../../images/two-stars.png';
@@ -10,31 +10,31 @@ import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
 
-export const VeeloomadDNDGame = () => {
+export const MaismaaloomadTwoDNDGame = () => {
     const [animals, setAnimals] = useState([
-        { accepts: [VeeloomadItemTypes.SAARMAS], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.KOBRAS], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.HULJES], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.KIIL], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.LIUSKUR], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.UJUR], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.VESIAMBLIK], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.VESIHARK], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.DELFIIN], lastDroppedItem: null },
-        { accepts: [VeeloomadItemTypes.VAAL], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.SIIL], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.REBANE], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.PODER], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.ORAV], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.LAMMAS], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.KOER], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.ILVES], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.HAMSTER], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.KAJAKAS], lastDroppedItem: null },
+        { accepts: [MaismaaloomadItemTypesTwo.HOBUNE], lastDroppedItem: null },
     ]);
 
     const [answers] = useState([
-        { name: 'liuskur', type: VeeloomadItemTypes.LIUSKUR },
-        { name: 'hüljes', type: VeeloomadItemTypes.HULJES },
-        { name: 'vesiämblik', type: VeeloomadItemTypes.VESIAMBLIK },
-        { name: 'delfiin', type: VeeloomadItemTypes.DELFIIN },
-        { name: 'vaal', type: VeeloomadItemTypes.VAAL },
-        { name: 'kobras', type: VeeloomadItemTypes.KOBRAS },
-        { name: 'ujur', type: VeeloomadItemTypes.UJUR },
-        { name: 'vesihark', type: VeeloomadItemTypes.VESIHARK },
-        { name: 'saarmas', type: VeeloomadItemTypes.SAARMAS },
-        { name: 'kiil', type: VeeloomadItemTypes.KIIL },
+        { name: 'hamster', type: MaismaaloomadItemTypesTwo.HAMSTER },
+        { name: 'põder', type: MaismaaloomadItemTypesTwo.PODER },
+        { name: 'ilves', type: MaismaaloomadItemTypesTwo.ILVES },
+        { name: 'orav', type: MaismaaloomadItemTypesTwo.ORAV },
+        { name: 'siil', type: MaismaaloomadItemTypesTwo.SIIL },
+        { name: 'hobune', type: MaismaaloomadItemTypesTwo.HOBUNE },
+        { name: 'kajakas', type: MaismaaloomadItemTypesTwo.KAJAKAS },
+        { name: 'lammas', type: MaismaaloomadItemTypesTwo.LAMMAS },
+        { name: 'koer', type: MaismaaloomadItemTypesTwo.KOER },
+        { name: 'rebane', type: MaismaaloomadItemTypesTwo.REBANE },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -94,10 +94,10 @@ export const VeeloomadDNDGame = () => {
                     (<>
                         <div className="dnd-content" style={{ overflow: 'hidden', clear: 'both' }}>
                             {animals.map(({ accepts, lastDroppedItem }, index) => (
-                                <VeeloomadAnimal accept={accepts}
-                                                  lastDroppedItem={lastDroppedItem}
-                                                  onDrop={(item) => {handleDrop(index, item); addScore();}}
-                                                  key={index}
+                                <MaismaaloomadTwoAnimal accept={accepts}
+                                                     lastDroppedItem={lastDroppedItem}
+                                                     onDrop={(item) => {handleDrop(index, item); addScore();}}
+                                                     key={index}
                                 />))}
                         </div>
 
@@ -123,4 +123,4 @@ export const VeeloomadDNDGame = () => {
     );
 };
 
-export { VeeloomadDNDGame as default } from './VeeloomadDNDGame';
+export { MaismaaloomadTwoDNDGame as default } from './MaismaaloomadTwoDNDGame';

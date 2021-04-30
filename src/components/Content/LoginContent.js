@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {withRouter} from "react-router";
-
+import {API} from '../../url';
 class Login extends Component {
 
     constructor(props){
@@ -17,7 +17,7 @@ class Login extends Component {
     onSubmit(e){
         e.preventDefault();
         const {email , password} = this.state ;
-        axios.post('https://aed.academy/aed-back/api/login', {
+        axios.post(API + '/api/login', {
             email,
             password
         })

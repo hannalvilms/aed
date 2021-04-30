@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Headerimg from '../../images/header-img.png';
 import axios from 'axios';
-
+import {API} from '../../url';
 export default class Header extends Component {
 
     state = {
@@ -12,7 +12,7 @@ export default class Header extends Component {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
 
-        axios.get(`https://aed.academy/aed-back/api/users`, {
+        axios.get(API + `/api/users`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

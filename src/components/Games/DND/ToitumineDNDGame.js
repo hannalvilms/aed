@@ -25,16 +25,16 @@ export const ToitumineDNDGame = () => {
     ]);
 
     const [answers] = useState([
-        { name: 'Lambatall', type: ToitumineItemTypes.LAMBATALL },
-        { name: 'Maimud', type: ToitumineItemTypes.MAIMUD },
-        { name: 'Rebasekutsikas', type: ToitumineItemTypes.REBASEKUTSIKAS },
-        { name: 'Kanatibu', type: ToitumineItemTypes.KANATIBU },
-        { name: 'Kitsetall', type: ToitumineItemTypes.KITSETALL },
-        { name: 'Parditibu', type: ToitumineItemTypes.PARDITIBU },
-        { name: 'Varss', type: ToitumineItemTypes.VARSS },
-        { name: 'Vasikas', type: ToitumineItemTypes.VASIKAS },
-        { name: 'Koerakutsikas', type: ToitumineItemTypes.KOERAKUTSIKAS },
-        { name: 'Põrsas', type: ToitumineItemTypes.PORSAS },
+        { name: 'lambatall', type: ToitumineItemTypes.LAMBATALL },
+        { name: 'maimud', type: ToitumineItemTypes.MAIMUD },
+        { name: 'rebasekutsikas', type: ToitumineItemTypes.REBASEKUTSIKAS },
+        { name: 'kanatibu', type: ToitumineItemTypes.KANATIBU },
+        { name: 'kitsetall', type: ToitumineItemTypes.KITSETALL },
+        { name: 'parditibu', type: ToitumineItemTypes.PARDITIBU },
+        { name: 'varss', type: ToitumineItemTypes.VARSS },
+        { name: 'vasikas', type: ToitumineItemTypes.VASIKAS },
+        { name: 'koerakutsikas', type: ToitumineItemTypes.KOERAKUTSIKAS },
+        { name: 'põrsas', type: ToitumineItemTypes.PORSAS },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -63,20 +63,26 @@ export const ToitumineDNDGame = () => {
     }, [droppedBoxNames, animals]);
 
     let img = FiveStars
+    let grade = 1
     if (scoree <= 39) {
         img = FiveStars
+        grade = 5
     }
     if (scoree > 39 && scoree <= 53) {
         img = FourStars
+        grade = 4
     }
     if (scoree > 53 && scoree <= 59) {
         img = ThreeStars
+        grade = 3
     }
     if (scoree > 59 && scoree <= 70) {
         img = TwoStars
+        grade = 2
     }
     if (scoree > 70) {
         img = OneStar
+        grade = 1
     }
 
     return (
@@ -107,7 +113,7 @@ export const ToitumineDNDGame = () => {
                     </>) : (
                         <div className="finalPage">
                             <h1>Tubli!</h1>
-                            <p>Hinne:</p>
+                            <p>Hinne: {grade}</p>
                             <img alt="result in stars"  className="result-img" src={img}/>
                         </div>
                     )

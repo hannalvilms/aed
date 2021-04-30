@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {randomWord, gameId} from "./LinnudWords";
-
 import zero from "./images/step0.png";
 import paasuke1 from "./images/paasuke1.png"; import paasuke2 from "./images/paasuke2.png"; import paasuke3 from "./images/paasuke3.png"; import paasuke4 from "./images/paasuke4.png"; import paasuke5 from "./images/paasuke5.png"; import paasuke6 from "./images/paasuke6.png";
 import looke1 from "./images/looke1.png"; import looke2 from "./images/looke2.png"; import looke3 from "./images/looke3.png"; import looke4 from "./images/looke4.png"; import looke5 from "./images/looke5.png"; import looke6 from "./images/looke6.png";
@@ -19,6 +18,7 @@ import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
 import axios from "axios";
+import {API} from '../../../url';
 
 export default class LinnudGuessPictureGame extends Component {
 
@@ -30,7 +30,8 @@ export default class LinnudGuessPictureGame extends Component {
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6,
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
         this.correctImg();
     }
@@ -44,11 +45,12 @@ export default class LinnudGuessPictureGame extends Component {
             answer: randomWord(),
             maxWrong: 6,
             images: [zero],
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
-    saveResult(result) {
+    saveResult(result, grade) {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         const headers = {
@@ -61,7 +63,8 @@ export default class LinnudGuessPictureGame extends Component {
         const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
-        axios.post(`https://aed.academy/aed-back/api/add-result`, data, {
+        data.append('score', grade);
+        axios.post(API + `/api/add-result`, data, {
             headers: headers,
         })
             .then(response=> {
@@ -88,22 +91,26 @@ export default class LinnudGuessPictureGame extends Component {
     setResult = () => {
         if (this.state.score >= 9) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.score >= 7) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.score >= 4) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.score >= 2) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
-        this.saveResult(this.state.score)
+        this.saveResult(this.state.score, this.state.grade)
     }
 
     //Show correct images

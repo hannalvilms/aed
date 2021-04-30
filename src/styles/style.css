@@ -279,7 +279,7 @@ a:hover {
 .img-result {
     opacity: 1 !important;
     margin: 5px auto 0 auto;
-    width: 50%;
+    width: 60%;
 }
 .sort-results {
     margin-bottom: 20px;
@@ -570,6 +570,9 @@ h2{
 .result-stars {
     color: #000 !important;
 }
+.kalad .memoryCard {
+    background-size: contain !important;
+}
 /*Games*/
 /*Quiz game*/
 .memory, .quiz-fluid, .pic-quiz-fluid, .hangman-fluid, .dnd-fluid, .guess-sound-fluid {
@@ -649,6 +652,7 @@ h2{
 .result-img {
     margin-bottom: 30px;
     height: auto !important;
+    width: 250px;
 }
 /*WordSearch Game*/
 .wordSearch {
@@ -828,7 +832,7 @@ p.hangman-letters {
 }
 .dnd .metsloomadDND, .dnd .koduloomadDND,
 .dnd .maismaaloomadDND, .dnd .veeloomadDND,
-.dnd .toitumineDND {
+.dnd .toitumineDND, .dnd .maismaaloomadTwoDND {
     height: 7.5rem;
     width: 7.5rem;
     margin: 0 auto 1rem auto;
@@ -929,6 +933,37 @@ p.hangman-letters {
 }
 .dnd .maismaaloomadDND:nth-of-type(10) {
     background-image: url(../components/Games/img/siga.jpg);
+}
+
+.dnd .maismaaloomadTwoDND:nth-of-type(1) {
+    background-image: url(../components/Games/img/siil.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(2) {
+    background-image: url(../components/Games/img/rebane.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(3) {
+    background-image: url(../components/Games/img/poder.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(4) {
+    background-image: url(../components/Games/img/orav.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(5) {
+    background-image: url(../components/Games/img/lammas.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(6) {
+    background-image: url(../components/Games/img/koer.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(7) {
+    background-image: url(../components/Games/img/ilves.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(8) {
+    background-image: url(../components/Games/img/hamster.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(9) {
+    background-image: url(../components/Games/img/kajakas.jpg);
+}
+.dnd .maismaaloomadTwoDND:nth-of-type(10) {
+    background-image: url(../components/Games/img/hobune.jpg);
 }
 
 
@@ -1321,7 +1356,8 @@ p.hangman-letters {
     .dnd .koduloomadDND,
     .dnd .maismaaloomadDND,
     .dnd .veeloomadDND,
-    .dnd .toitumineDND {
+    .dnd .toitumineDND,
+    .dnd .maismaaloomadTwoDND {
         height: 6rem;
         width: 6rem;
     }
@@ -1501,7 +1537,8 @@ p.hangman-letters {
     .dnd .koduloomadDND,
     .dnd .maismaaloomadDND,
     .dnd .veeloomadDND,
-    .dnd .toitumineDND {
+    .dnd .toitumineDND,
+    .dnd .maismaaloomadTwoDND {
         height: 5rem;
         width: 5rem;
     }
@@ -1545,7 +1582,8 @@ p.hangman-letters {
     .dnd .koduloomadDND,
     .dnd .maismaaloomadDND,
     .dnd .veeloomadDND,
-    .dnd .toitumineDND {
+    .dnd .toitumineDND,
+    .dnd .maismaaloomadTwoDND {
         height: 4rem;
         width: 4rem;
     }

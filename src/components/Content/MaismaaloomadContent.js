@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Butterfly from "../../images/butterfly.jpg";
 import Deer from "../../images/deer.jpg";
 import Rabbits from "../../images/rabbits.jpg";
+import Horse from "../../images/horse.jpg";
 import Back from "../../images/back.svg";
 import {initial} from "../Games/DND/Answer";
 
@@ -23,21 +24,30 @@ export default class MaismaaloomadContent extends Component {
                                 <h3>Mängud</h3>
                             </div>
                             <div className="row teemad">
+                                <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12" onClick={initial}>
+                                    <img src={Rabbits} alt="jänesed"/>
+                                    <Link to="/maismaaloomadDND">
+                                        <div className="overlay">
+                                            <h4>Lohistamine 1</h4>
+                                            <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12" onClick={initial}>
+                                    <img src={Horse} alt="jänesed"/>
+                                    <Link to="/maismaaloomadTwoDND">
+                                        <div className="overlay">
+                                            <h4>Lohistamine 2</h4>
+                                            <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
+                                </div>
                                 <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                     <img src={Deer} alt="metskits"/>
                                     <Link to="/maismaaGuessPicture">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
-                                        </div>
-                                    </Link>
-                                </div>
-                                <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12" onClick={initial}>
-                                    <img src={Rabbits} alt="jänesed"/>
-                                    <Link to="/maismaaloomadDND">
-                                        <div className="overlay">
-                                            <h4>Lohistamine</h4>
-                                            <p>Lohista looma nimi õige pildi peale.</p>
                                         </div>
                                     </Link>
                                 </div>

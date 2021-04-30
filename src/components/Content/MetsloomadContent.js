@@ -23,21 +23,21 @@ export default class MetsloomadContent extends Component {
                                 <h3>Mängud</h3>
                             </div>
                             <div className="row teemad">
-                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Lynx} alt="ilves"/>
-                                    <Link to="/metsloomadGuessPicture">
-                                        <div className="overlay">
-                                            <h4>Piltide arvamine</h4>
-                                            <p>Arva, kes on pildil.</p>
-                                        </div>
-                                    </Link>
-                                </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
                                     <img src={Moose} alt="põder"/>
                                     <Link to="/metsloomadDND">
                                         <div className="overlay">
                                             <h4>Lohistamine</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
+                                    <img src={Lynx} alt="ilves"/>
+                                    <Link to="/metsloomadGuessPicture">
+                                        <div className="overlay">
+                                            <h4>Piltide arvamine</h4>
+                                            <p>Arva, kes on pildil.</p>
                                         </div>
                                     </Link>
                                 </div>

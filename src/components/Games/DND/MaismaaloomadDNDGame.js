@@ -25,16 +25,16 @@ export const MaismaaloomadDNDGame = () => {
     ]);
 
     const [answers] = useState([
-        { name: 'Metssiga', type: MaismaaloomadItemTypes.METSSIGA },
-        { name: 'Nastik', type: MaismaaloomadItemTypes.NASTIK },
-        { name: 'Kana', type: MaismaaloomadItemTypes.KANA },
-        { name: 'Kass', type: MaismaaloomadItemTypes.KASS },
-        { name: 'Hunt', type: MaismaaloomadItemTypes.HUNT },
-        { name: 'Mutt', type: MaismaaloomadItemTypes.MUTT },
-        { name: 'Kits', type: MaismaaloomadItemTypes.KITS },
-        { name: 'Merisiga', type: MaismaaloomadItemTypes.MERISIGA },
-        { name: 'Siga', type: MaismaaloomadItemTypes.SIGA },
-        { name: 'Mäger', type: MaismaaloomadItemTypes.MAGER },
+        { name: 'metssiga', type: MaismaaloomadItemTypes.METSSIGA },
+        { name: 'nastik', type: MaismaaloomadItemTypes.NASTIK },
+        { name: 'kana', type: MaismaaloomadItemTypes.KANA },
+        { name: 'kass', type: MaismaaloomadItemTypes.KASS },
+        { name: 'hunt', type: MaismaaloomadItemTypes.HUNT },
+        { name: 'mutt', type: MaismaaloomadItemTypes.MUTT },
+        { name: 'kits', type: MaismaaloomadItemTypes.KITS },
+        { name: 'merisiga', type: MaismaaloomadItemTypes.MERISIGA },
+        { name: 'siga', type: MaismaaloomadItemTypes.SIGA },
+        { name: 'mäger', type: MaismaaloomadItemTypes.MAGER },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -63,20 +63,26 @@ export const MaismaaloomadDNDGame = () => {
     }, [droppedBoxNames, animals]);
 
     let img = FiveStars
+    let grade = 1
     if (scoree <= 39) {
         img = FiveStars
+        grade = 5
     }
     if (scoree > 39 && scoree <= 53) {
         img = FourStars
+        grade = 4
     }
     if (scoree > 53 && scoree <= 59) {
         img = ThreeStars
+        grade = 3
     }
     if (scoree > 59 && scoree <= 70) {
         img = TwoStars
+        grade = 2
     }
     if (scoree > 70) {
         img = OneStar
+        grade = 1
     }
 
     return (
@@ -107,7 +113,7 @@ export const MaismaaloomadDNDGame = () => {
                     </>) : (
                         <div className="finalPage">
                             <h1>Tubli!</h1>
-                            <p>Hinne:</p>
+                            <p>Hinne: {grade}</p>
                             <img alt="result in stars"  className="result-img" src={img}/>
                         </div>
                     )

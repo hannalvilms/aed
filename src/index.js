@@ -64,6 +64,7 @@ import '../src/styles/style.css';
 import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import MaismaaloomadTwoDND from "./components/Views/Games/MaismaaloomadTwoDND";
 
 ReactDOM.render(
    <BrowserRouter>
@@ -117,6 +118,7 @@ ReactDOM.render(
        <PrivateRoute path = "/koduloomadDND" component={KoduloomadDND} />
        <PrivateRoute path = "/metsloomadDND" component={MetsloomadDND} />
        <PrivateRoute path = "/maismaaloomadDND" component={MaismaaloomadDND} />
+       <PrivateRoute path = "/maismaaloomadTwoDND" component={MaismaaloomadTwoDND} />
        <PrivateRoute path = "/veeloomadDND" component={VeeloomadDND} />
        <PrivateRoute path = "/toitumineDND" component={ToitumineDND} />
 

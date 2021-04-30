@@ -69,7 +69,8 @@ export default class KahepaiksedQuizGame extends Component {
         clickedAnswer: 0,
         step: 1,
         score: 0,
-        result: OneStar
+        result: OneStar,
+        grade: 1
     };
 
 //Initial state for restarting the game
@@ -132,7 +133,8 @@ export default class KahepaiksedQuizGame extends Component {
             correctAnswer: 0,
             clickedAnswer: 0,
             step: 1,
-            score: 0
+            score: 0,
+            grade: 1
         };
     };
 
@@ -179,19 +181,23 @@ export default class KahepaiksedQuizGame extends Component {
     setResult = () => {
         if(this.state.score === 6) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.score === 5) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.score === 4 || this.state.score === 3) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.score === 2) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
     }

@@ -283,7 +283,8 @@ export default class LinnudGuessSoundGame extends Component {
             step: 1,
             score: 0,
             play: false,
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
@@ -539,7 +540,8 @@ export default class LinnudGuessSoundGame extends Component {
             step: 1,
             score: 0,
             play: false,
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
@@ -587,19 +589,23 @@ export default class LinnudGuessSoundGame extends Component {
     setResult = () => {
         if(this.state.score >= 9) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.score >= 7) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.score >= 5) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.score >= 3) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
     }

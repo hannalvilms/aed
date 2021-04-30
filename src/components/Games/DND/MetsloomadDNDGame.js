@@ -25,16 +25,16 @@ export const MetsloomadDNDGame = () => {
     ]);
 
     const [answers] = useState([
-        { name: 'Ilves', type: MetsloomadItemTypes.ILVES },
-        { name: 'Metssiga', type: MetsloomadItemTypes.METSSIGA },
-        { name: 'Rebane', type: MetsloomadItemTypes.REBANE },
-        { name: 'Põder', type: MetsloomadItemTypes.PODER },
-        { name: 'Orav', type: MetsloomadItemTypes.ORAV },
-        { name: 'Hunt', type: MetsloomadItemTypes.HUNT },
-        { name: 'Metskits', type: MetsloomadItemTypes.METSKITS },
-        { name: 'Karu', type: MetsloomadItemTypes.KARU },
-        { name: 'Siil', type: MetsloomadItemTypes.SIIL },
-        { name: 'Mäger', type: MetsloomadItemTypes.MAGER },
+        { name: 'ilves', type: MetsloomadItemTypes.ILVES },
+        { name: 'metssiga', type: MetsloomadItemTypes.METSSIGA },
+        { name: 'rebane', type: MetsloomadItemTypes.REBANE },
+        { name: 'põder', type: MetsloomadItemTypes.PODER },
+        { name: 'orav', type: MetsloomadItemTypes.ORAV },
+        { name: 'hunt', type: MetsloomadItemTypes.HUNT },
+        { name: 'metskits', type: MetsloomadItemTypes.METSKITS },
+        { name: 'karu', type: MetsloomadItemTypes.KARU },
+        { name: 'siil', type: MetsloomadItemTypes.SIIL },
+        { name: 'mäger', type: MetsloomadItemTypes.MAGER },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -63,20 +63,26 @@ export const MetsloomadDNDGame = () => {
     }, [droppedBoxNames, animals]);
 
     let img = FiveStars
+    let grade = 1
     if (scoree <= 39) {
         img = FiveStars
+        grade = 5
     }
     if (scoree > 39 && scoree <= 53) {
         img = FourStars
+        grade = 4
     }
     if (scoree > 53 && scoree <= 59) {
         img = ThreeStars
+        grade = 3
     }
     if (scoree > 59 && scoree <= 70) {
         img = TwoStars
+        grade = 2
     }
     if (scoree > 70) {
         img = OneStar
+        grade = 1
     }
 
     return (
@@ -107,7 +113,7 @@ export const MetsloomadDNDGame = () => {
                     </>) : (
                         <div className="finalPage">
                             <h1>Tubli!</h1>
-                            <p>Hinne:</p>
+                            <p>Hinne: {grade}</p>
                             <img alt="result in stars"  className="result-img" src={img}/>
                         </div>
                     )

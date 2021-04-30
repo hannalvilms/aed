@@ -115,7 +115,7 @@ class KaladMemoryGame extends Component {
     render() {
         const { cards, newGame, won, clicks } = this.state;
         return (
-            <div className="container-fluid memory">
+            <div className="container-fluid memory kalad">
                 <div className="container">
                     <div className="memory-menu" onClick={this.handleClick}
                          style={{

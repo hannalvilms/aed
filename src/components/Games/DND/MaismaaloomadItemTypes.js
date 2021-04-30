@@ -10,3 +10,16 @@ export const MaismaaloomadItemTypes = {
     MERISIGA: 'merisiga',
     SIGA: 'siga',
 };
+
+export const MaismaaloomadItemTypesTwo = {
+    SIIL: 'siil',
+    REBANE: 'rebane',
+    PODER: 'põder',
+    ORAV: 'orav',
+    LAMMAS: 'lammas',
+    KOER: 'koer',
+    ILVES: 'ilves',
+    HAMSTER: 'hamster',
+    KAJAKAS: 'kajakas',
+    HOBUNE: 'hobune',
+};

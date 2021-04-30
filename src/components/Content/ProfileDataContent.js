@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import {API} from '../../url';
 
 export default class ProfileDataContent extends Component {
 
@@ -12,7 +13,7 @@ export default class ProfileDataContent extends Component {
     componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        axios.get(`https://aed.academy/aed-back/api/users`, {
+        axios.get(API + `/api/users`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

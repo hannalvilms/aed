@@ -27,7 +27,8 @@ export default class ToitumineHangmanGame extends Component {
             guessed: new Set(),
             answer: randomWord(),
             maxWrong: 6,
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
         this.correctImg();
     }
@@ -41,7 +42,8 @@ export default class ToitumineHangmanGame extends Component {
             answer: randomWord(),
             maxWrong: 6,
             images: [zero],
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
@@ -60,19 +62,23 @@ export default class ToitumineHangmanGame extends Component {
     setResult = () => {
         if (this.state.score >= 9) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.score >= 7) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.score >= 4) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.score >= 2) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
     }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-//axios for api request
 import axios from 'axios';
+import {API} from '../../url';
+import {Link} from "react-router-dom";
 
 // noinspection JSDeprecatedSymbols
 export default class RegisterContent extends Component {
@@ -39,7 +40,7 @@ export default class RegisterContent extends Component {
             fd.append('email', this.refs.myEmail.value);
             fd.append('password', this.refs.pass.value);
             fd.append('confirm_password', this.refs.confpass.value);
-            axios.post('https://aed.academy/aed-back/api/register', fd)
+            axios.post(API + '/api/register', fd)
                 .then(res => {
                     console.log(res);
                     let input = {};
@@ -168,7 +169,7 @@ export default class RegisterContent extends Component {
                                     <input className="form-check-input" type="checkbox" value="" id="invalidCheck"
                                            required/>
                                     <label className="form-check-label" htmlFor="invalidCheck">
-                                        Konto loomisel nõustute kasutustingimustega.
+                                        Konto loomisel nõustute <Link to="conditions">kasutustingimustega.</Link>
                                     </label>
                                     <div className="invalid-feedback">
                                         Konto loomisel tuleb nõustuda kasutustingimustega.

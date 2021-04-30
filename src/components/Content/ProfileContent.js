@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import Trees from "../../images/trees.jpg";
-import One from "../../images/one-star.png";
 import axios from "axios";
-
-
+import {API} from '../../url';
 export default class ProfileContent extends Component {
 
     constructor(props){
@@ -17,7 +15,7 @@ export default class ProfileContent extends Component {
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        const res = await axios.get(`https://aed.academy/aed-back/api/results`, {
+        const res = await axios.get(API + `/api/results`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
@@ -39,7 +37,7 @@ export default class ProfileContent extends Component {
                         <h4>{data.game_id}</h4>
                         <h6>Maismaaloomad</h6>
                         <h6>Tulemus: {data.score}</h6>
-                        <img src={One} className="img-result" alt="score"/>
+                        <h6>Hinne: {data.grade}</h6>
                     </div>
                 </div>
             ))

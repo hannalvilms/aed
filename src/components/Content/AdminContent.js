@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
+import {API} from '../../url';
 //import Trees from "../../images/trees.jpg";
 //import One from "../../images/one-star.png";
-
 export default class AdminContent extends Component {
 
     constructor(props){
@@ -16,7 +16,7 @@ export default class AdminContent extends Component {
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        const res = await axios.get(`https://aed.academy/aed-back/api/all-users`, {
+        const res = await axios.get(API + `/api/all-users`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

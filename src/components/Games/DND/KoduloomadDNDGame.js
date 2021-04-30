@@ -25,16 +25,16 @@ export const KoduloomadDNDGame = () => {
     ]);
 
     const [answers] = useState([
-        { name: 'Lehm', type: KoduloomadItemTypes.LEHM },
-        { name: 'Kass', type: KoduloomadItemTypes.KASS },
-        { name: 'Papagoi', type: KoduloomadItemTypes.PAPAGOI },
-        { name: 'Hani', type: KoduloomadItemTypes.HANI },
-        { name: 'Kalkun', type: KoduloomadItemTypes.KALKUN },
-        { name: 'Janes', type: KoduloomadItemTypes.JANES },
-        { name: 'Siga', type: KoduloomadItemTypes.SIGA },
-        { name: 'Kana', type: KoduloomadItemTypes.KANA },
-        { name: 'Lammas', type: KoduloomadItemTypes.LAMMAS },
-        { name: 'Kits', type: KoduloomadItemTypes.KITS },
+        { name: 'lehm', type: KoduloomadItemTypes.LEHM },
+        { name: 'kass', type: KoduloomadItemTypes.KASS },
+        { name: 'papagoi', type: KoduloomadItemTypes.PAPAGOI },
+        { name: 'hani', type: KoduloomadItemTypes.HANI },
+        { name: 'kalkun', type: KoduloomadItemTypes.KALKUN },
+        { name: 'jänes', type: KoduloomadItemTypes.JANES },
+        { name: 'siga', type: KoduloomadItemTypes.SIGA },
+        { name: 'kana', type: KoduloomadItemTypes.KANA },
+        { name: 'lammas', type: KoduloomadItemTypes.LAMMAS },
+        { name: 'kits', type: KoduloomadItemTypes.KITS },
     ]);
 
     const [droppedBoxNames, setDroppedBoxNames] = useState([]);
@@ -63,20 +63,26 @@ export const KoduloomadDNDGame = () => {
     }, [droppedBoxNames, animals]);
 
     let img = FiveStars
+    let grade = 1
     if (scoree <= 39) {
         img = FiveStars
+        grade = 5
     }
     if (scoree > 39 && scoree <= 53) {
         img = FourStars
+        grade = 4
     }
     if (scoree > 53 && scoree <= 59) {
         img = ThreeStars
+        grade = 3
     }
     if (scoree > 59 && scoree <= 70) {
         img = TwoStars
+        grade = 2
     }
     if (scoree > 70) {
         img = OneStar
+        grade = 1
     }
 
     return (
@@ -108,7 +114,7 @@ export const KoduloomadDNDGame = () => {
                     </>) : (
                         <div className="finalPage">
                             <h1>Tubli!</h1>
-                            <p>Hinne:</p>
+                            <p>Hinne: {grade}</p>
                             <img alt="result in stars" className="result-img" src={img}/>
                         </div>
                     )
