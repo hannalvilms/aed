@@ -63,7 +63,7 @@ export default class LinnudGuessPictureGame extends Component {
         const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
-        data.append('score', grade);
+        data.append('grade', grade);
         axios.post(API + `/api/add-result`, data, {
             headers: headers,
         })
