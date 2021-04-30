@@ -50,7 +50,7 @@ export default class LinnudGuessPictureGame extends Component {
         };
     };
 
-    saveResult(result, grade) {
+    saveResult(result, newGrade) {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         const headers = {
@@ -63,7 +63,7 @@ export default class LinnudGuessPictureGame extends Component {
         const data = new FormData();
         data.append('game_id', gameId);
         data.append('score', result);
-        data.append('grade', grade);
+        data.append('grade', newGrade);
         axios.post(API + `/api/add-result`, data, {
             headers: headers,
         })
@@ -115,6 +115,7 @@ export default class LinnudGuessPictureGame extends Component {
                 grade: 1
             })
         }
+        console.log(this.state.grade)
         this.saveResult(this.state.score, this.state.grade)
     }
 
