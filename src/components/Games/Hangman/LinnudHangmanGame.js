@@ -109,6 +109,11 @@ export default class LinnudGuessPictureGame extends Component {
                 result: TwoStars,
                 grade: 2
             })
+        } else {
+            this.setState({
+                result: OneStar,
+                grade: 1
+            })
         }
         this.saveResult(this.state.score, this.state.grade)
     }
