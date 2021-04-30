@@ -17,14 +17,12 @@ export default class ProfileContent extends Component {
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        console.log(token)
         const res = await axios.get(`https://aed.academy/aed-back/api/results`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
         if (res) {
-            console.log(res.data.data)
             const posts = res.data.data;
             this.setState({
                 posts: [...posts]

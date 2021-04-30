@@ -22,8 +22,6 @@ class Login extends Component {
             password
         })
             .then(response=> {
-                console.log('success', response);
-                console.log(password)
                 let userData = {
                     token: response.data.token,
                     timestamp: new Date().toString()

@@ -41,10 +41,7 @@ export default class RegisterContent extends Component {
             fd.append('confirm_password', this.refs.confpass.value);
             axios.post('https://aed.academy/aed-back/api/register', fd)
                 .then(res => {
-                    console.log('res');
                     console.log(res);
-                    console.log(res.data);
-
                     let input = {};
                     input["email"] = "";
                     input["name"] = "";

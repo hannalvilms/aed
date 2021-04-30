@@ -9,7 +9,6 @@ export default class Mobilenav extends Component {
             user: {}
         };
         // save app state with user date in local storage
-        console.log(JSON.stringify(appState))
         localStorage["appState"] = JSON.stringify(appState);
         this.setState({
             isLoggedIn: appState.isLoggedIn,

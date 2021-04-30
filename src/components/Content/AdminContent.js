@@ -16,7 +16,6 @@ export default class AdminContent extends Component {
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        console.log(token)
         const res = await axios.get(`https://aed.academy/aed-back/api/all-users`, {
             headers: {
                 'Authorization': `Bearer ${token}`

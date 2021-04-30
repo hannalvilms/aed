@@ -12,8 +12,6 @@ export default class ProfileDataContent extends Component {
     componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-        console.log(token)
-
         axios.get(`https://aed.academy/aed-back/api/users`, {
             headers: {
                 'Authorization': `Bearer ${token}`

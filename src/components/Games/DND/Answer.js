@@ -22,7 +22,6 @@ export let Answer = memo(function Food({ name, type, isDropped }) {
 export function addScore() {
     if (scoree < 100) {
         scoree++;
-        console.log(scoree)
     }
 }
 
@@ -32,7 +31,6 @@ export function initial() {
 
 export let Score = memo(function Add({score}) {
     addScore();
-    console.log(scoree)
     if (score < 100) {
         addScore();
     }
