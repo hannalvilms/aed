@@ -17,9 +17,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
-import axios from "axios";
-import {API} from '../../../url';
-let gameId = 16;
+import {saveResult} from "../../../saveResult";
 export default class LinnudGuessPictureGame extends Component {
 
     constructor(props) {
@@ -49,32 +47,6 @@ export default class LinnudGuessPictureGame extends Component {
             grade: 1,
         };
     };
-
-    saveResult(result, newGrade) {
-        let user = JSON.parse(localStorage.getItem('appState'))
-        let token = user.user.token;
-        const headers = {
-            'Content-Type' : 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Accept' : 'application/json',
-            'Authorization': `Bearer ${token}`
-        }
-        //const data = { gameId, resultt, gradee }
-        const data = new FormData();
-        data.append('game_id', gameId);
-        data.append('score', result);
-        data.append('grade', newGrade);
-        axios.post(API + `/api/add-result`, data, {
-            headers: headers,
-        })
-            .then(response=> {
-                console.log('success', response);
-            })
-            .catch(error=> {
-                console.log('error', error);
-            }
-        );
-    }
 
     //Changes score, starts new game
     nextGuess = () => {
@@ -115,8 +87,6 @@ export default class LinnudGuessPictureGame extends Component {
                 grade: 1
             })
         }
-        //console.log(this.state.grade)
-        //this.saveResult(this.state.score, this.state.grade)
     }
 
     //Show correct images
@@ -235,7 +205,7 @@ export default class LinnudGuessPictureGame extends Component {
             gameStat = "Arvasid sõna ära!";
         }
         if (gameOver) {
-            this.saveResult(this.state.score, this.state.grade);
+            saveResult(this.state.score, this.state.grade, 16);
             gameStat = "Kahjuks ei arvanud sa sõna ära!";
         }
         return (
