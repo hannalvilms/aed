@@ -22,6 +22,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 export default class MaismaaGuessPictureGame extends Component {
 
@@ -294,6 +295,10 @@ export default class MaismaaGuessPictureGame extends Component {
     }
     render() {
         let { questions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
+        const gameOver = step === 16;
+        if (gameOver) {
+            saveResult(this.state.score, this.state.grade, 15);
+        }
         return (
             <div className="container-fluid pic-quiz-fluid">
                 <div className="container pic-quiz">
