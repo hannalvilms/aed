@@ -8,6 +8,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 class MetsloomadMemoryGame extends Component {
     static initState = () => {
@@ -17,7 +18,8 @@ class MetsloomadMemoryGame extends Component {
             cards: [],
             clicks : 0,
             visible: true,
-            result: OneStar
+            result: OneStar,
+            grade: 1
         };
     };
 
@@ -31,19 +33,23 @@ class MetsloomadMemoryGame extends Component {
 
         if(this.state.clicks < 30) {
             this.setState({
-                result: FiveStars
+                result: FiveStars,
+                grade: 5
             })
         } else if (this.state.clicks >= 30) {
             this.setState({
-                result: FourStars
+                result: FourStars,
+                grade: 4
             })
         } else if (this.state.clicks >= 40) {
             this.setState({
-                result: ThreeStars
+                result: ThreeStars,
+                grade: 3
             })
         } else if (this.state.clicks >= 50) {
             this.setState({
-                result: TwoStars
+                result: TwoStars,
+                grade: 2
             })
         }
     };
@@ -102,6 +108,7 @@ class MetsloomadMemoryGame extends Component {
         this.setState({
             won: true
         });
+        saveResult(this.state.clicks, this.state.grade, 5);
     };
 
 //Initialise the game state
