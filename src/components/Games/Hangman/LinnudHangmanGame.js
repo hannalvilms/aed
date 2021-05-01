@@ -205,7 +205,7 @@ export default class LinnudGuessPictureGame extends Component {
             gameStat = "Arvasid sõna ära!";
         }
         if (gameOver) {
-            saveResult(this.state.score, this.state.grade, 16);
+            saveResult(this.state.score, this.state.grade, 13);
             gameStat = "Kahjuks ei arvanud sa sõna ära!";
         }
         return (

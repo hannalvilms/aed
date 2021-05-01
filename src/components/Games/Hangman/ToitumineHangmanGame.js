@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {randomWord} from "./ToitumineWords";
-
 import zero from "./images/step0.png";
 import vasikas1 from "./images/vasikas1.png"; import vasikas2 from "./images/vasikas2.png"; import vasikas3 from "./images/vasikas3.png"; import vasikas4 from "./images/vasikas4.png"; import vasikas5 from "./images/vasikas5.png"; import vasikas6 from "./images/vasikas6.png";
 import lambatall1 from "./images/lambatall1.png"; import lambatall2 from "./images/lambatall2.png"; import lambatall3 from "./images/lambatall3.png"; import lambatall4 from "./images/lambatall4.png"; import lambatall5 from "./images/lambatall5.png"; import lambatall6 from "./images/lambatall6.png";
@@ -16,6 +15,7 @@ import FourStars from "../../../images/four-stars.png";
 import ThreeStars from "../../../images/three-stars.png";
 import TwoStars from "../../../images/two-stars.png";
 import OneStar from "../../../images/one-star.png";
+import {saveResult} from "../../../saveResult";
 
 export default class ToitumineHangmanGame extends Component {
 
@@ -189,6 +189,7 @@ export default class ToitumineHangmanGame extends Component {
             gameStat = "Arvasid sõna ära!";
         }
         if (gameOver) {
+            saveResult(this.state.score, this.state.grade, 23);
             gameStat = "Kahjuks ei arvanud sa sõna ära!";
         }
         return (

@@ -9,6 +9,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 export const KoduloomadDNDGame = () => {
     const [animals, setAnimals] = useState([
@@ -85,6 +86,10 @@ export const KoduloomadDNDGame = () => {
         grade = 1
     }
 
+    const gameOver = score===10;
+    if (gameOver) {
+        saveResult(scoree, grade, 7);
+    }
     return (
         <div className="container-fluid dnd-fluid">
             <div className="container dnd">
