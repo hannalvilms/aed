@@ -108,7 +108,7 @@ class KaladMemoryGame extends Component {
         this.setState({
             won: true
         });
-        saveResult(this.state.score, this.state.grade, 5);
+        saveResult(this.state.result, this.state.grade, 5);
     };
 
 //Initialise the game state
