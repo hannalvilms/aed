@@ -30,6 +30,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 export default class LinnudGuessSoundGame extends Component {
     constructor(props) {
@@ -618,6 +619,10 @@ export default class LinnudGuessSoundGame extends Component {
 
     render(){
         let { questions, answers, correctAnswer, clickedAnswer, step, score, audio, author, names } = this.state;
+        const gameOver = step === 11;
+        if (gameOver) {
+            saveResult(this.state.score, this.state.grade, 12);
+        }
         return(
             <div className="container-fluid guess-sound-fluid">
                 <div className="container guess-sound">
