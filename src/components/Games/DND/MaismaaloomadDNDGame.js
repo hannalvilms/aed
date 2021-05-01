@@ -9,6 +9,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 export const MaismaaloomadDNDGame = () => {
     const [animals, setAnimals] = useState([
@@ -83,6 +84,11 @@ export const MaismaaloomadDNDGame = () => {
     if (scoree > 70) {
         img = OneStar
         grade = 1
+    }
+
+    const gameOver = score===10;
+    if (gameOver) {
+        saveResult(scoree, grade, 16);
     }
 
     return (

@@ -13,6 +13,7 @@ import TwoStars from '../../../images/two-stars.png';
 import ThreeStars from '../../../images/three-stars.png';
 import FourStars from '../../../images/four-stars.png';
 import FiveStars from '../../../images/five-stars.png';
+import {saveResult} from "../../../saveResult";
 
 export default class KahepaiksedGuessPictureGame extends Component {
 
@@ -208,6 +209,10 @@ export default class KahepaiksedGuessPictureGame extends Component {
 
     render() {
         let { questions, answers, correctAnswer, clickedAnswer, step, score } = this.state;
+        const gameOver = step >= Object.keys(questions).length;
+        if (gameOver) {
+            saveResult(this.state.score, this.state.grade, 7);
+        }
         return (
             <div className="container-fluid pic-quiz-fluid">
                 <div className="container pic-quiz">
