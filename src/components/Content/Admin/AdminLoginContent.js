@@ -36,7 +36,7 @@ class AdminLogin extends Component {
                     isLoggedIn: appState.isLoggedIn,
                     user: appState.user
                 });
-                this.props.history.push("/adminfrontpage");
+                this.props.history.push("/adminusers");
                 window.location.reload();
             })
             .catch(error=> {

@@ -11,9 +11,6 @@ import Fox from '../../images/fox.jpg';
 import Hedgehog from '../../images/hedgehog.jpg';
 
 export default class FrontpageContent extends Component {
-    componentDidMount() {
-        document.body.style.backgroundColor = "white"
-    }
     render() {
         return (
             <div className="container-fluid content">

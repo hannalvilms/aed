@@ -48,7 +48,6 @@ export default class AdminNav extends Component {
                             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                             </ul>
                             <div className="nav navbar-right">
-                                <Link to="/adminfrontpage" className="nav-link btn btn-primary btn-xs">Materjalid</Link>
                                 <Link to="/adminusers" className="nav-link btn btn-primary btn-xs">Konto</Link>
                                 <Link to="/adminlogin" onClick={this.logoutUser} className="nav-link btn btn-primary btn-xs">Logi välja</Link>
                             </div>

@@ -19,7 +19,6 @@ export default class AdminMobileNav extends Component {
     render() {
         return (
             <div className = "main-nav" id = "main-nav">
-                <Link to="/adminfrontpage" className = "nav-link">Materjalid</Link>
                 <Link to="/adminusers" className="nav-link">Konto</Link>
                 <Link to="/adminlogin" onClick={this.logoutUser} className="nav-link">Logi välja</Link>
             </div>
