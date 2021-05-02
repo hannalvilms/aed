@@ -35,7 +35,7 @@ export default class ProfileDataContent extends Component {
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-sm-12 profile-menu my-auto">
+                        <div className="col-lg-3 col-sm-12 profile-menu">
                             <Link to="/profile">Tulemused</Link>
                             <p>Andmed</p>
                         </div>

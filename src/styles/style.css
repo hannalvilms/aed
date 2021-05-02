@@ -253,6 +253,8 @@ a:hover {
     border-right: 3px solid #FFB832;
     margin-right: 50px;
     text-align: right !important;
+    height: 25%;
+    margin-top: 5vh;
 }
 .results .overlay {
     width: 80%;
@@ -1227,6 +1229,7 @@ p.hangman-letters {
         padding-bottom: 30px !important;
         display: flex;
         justify-content: center;
+        margin-top: 50px;
     }
     .profile-menu a {
         text-align: center;

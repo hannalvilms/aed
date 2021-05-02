@@ -49,7 +49,7 @@ export default class AdminProfileContent extends Component {
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-sm-12 profile-menu my-auto">
+                        <div className="col-lg-3 col-sm-12 profile-menu ">
                             <Link to="adminusers">Kasutajad</Link>
                             {/*<Link to="adminprofile">Tulemused</Link>*/}
                             <Link to="/adminprofileData">Andmed</Link>

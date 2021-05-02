@@ -49,7 +49,7 @@ export default class ProfileContent extends Component {
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-3 col-sm-12 profile-menu my-auto">
+                        <div className="col-lg-3 col-sm-12 profile-menu">
                             <p>Tulemused</p>
                             <Link to="/profileData">Andmed</Link>
                         </div>
