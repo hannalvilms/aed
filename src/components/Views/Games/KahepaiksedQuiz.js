@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import KahepaiksedQuizGame from '../../Games/Quiz/KahepaiksedQuizGame';
 import KahepaiksedGameContent from "../../Content/KahepaiksedGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class KahepaiksedQuiz extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class KahepaiksedQuiz extends Component {
                 <LoggedNav />
                 <KahepaiksedGameContent />
                 <KahepaiksedQuizGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

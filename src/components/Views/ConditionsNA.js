@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import ConditionsContent from '../Content/ConditionsContent';
-import LoggedNav from '../Nav/LoggedNav';
-import LoggedFooter from "../Footer/LoggedFooter";
+import Navbar from '../Nav/Navbar';
+import Footer from "../Footer/Footer";
 
-export default class Conditions extends Component {
+export default class ConditionsNA extends Component {
     render() {
         return (
             <div id="profile">
-                <LoggedNav />
+                <Navbar />
                 <ConditionsContent />
-                <LoggedFooter />
+                <Footer />
             </div>
         )
     }

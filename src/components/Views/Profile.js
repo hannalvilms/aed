@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ProfileContent from '../Content/ProfileContent';
 import LoggedNav from '../Nav/LoggedNav';
-import Footer from "../Footer/Footer";
+import LoggedFooter from "../Footer/LoggedFooter";
 
 export default class Profile extends Component {
     render() {
@@ -9,7 +9,7 @@ export default class Profile extends Component {
             <div id="profile">
                 <LoggedNav />
                 <ProfileContent />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MetsloomadGuessPictureGame from "../../Games/GuessPicture/MetsloomadGuessPictureGame";
 import MetsloomadGameContent from "../../Content/MetsloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class MetsloomadGuessPicture extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class MetsloomadGuessPicture extends Component {
                 <LoggedNav />
                 <MetsloomadGameContent />
                 <MetsloomadGuessPictureGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import VeeloomadContent from "../../components/Content/VeeloomadContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Veeloomad extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class Veeloomad extends Component {
                 <div className="stretch-games">
                     <VeeloomadContent />
                     <div className="footer-stretch">
-                        <Footer />
+                        <LoggedFooter />
                     </div>
                 </div>
             </div>

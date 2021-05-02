@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import PrivacyPolicyContent from '../Content/PrivacyPolicyContent';
-import LoggedNav from '../Nav/LoggedNav';
-import LoggedFooter from "../Footer/LoggedFooter";
+import Navbar from '../Nav/Navbar';
+import Footer from "../Footer/Footer";
 
-export default class PrivacyPolicy extends Component {
+export default class PrivacyPolicyNA extends Component {
     render() {
         return (
             <div id="profile">
-                <LoggedNav />
+                <Navbar />
                 <PrivacyPolicyContent />
-                <LoggedFooter />
+                <Footer />
             </div>
         )
     }

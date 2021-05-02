@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ValisehitusQuizGame from '../../Games/Quiz/ValisehitusQuizGame';
 import ValisehitusGameContent from "../../Content/ValisehitusGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class ValisehitusQuiz extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class ValisehitusQuiz extends Component {
                 <LoggedNav />
                 <ValisehitusGameContent />
                 <ValisehitusQuizGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -65,16 +65,24 @@ import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import MaismaaloomadTwoDND from "./components/Views/Games/MaismaaloomadTwoDND";
+import AdminLogin from "./components/Views/Admin/AdminLogin";
+import AdminFrontpage from "./components/Views/Admin/AdminFrontpage";
+import ConditionsNA from "./components/Views/ConditionsNA";
+import ContactNA from "./components/Views/ContactNA";
+import PrivacyPolicyNA from "./components/Views/PrivacyPolicyNA";
 
 ReactDOM.render(
    <BrowserRouter>
+
+       <Route path = "/adminlogin" component={AdminLogin}/>
+       <Route path = "/adminfrontpage" component={AdminFrontpage}/>
+
        <Route path = "/loggedMobilenav" component ={LoggedMobilenav}/>
        <PrivateRoute path="/profile" component={Profile}/>
        <PrivateRoute path = "/profileData" component = {ProfileData}/>
        <Route path = "/frontpage" component={Frontpage}/>
        <PrivateRoute path = "/loggedFrontpage" component={LoggedFrontpage}/>
-       <PrivateRoute path = "/admin" component={Admin}/>
-       <Route path = "/contact" component={Contact}/>
+       <PrivateRoute path = "/adminusers" component={Admin}/>
        <Route path = "/error" component={Error}/>
        <PrivateRoute path = "/kahepaiksed" component={Kahepaiksed}/>
        <PrivateRoute path = "/kalad" component={Kalad}/>
@@ -122,9 +130,15 @@ ReactDOM.render(
        <PrivateRoute path = "/veeloomadDND" component={VeeloomadDND} />
        <PrivateRoute path = "/toitumineDND" component={ToitumineDND} />
 
-       <Route path = "/privacyPolicy" component={PrivacyPolicy} />
-       <Route path = "/conditions" component={Conditions} />
        <PrivateRoute path = "/guessSound" component={LinnudGuessSound} />
+
+       <Route path = "/privacyPolicy" component={PrivacyPolicyNA} />
+       <Route path = "/conditions" component={ConditionsNA} />
+       <Route path = "/contact" component={ContactNA}/>
+       <PrivateRoute path = "/privacyPolicyLogged" component={PrivacyPolicy}/>
+       <PrivateRoute path = "/conditionsLogged" component={Conditions}/>
+       <PrivateRoute path = "/contactLogged" component={Contact}/>
+
    </BrowserRouter>,
   document.getElementById('root')
 );

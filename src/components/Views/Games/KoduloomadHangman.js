@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import KoduloomadHangmanGame from '../../Games/Hangman/KoduloomadHangmanGame';
 import KoduloomadGameContent from "../../Content/KoduloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class KoduloomadHangman extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class KoduloomadHangman extends Component {
                 <LoggedNav />
                 <KoduloomadGameContent />
                 <KoduloomadHangmanGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

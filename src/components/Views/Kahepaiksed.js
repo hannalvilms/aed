@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import KahepaiksedContent from "../../components/Content/KahepaiksedContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Kahepaiksed extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class Kahepaiksed extends Component {
                 <div className="stretch-games">
                     <KahepaiksedContent />
                     <div className="footer-stretch">
-                        <Footer />
+                        <LoggedFooter />
                     </div>
                 </div>
             </div>

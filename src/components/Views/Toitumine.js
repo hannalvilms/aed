@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import ToitumineContent from "../../components/Content/ToitumineContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Toitumine extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class Toitumine extends Component {
                 <div className="stretch-games">
                     <ToitumineContent />
                     <div className="footer-stretch">
-                        <Footer />
+                        <LoggedFooter />
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch'; // or 
 import MaismaaloomadTwoDNDGame from '../../Games/DND/MaismaaloomadTwoDNDGame';
 import MaismaaGameContent from "../../Content/MaismaaGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class MaismaaloomadTwoDND extends Component {
     render() {
@@ -15,7 +15,7 @@ export default class MaismaaloomadTwoDND extends Component {
                 <DndProvider options={HTML5toTouch}>
                     <MaismaaloomadTwoDNDGame />
                 </DndProvider>
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LinnudGuessSoundGame from "../../Games/GuessSound/LinnudGuessSoundGame";
 import LinnudGameContent from "../../Content/LinnudGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class LinnudGuessSound extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class LinnudGuessSound extends Component {
                 <LoggedNav />
                 <LinnudGameContent />
                 <LinnudGuessSoundGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

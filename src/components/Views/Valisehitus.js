@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import ValisehitusContent from "../../components/Content/ValisehitusContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Valisehitus extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class Valisehitus extends Component {
                 <div className="stretch-games">
                     <ValisehitusContent />
                     <div className="footer-stretch">
-                        <Footer />
+                        <LoggedFooter />
                     </div>
                 </div>
             </div>

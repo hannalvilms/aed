@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import KoduloomadMemoryGame from '../../Games/Memory/KoduloomadMemoryGame';
 import KoduloomadGameContent from "../../Content/KoduloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class KoduloomadMemory extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class KoduloomadMemory extends Component {
                 <LoggedNav />
                 <KoduloomadGameContent />
                 <KoduloomadMemoryGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

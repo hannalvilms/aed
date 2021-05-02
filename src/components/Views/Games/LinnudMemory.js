@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LinnudMemoryGame from '../../Games/Memory/LinnudMemoryGame';
 import LinnudGameContent from "../../Content/LinnudGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class LinnudMemory extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class LinnudMemory extends Component {
                 <LoggedNav />
                 <LinnudGameContent />
                 <LinnudMemoryGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import KoduloomadGuessPictureGame from "../../Games/GuessPicture/KoduloomadGuessPictureGame";
 import KoduloomadGameContent from "../../Content/KoduloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class KoduloomadGuessPicture extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class KoduloomadGuessPicture extends Component {
                 <LoggedNav />
                 <KoduloomadGameContent />
                 <KoduloomadGuessPictureGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

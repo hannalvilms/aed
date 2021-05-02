@@ -3,7 +3,7 @@ import { DndProvider } from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch'; // or any other pipeline
 import ToitumineGameContent from "../../Content/ToitumineGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 import ToitumineDNDGame from "../../Games/DND/ToitumineDNDGame";
 
 export default class ToitumineDND extends Component {
@@ -15,7 +15,7 @@ export default class ToitumineDND extends Component {
                 <DndProvider options={HTML5toTouch}>
                     <ToitumineDNDGame />
                 </DndProvider>
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

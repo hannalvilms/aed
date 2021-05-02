@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
-import Navbar from "../../components/Nav/Navbar";
+import LoggedNav from "../../components/Nav/LoggedNav";
 import ContactContent from "../Content/ContactContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Contact extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <LoggedNav />
                 <ContactContent />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

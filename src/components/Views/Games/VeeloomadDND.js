@@ -3,7 +3,7 @@ import { DndProvider } from 'react-dnd-multi-backend';
 import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch'; // or any other pipeline
 import VeeloomadGameContent from "../../Content/VeeloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 import VeeloomadDNDGame from "../../Games/DND/VeeloomadDNDGame";
 
 export default class VeeloomadDND extends Component {
@@ -15,7 +15,7 @@ export default class VeeloomadDND extends Component {
                 <DndProvider options={HTML5toTouch}>
                     <VeeloomadDNDGame />
                 </DndProvider>
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

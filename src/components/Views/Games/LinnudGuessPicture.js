@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LinnudGuessPictureGame from "../../Games/GuessPicture/LinnudGuessPictureGame";
 import LinnudGameContent from "../../Content/LinnudGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class LinnudGuessPicture extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class LinnudGuessPicture extends Component {
                 <LoggedNav />
                 <LinnudGameContent />
                 <LinnudGuessPictureGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import MetsloomadMemoryGame from '../../Games/Memory/MetsloomadMemoryGame';
 import MetsloomadGameContent from "../../Content/MetsloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class MetsloomadMemory extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class MetsloomadMemory extends Component {
                 <LoggedNav />
                 <MetsloomadGameContent />
                 <MetsloomadMemoryGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

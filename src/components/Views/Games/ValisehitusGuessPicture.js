@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ValisehitusGuessPictureGame from "../../Games/GuessPicture/ValisehitusGuessPictureGame";
 import ValisehitusGameContent from "../../Content/ValisehitusGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class ValisehitusGuessPicture extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class ValisehitusGuessPicture extends Component {
                 <LoggedNav />
                 <ValisehitusGameContent />
                 <ValisehitusGuessPictureGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

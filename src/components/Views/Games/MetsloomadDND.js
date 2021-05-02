@@ -4,7 +4,7 @@ import HTML5toTouch from 'react-dnd-multi-backend/dist/esm/HTML5toTouch'; // or 
 import MetsloomadDNDGame from '../../Games/DND/MetsloomadDNDGame';
 import MetsloomadGameContent from "../../Content/MetsloomadGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class MetsloomadDND extends Component {
     render() {
@@ -15,7 +15,7 @@ export default class MetsloomadDND extends Component {
                 <DndProvider options={HTML5toTouch}>
                     <MetsloomadDNDGame />
                 </DndProvider>
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

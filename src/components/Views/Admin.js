@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AdminContent from '../Content/AdminContent';
 import LoggedNav from '../Nav/LoggedNav';
-import Footer from "../Footer/Footer";
+import LoggedFooter from "../Footer/LoggedFooter";
 
 export default class Admin extends Component {
     render() {
@@ -9,7 +9,7 @@ export default class Admin extends Component {
             <div id="profile">
                 <LoggedNav />
                 <AdminContent />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

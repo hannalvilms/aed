@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import KaladGuessPictureGame from "../../Games/GuessPicture/KaladGuessPictureGame";
 import KaladGameContent from "../../Content/KaladGameContent";
 import LoggedNav from '../../Nav/LoggedNav';
-import Footer from "../../Footer/Footer";
+import LoggedFooter from "../../Footer/LoggedFooter";
 
 export default class KaladGuessPicture extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class KaladGuessPicture extends Component {
                 <LoggedNav />
                 <KaladGameContent />
                 <KaladGuessPictureGame />
-                <Footer />
+                <LoggedFooter />
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LoggedNavbar from "../../components/Nav/LoggedNav";
 import KoduloomadContent from "../../components/Content/KoduloomadContent";
-import Footer from "../../components/Footer/Footer";
+import LoggedFooter from "../../components/Footer/LoggedFooter";
 
 export default class Koduloomad extends Component {
     render() {
@@ -11,7 +11,7 @@ export default class Koduloomad extends Component {
                 <div className="stretch-games">
                     <KoduloomadContent />
                     <div className="footer-stretch">
-                        <Footer />
+                        <LoggedFooter />
                     </div>
                 </div>
             </div>
