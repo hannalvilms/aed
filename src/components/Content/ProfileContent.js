@@ -8,7 +8,7 @@ export default class ProfileContent extends Component {
     constructor(props){
         super(props);
         this.state = {
-            reviews : [],
+            results : [],
         };
     }
 
@@ -21,16 +21,16 @@ export default class ProfileContent extends Component {
             }
         })
         if (res) {
-            const posts = res.data.data;
+            const results = res.data.data;
             this.setState({
-                posts: [...posts]
+                results: [...results]
             });
         }
     }
-    renderPost = () => {
 
-        return this.state.posts
-            ? this.state.posts.map(data => (
+    renderResults() {
+        return this.state.results
+            ? this.state.results.map(data => (
                 <div className="col-lg-6 col-md-6 col-sm-10 results" key={data.id}>
                     <img src={Trees} alt="trees"/>
                     <div className="overlay">
@@ -53,7 +53,9 @@ export default class ProfileContent extends Component {
                             <p>Tulemused</p>
                             <Link to="/profileData">Andmed</Link>
                         </div>
-                        <div className="row profile-results col-lg-8 col-sm-12"> {this.renderPost()}</div>
+                        <div className="row profile-results col-lg-8 col-sm-12">
+                            {this.renderResults()}
+                        </div>
                     </div>
                 </div>
             </div>

@@ -1190,7 +1190,7 @@ p.hangman-letters {
         height: 100%;
         right: 0;
         background: rgb(236,251,251);
-        background: linear-gradient(125deg, rgba(236,251,251,1) 20%, rgba(0,114,112,1) 100%);
+        background: linear-gradient(125deg, rgb(236, 251, 251) 20%, rgb(0, 114, 112) 100%);
         transform-origin: 0 0;
         transition: all .999s;
     }

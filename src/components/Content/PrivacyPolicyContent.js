@@ -9,13 +9,13 @@ export default class PrivacyPolicyContent extends Component {
                         <div className="col-lg-12 policy-text">
                             <h1>Privaatsuspoliitika</h1>
                             <p>Andmekaitsetingimused kirjeldavad, kuidas töödeldakse veebirakenduse Aed kasutaja isikuandmeid. Aed annab Kliendile poolte vahel sõlmitud teenuselepingu alusel ligipääsu veebirakenduse materjalidele.
-                                Isikuandmed on igasugune informatsioon, mis on otseselt seotud Aed kasutajaga või teenustega. Täpsemalt - identifitseervad tunnused nagu nimi, sünnikuupäev, kontaktandmed.
+                                Isikuandmed on igasugune informatsioon, mis on otseselt seotud Aed kasutajaga või teenustega. Täpsemalt - identifitseervad tunnused nagu nimi, kontaktandmed.
                                 Töötlemine on mistahes tooiming, mida teostatakse Isikuandmetega - kogumine, hoiustamine, salvestamine jms.
                             </p>
                         </div>
                         <div className="col-lg-12 policy-text">
                             <h3>Milliseid andmeid kogume</h3>
-                            <p>Aeg kogub kasutajaks registreerimisel järmiseid isikuandmeid: eesnimi, perekonnanimi, õppeasutus.</p>
+                            <p>Aeg kogub kasutajaks registreerimisel järmiseid isikuandmeid: eesnimi, perekonnanimi, e-post.</p>
                         </div>
                         <div className="col-lg-12 policy-text">
                             <h3>Millisel eesmärgil isikuandmeid kogume</h3>

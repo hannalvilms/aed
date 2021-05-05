@@ -27,8 +27,7 @@ export default class AdminProfileContent extends Component {
             });
         }
     }
-    renderPost = () => {
-
+    renderUser = () => {
         return this.state.posts
             ? this.state.posts.map(data => (
                 <div className="col-lg-6 col-md-6 col-sm-10 results" key={data.id}>
@@ -54,7 +53,7 @@ export default class AdminProfileContent extends Component {
                             {/*<Link to="adminprofile">Tulemused</Link>*/}
                             <Link to="/adminprofileData">Andmed</Link>
                         </div>
-                        <div className="row profile-results col-lg-8 col-sm-12"> {this.renderPost()}</div>
+                        <div className="row profile-results col-lg-8 col-sm-12"> {this.renderUser()}</div>
                     </div>
                 </div>
             </div>
