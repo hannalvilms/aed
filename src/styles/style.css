@@ -269,8 +269,13 @@ a:hover {
 .results .overlay h4 {
     margin: 25px 0 5px 0;
 }
-.results .overlay h4, .results .overlay h6 {
+.results .overlay h4,
+.results .overlay h6,
+.results .overlay h5 {
     font-weight: 400;
+}
+.results .overlay h5:first-of-type {
+    margin-top: 20px;
 }
 .results .overlay p {
     margin: 0;

@@ -65,19 +65,13 @@ import '../src/styles/hamburgers.css';
 import '../src/styles/hamburgers.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import MaismaaloomadTwoDND from "./components/Views/Games/MaismaaloomadTwoDND";
-import AdminLogin from "./components/Views/Admin/AdminLogin";
 import ConditionsNA from "./components/Views/ConditionsNA";
 import ContactNA from "./components/Views/ContactNA";
 import PrivacyPolicyNA from "./components/Views/PrivacyPolicyNA";
-import AdminProfile from "./components/Views/Admin/AdminProfile";
-import AdminProfileData from "./components/Views/Admin/AdminProfileData";
 
 ReactDOM.render(
    <BrowserRouter>
 
-       <Route path = "/adminlogin" component={AdminLogin}/>
-       <PrivateRoute path="/adminprofile" component={AdminProfile}/>
-       <PrivateRoute path = "/adminprofileData" component = {AdminProfileData}/>
        <PrivateRoute path = "/adminusers" component={AdminUsers}/>
 
        <Route path = "/loggedMobilenav" component ={LoggedMobilenav}/>

@@ -16,6 +16,8 @@ export default class ProfileContent extends Component {
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
+
+
         const res = await axios.get(API + `/api/results`, {
             headers: {
                 'Authorization': `Bearer ${token}`
@@ -33,11 +35,13 @@ export default class ProfileContent extends Component {
                 'Authorization': `Bearer ${token}`
             }
         })
-        if (result) {
+        if(result) {
             const results = result.data.isAdmin;
+            console.log(results)
             this.setState({
                 isAdmin: results
             })
+            console.log(this.state.isAdmin)
         }
     }
 
@@ -47,10 +51,10 @@ export default class ProfileContent extends Component {
                 <div className="col-lg-6 col-md-6 col-sm-10 results" key={data.id}>
                     <img src={Trees} alt="trees"/>
                     <div className="overlay">
-                        <h4>{data.game_id}</h4>
-                        <h6>Maismaaloomad</h6>
-                        <h6>Tulemus: {data.score}</h6>
-                        <h6>Hinne: {data.grade}</h6>
+                        <h4>{data.name}</h4>
+                        <h6>{data.description}</h6>
+                        <h5>Tulemus: {data.score}</h5>
+                        <h5>Hinne: {data.grade}</h5>
                     </div>
                 </div>
             ))
@@ -59,10 +63,10 @@ export default class ProfileContent extends Component {
 
     render() {
         let link;
+        console.log(this.state.isAdmin)
         if (this.state.isAdmin === 1) {
             link = <Link to="/adminusers">Kasutajad</Link>;
         }
-
         return (
             <div className="container-fluid profile">
                 <div className="container">

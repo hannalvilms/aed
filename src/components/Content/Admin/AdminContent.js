@@ -15,6 +15,7 @@ export default class AdminContent extends Component {
     }
 
      componentDidMount() {
+         this.admin();
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         axios.get(API + `/api/all-users`, {
@@ -26,18 +27,6 @@ export default class AdminContent extends Component {
             const names = res.data.data;
             this.setState({ names });
         })
-
-         axios.get(API + `/api/admin`, {
-             headers: {
-                 'Authorization': `Bearer ${token}`
-             }
-         })
-         .then(result => {
-             const admin = result.data.isAdmin;
-             this.setState({
-                 isAdmin: admin
-             });
-         })
     }
 
     deleteRow(id, e){
@@ -56,19 +45,37 @@ export default class AdminContent extends Component {
         })
     }
 
+    admin() {
+        let user = JSON.parse(localStorage.getItem('appState'))
+        let token = user.user.token;
+        axios.get(API + `/api/admin`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+            .then(result => {
+                const admin = result.data.isAdmin;
+                console.log(admin)
+                this.setState({
+                    isAdmin: admin
+                });
+            })
+        if (this.state.isAdmin !== 1) {
+             return <Redirect to="/avaleht-logitud" />
+        }
+    }
+
     render() {
         let i = 1;
-        if (this.state.isAdmin !== 1) {
-            return <Redirect to="/avaleht-logitud" />
-        }
+        console.log(this.state.isAdmin)
         return (
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-2 col-sm-12 profile-menu">
-                            <Link to="adminusers">Kasutajad</Link>
-                            {/*<Link to="adminprofile">Tulemused</Link>*/}
-                            <Link to="adminprofileData">Andmed</Link>
+                            <p>Kasutajad</p>
+                            <Link to="/tulemused">Tulemused</Link>
+                            <Link to="/andmed">Andmed</Link>
                         </div>
                         <div className="row change-profile admin-names contact col-lg-9">
                             <form className="row col-lg-12">

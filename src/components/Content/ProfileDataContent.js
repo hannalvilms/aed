@@ -5,12 +5,17 @@ import {API} from '../../url';
 
 export default class ProfileDataContent extends Component {
 
-    state = {
-        name: [],
-        email: [],
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: [],
+            email: [],
+            isAdmin: 0
+        }
     }
 
     componentDidMount() {
+        this.admin();
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         axios.get(API + `/api/users`, {
@@ -30,14 +35,34 @@ export default class ProfileDataContent extends Component {
             })
     }
 
+    admin() {
+        let user = JSON.parse(localStorage.getItem('appState'))
+        let token = user.user.token;
+        axios.get(API + `/api/admin`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }).then((result) => {
+            const results = result.data.isAdmin;
+            this.setState({
+                isAdmin: results
+            })
+        })
+    }
+
     render() {
+        let link;
+        if (this.state.isAdmin === 1) {
+            link = <Link to="/adminusers">Kasutajad</Link>;
+        }
         return (
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu">
+                            {link}
                             <Link to="/profile">Tulemused</Link>
-                            <p>Andmed</p>
+                            <Link>Andmed</Link>
                         </div>
                         <div className="row change-profile col-lg-8">
                             <form className="row col-lg-12">
