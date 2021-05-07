@@ -6,7 +6,7 @@ export default class Mobilenav extends Component {
         return (
             <div className = "main-nav" id = "main-nav">
                 <Link to="/login" className = "nav-link"> Logi sisse</Link>
-                <Link to="/register" className="nav-link">Loo konto</Link>
+                <Link to="/registreeri" className="nav-link">Loo konto</Link>
             </div>
         )
     }

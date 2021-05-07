@@ -11,7 +11,7 @@ export default class KahepaiksedContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid frog">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Maod, sisalikud ja kahepaiksed</h1>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ export default class KahepaiksedContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Snake} alt="madu"/>
-                                    <Link to="/kahepaiksedGuessPicture">
+                                    <Link to="/kahepaiksed-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -33,7 +33,7 @@ export default class KahepaiksedContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Geko} alt="geko"/>
-                                    <Link to="/maodSisalikudQuiz">
+                                    <Link to="/maod-sisalikud-test">
                                         <div className="overlay">
                                             <h4>Test (Maod ja sisalikud)</h4>
                                             <p>Vali õige vastus.</p>
@@ -42,7 +42,7 @@ export default class KahepaiksedContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Frog} alt="konn"/>
-                                    <Link to="/kahepaiksedQuiz">
+                                    <Link to="/kahepaiksed-test">
                                         <div className="overlay">
                                             <h4>Test (Kahepaiksed)</h4>
                                             <p>Vali õige vastus.</p>

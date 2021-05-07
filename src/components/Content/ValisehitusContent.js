@@ -10,7 +10,7 @@ export default class ValisehitusContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid fox">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Loomade välisehitus</h1>
                     </div>
                 </div>
@@ -23,7 +23,7 @@ export default class ValisehitusContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Dog} alt="koer"/>
-                                    <Link to="/valisehitusGuessPicture">
+                                    <Link to="/valisehitus-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -32,7 +32,7 @@ export default class ValisehitusContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                    <img src={Dragonfly} alt="kiil"/>
-                                    <Link to="/valisehitusQuiz">
+                                    <Link to="/valisehitus-test">
                                         <div className="overlay">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>

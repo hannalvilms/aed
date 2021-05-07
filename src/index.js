@@ -81,10 +81,10 @@ ReactDOM.render(
        <PrivateRoute path = "/adminusers" component={AdminUsers}/>
 
        <Route path = "/loggedMobilenav" component ={LoggedMobilenav}/>
-       <PrivateRoute path="/profile" component={Profile}/>
-       <PrivateRoute path = "/profileData" component = {ProfileData}/>
-       <Route path = "/frontpage" component={Frontpage}/>
-       <PrivateRoute path = "/loggedFrontpage" component={LoggedFrontpage}/>
+       <PrivateRoute path="/tulemused" component={Profile}/>
+       <PrivateRoute path = "/andmed" component = {ProfileData}/>
+       <Route path = "/avaleht" component={Frontpage}/>
+       <PrivateRoute path = "/avaleht-logitud" component={LoggedFrontpage}/>
        <Route path = "/error" component={Error}/>
        <PrivateRoute path = "/kahepaiksed" component={Kahepaiksed}/>
        <PrivateRoute path = "/kalad" component={Kalad}/>
@@ -94,52 +94,52 @@ ReactDOM.render(
        <Route path = "/maintenance" component={Maintenance}/>
        <PrivateRoute path = "/maismaaloomad" component={Maismaaloomad}/>
        <PrivateRoute path = "/metsloomad" component={Metsloomad}/>
-       <Route path = "/register" component={Register} />
+       <Route path = "/registreeri" component={Register} />
        <PrivateRoute path = "/toitumine" component={Toitumine}/>
        <PrivateRoute path = "/valisehitus" component={Valisehitus} />
        <PrivateRoute path = "/veeloomad" component={Veeloomad}/>
 
-       <PrivateRoute path = "/maodSisalikudQuiz" component={KahepaiksedSecondQuiz} />
-       <PrivateRoute path = "/kahepaiksedQuiz" component={KahepaiksedQuiz} />
-       <PrivateRoute path = "/kaladQuiz" component={KaladQuiz} />
-       <PrivateRoute path = "/toitumineQuiz" component={ToitumineQuiz} />
-       <PrivateRoute path = "/valisehitusQuiz" component={ValisehitusQuiz} />
-       <PrivateRoute path = "/veeloomadQuiz" component={VeeloomadQuiz} />
+       <PrivateRoute path = "/maod-sisalikud-test" component={KahepaiksedSecondQuiz} />
+       <PrivateRoute path = "/kahepaiksed-test" component={KahepaiksedQuiz} />
+       <PrivateRoute path = "/kalad-test" component={KaladQuiz} />
+       <PrivateRoute path = "/toitumine-test" component={ToitumineQuiz} />
+       <PrivateRoute path = "/valisehitus-test" component={ValisehitusQuiz} />
+       <PrivateRoute path = "/veeloomad-test" component={VeeloomadQuiz} />
 
-       <PrivateRoute path = "/memoryGame" component={MaismaaMemory}/>
-       <PrivateRoute path = "/kaladMemory" component={KaladMemory}/>
-       <PrivateRoute path = "/koduloomadMemory" component={KoduloomadMemory}/>
-       <PrivateRoute path = "/linnudMemory" component={LinnudMemory}/>
-       <PrivateRoute path = "/metsloomadMemory" component={MetsloomadMemory}/>
+       <PrivateRoute path = "/maismaaloomad-memory" component={MaismaaMemory}/>
+       <PrivateRoute path = "/kalad-memory" component={KaladMemory}/>
+       <PrivateRoute path = "/koduloomad-memory" component={KoduloomadMemory}/>
+       <PrivateRoute path = "/linnud-memory" component={LinnudMemory}/>
+       <PrivateRoute path = "/metsloomad-memory" component={MetsloomadMemory}/>
 
-       <PrivateRoute path = "/linnudGuessPicture" component={LinnudGuessPicture} />
-       <PrivateRoute path = "/kahepaiksedGuessPicture" component={KahepaiksedGuessPicture} />
-       <PrivateRoute path = "/kaladGuessPicture" component={KaladGuessPicture}/>
-       <PrivateRoute path = "/koduloomadGuessPicture" component={KoduloomadGuessPicture}/>
-       <PrivateRoute path = "/maismaaGuessPicture" component={MaismaaGuessPicture}/>
-       <PrivateRoute path = "/metsloomadGuessPicture" component={MetsloomadGuessPicture}/>
-       <PrivateRoute path = "/valisehitusGuessPicture" component={ValisehitusGuessPicture}/>
-       <PrivateRoute path = "/veeloomadGuessPicture" component={VeeloomadGuessPicture}/>
+       <PrivateRoute path = "/linnud-arva-pilt" component={LinnudGuessPicture} />
+       <PrivateRoute path = "/kahepaiksed-arva-pilt" component={KahepaiksedGuessPicture} />
+       <PrivateRoute path = "/kalad-arva-pilt" component={KaladGuessPicture}/>
+       <PrivateRoute path = "/koduloomad-arva-pilt" component={KoduloomadGuessPicture}/>
+       <PrivateRoute path = "/maismaaloomad-arva-pilt" component={MaismaaGuessPicture}/>
+       <PrivateRoute path = "/metsloomad-arva-pilt" component={MetsloomadGuessPicture}/>
+       <PrivateRoute path = "/valisehitus-arva-pilt" component={ValisehitusGuessPicture}/>
+       <PrivateRoute path = "/veeloomad-arva-pilt" component={VeeloomadGuessPicture}/>
 
-       <PrivateRoute path = "/linnudHangman" component={LinnudHangman} />
-       <PrivateRoute path = "/koduloomadHangman" component={KoduloomadHangman}/>
-       <PrivateRoute path = "/toitumineHangman" component={ToitumineHangman}/>
+       <PrivateRoute path = "/linnud-poomine" component={LinnudHangman} />
+       <PrivateRoute path = "/koduloomad-poomine" component={KoduloomadHangman}/>
+       <PrivateRoute path = "/toitumine-poomine" component={ToitumineHangman}/>
 
-       <PrivateRoute path = "/koduloomadDND" component={KoduloomadDND} />
-       <PrivateRoute path = "/metsloomadDND" component={MetsloomadDND} />
-       <PrivateRoute path = "/maismaaloomadDND" component={MaismaaloomadDND} />
-       <PrivateRoute path = "/maismaaloomadTwoDND" component={MaismaaloomadTwoDND} />
-       <PrivateRoute path = "/veeloomadDND" component={VeeloomadDND} />
-       <PrivateRoute path = "/toitumineDND" component={ToitumineDND} />
+       <PrivateRoute path = "/koduloomad-lohistamine" component={KoduloomadDND} />
+       <PrivateRoute path = "/metsloomad-lohistamine" component={MetsloomadDND} />
+       <PrivateRoute path = "/maismaaloomad-lohistamine" component={MaismaaloomadDND} />
+       <PrivateRoute path = "/maismaaloomad-lohistamine-kaks" component={MaismaaloomadTwoDND} />
+       <PrivateRoute path = "/veeloomad-lohistamine" component={VeeloomadDND} />
+       <PrivateRoute path = "/toitumine-lohistamine" component={ToitumineDND} />
 
-       <PrivateRoute path = "/guessSound" component={LinnudGuessSound} />
+       <PrivateRoute path = "/linnud-arva-heli" component={LinnudGuessSound} />
 
-       <Route path = "/privacyPolicy" component={PrivacyPolicyNA} />
-       <Route path = "/conditions" component={ConditionsNA} />
-       <Route path = "/contact" component={ContactNA}/>
-       <PrivateRoute path = "/privacyPolicyLogged" component={PrivacyPolicy}/>
-       <PrivateRoute path = "/conditionsLogged" component={Conditions}/>
-       <PrivateRoute path = "/contactLogged" component={Contact}/>
+       <Route path = "/privaatsuspoliitika" component={PrivacyPolicyNA} />
+       <Route path = "/tingimused" component={ConditionsNA} />
+       <Route path = "/kontakt" component={ContactNA}/>
+       <PrivateRoute path = "/privaatsuspoliitika-logitud" component={PrivacyPolicy}/>
+       <PrivateRoute path = "/tingimused-logitud" component={Conditions}/>
+       <PrivateRoute path = "/kontakt-logitud" component={Contact}/>
 
    </BrowserRouter>,
   document.getElementById('root')

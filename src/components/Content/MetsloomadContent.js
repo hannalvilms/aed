@@ -12,7 +12,7 @@ export default class MetsloomadContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid bear">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Metsloomad</h1>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ export default class MetsloomadContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
                                     <img src={Moose} alt="põder"/>
-                                    <Link to="/metsloomadDND">
+                                    <Link to="/metsloomad-lohistamine">
                                         <div className="overlay">
                                             <h4>Lohistamine</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
@@ -34,7 +34,7 @@ export default class MetsloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Lynx} alt="ilves"/>
-                                    <Link to="/metsloomadGuessPicture">
+                                    <Link to="/metsloomad-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -43,7 +43,7 @@ export default class MetsloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Hunt} alt="hunt"/>
-                                    <Link to="/metsloomadMemory">
+                                    <Link to="/metsloomad-memory">
                                         <div className="overlay">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>

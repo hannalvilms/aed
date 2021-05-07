@@ -11,7 +11,7 @@ export default class KaladContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid fish">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Kalad</h1>
                     </div>
                 </div>
@@ -24,7 +24,7 @@ export default class KaladContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish1} alt="kala"/>
-                                    <Link to="/kaladGuessPicture">
+                                    <Link to="/kalad-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -33,7 +33,7 @@ export default class KaladContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish2} alt="kala"/>
-                                    <Link to="/kaladMemory">
+                                    <Link to="/kalad-memory">
                                         <div className="overlay">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>
@@ -42,7 +42,7 @@ export default class KaladContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish3} alt="kala"/>
-                                    <Link to="/kaladQuiz">
+                                    <Link to="/kalad-test">
                                         <div className="overlay">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>

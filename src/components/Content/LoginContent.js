@@ -36,7 +36,7 @@ class Login extends Component {
                     isLoggedIn: appState.isLoggedIn,
                     user: appState.user
                 });
-                this.props.history.push("/loggedFrontpage");
+                this.props.history.push("/avaleht-logitud");
                 window.location.reload();
             })
             .catch(error=> {

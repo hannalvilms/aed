@@ -12,9 +12,9 @@ export default class LoggedFooter extends Component {
                             <img src={FooterLogo} alt="footer-logo"/>
                         </div>
                         <div className="footer-links col-lg-10 col-md-10 col-sm-12 col-xs-12 my-auto ">
-                            <Link to="/privacyPolicyLogged">Privaatsuspoliitika</Link>
-                            <Link to="/conditionsLogged">Kasutustingimused</Link>
-                            <Link to="/contactLogged">Kontakt</Link>
+                            <Link to="/privaatsuspoliitika-logitud">Privaatsuspoliitika</Link>
+                            <Link to="/tingimused-logitud">Kasutustingimused</Link>
+                            <Link to="/kontakt-logitud">Kontakt</Link>
                         </div>
                     </div>
                 </div>

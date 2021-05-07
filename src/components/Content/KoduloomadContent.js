@@ -13,7 +13,7 @@ export default class KoduloomadContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid dog">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Koduloomad</h1>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ export default class KoduloomadContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
                                     <img src={Cow} alt="lehm"/>
-                                    <Link to="/koduloomadDND">
+                                    <Link to="/koduloomad-lohistamine">
                                         <div className="overlay">
                                             <h4>Lohistamine</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
@@ -35,7 +35,7 @@ export default class KoduloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Lambs} alt="lambad"/>
-                                    <Link to="/koduloomadGuessPicture">
+                                    <Link to="/koduloomad-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -44,7 +44,7 @@ export default class KoduloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Horses} alt="konn"/>
-                                    <Link to="/koduloomadHangman">
+                                    <Link to="/koduloomad-poomine">
                                         <div className="overlay">
                                             <h4>Poomine</h4>
                                             <p>Arva ära sõna.</p>
@@ -53,7 +53,7 @@ export default class KoduloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Rabbits} alt="jänesed"/>
-                                    <Link to="/koduloomadMemory">
+                                    <Link to="/koduloomad-memory">
                                         <div className="overlay">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>

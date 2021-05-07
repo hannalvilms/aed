@@ -12,9 +12,9 @@ export default class Footer extends Component {
                             <img src={FooterLogo} alt="footer-logo"/>
                         </div>
                         <div className="footer-links col-lg-10 col-md-10 col-sm-12 col-xs-12 my-auto ">
-                            <Link to="/privacyPolicy">Privaatsuspoliitika</Link>
-                            <Link to="/conditions">Kasutustingimused</Link>
-                            <Link to="/contact">Kontakt</Link>
+                            <Link to="/privaatsuspoliitika">Privaatsuspoliitika</Link>
+                            <Link to="/tingimused">Kasutustingimused</Link>
+                            <Link to="/kontakt">Kontakt</Link>
                         </div>
                     </div>
                 </div>

@@ -12,7 +12,7 @@ export default class VeeloomadContent extends Component {
             <div id="gamepage">
                 <div className="jumbotron jumbotron-fluid seal">
                     <div className="container">
-                        <Link to="/loggedFrontpage"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
+                        <Link to="/avaleht-logitud"><p className="lead gamepage-header"><img className="arrow-back" alt="arrow-back" src={Back}/> Tagasi</p></Link>
                         <h1 className="display-4">Veeloomad</h1>
                     </div>
                 </div>
@@ -25,7 +25,7 @@ export default class VeeloomadContent extends Component {
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
                                     <img src={Whale} alt="vaal"/>
-                                    <Link to="/veeloomadDND">
+                                    <Link to="/veeloomad-lohistamine">
                                         <div className="overlay">
                                             <h4>Lohistamine</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
@@ -34,7 +34,7 @@ export default class VeeloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Dolphin} alt="delfiin"/>
-                                    <Link to="/veeloomadGuessPicture">
+                                    <Link to="/veeloomad-arva-pilt">
                                         <div className="overlay">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
@@ -43,7 +43,7 @@ export default class VeeloomadContent extends Component {
                                 </div>
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Seal} alt="hüljes"/>
-                                    <Link to="/veeloomadQuiz">
+                                    <Link to="/veeloomad-test">
                                         <div className="overlay">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>

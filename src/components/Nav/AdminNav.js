@@ -37,7 +37,7 @@ export default class AdminNav extends Component {
                 <div className="container">
                     <nav className="row navbar navbar-expand-lg navbar-light">
                         <div className="navbar-header header-logo">
-                            <Link to="/loggedFrontpage" ><img src={logo} alt="logo"/></Link>
+                            <img src={logo} alt="logo"/>
                         </div>
                         <button className="hamburger hamburger--collapse toggle-menu menu-right"  type="button">
                             <span className="hamburger-box">

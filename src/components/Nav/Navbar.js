@@ -22,7 +22,7 @@ export default class Navbar extends Component {
                 <div className="container">
                     <nav className="row navbar navbar-expand-lg navbar-light">
                         <div  className="navbar-header header-logo">
-                            <Link to="/frontpage"> <img src={logo} alt="logo"/></Link>
+                            <Link to="/avaleht"> <img src={logo} alt="logo"/></Link>
                         </div>
                         <button className="hamburger hamburger--collapse toggle-menu menu-right"  type="button">
                             <span className="hamburger-box">
@@ -34,7 +34,7 @@ export default class Navbar extends Component {
                             </ul>
                             <div className="nav navbar-right">
                                 <Link to="/login" className="nav-link btn btn-primary btn-xs"> Logi sisse</Link>
-                                <Link to="/register" className="nav-link btn btn-primary btn-xs"> Loo konto</Link>
+                                <Link to="/registreeri" className="nav-link btn btn-primary btn-xs"> Loo konto</Link>
                             </div>
                         </div>
                     </nav>
