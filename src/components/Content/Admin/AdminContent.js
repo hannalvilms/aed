@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from "axios";
 import {API} from '../../../url';
+import {Redirect} from "react-router";
+
 export default class AdminContent extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             names : [],
+            isAdmin: 0
         };
     }
 
@@ -21,9 +24,20 @@ export default class AdminContent extends Component {
         })
         .then(res => {
             const names = res.data.data;
-            console.log(names)
             this.setState({ names });
         })
+
+         axios.get(API + `/api/admin`, {
+             headers: {
+                 'Authorization': `Bearer ${token}`
+             }
+         })
+         .then(result => {
+             const admin = result.data.isAdmin;
+             this.setState({
+                 isAdmin: admin
+             });
+         })
     }
 
     deleteRow(id, e){
@@ -44,6 +58,9 @@ export default class AdminContent extends Component {
 
     render() {
         let i = 1;
+        if (this.state.isAdmin !== 1) {
+            return <Redirect to="/avaleht-logitud" />
+        }
         return (
             <div className="container-fluid profile">
                 <div className="container">

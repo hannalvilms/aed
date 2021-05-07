@@ -9,6 +9,7 @@ export default class ProfileContent extends Component {
         super(props);
         this.state = {
             results : [],
+            isAdmin: 0
         };
     }
 
@@ -25,6 +26,18 @@ export default class ProfileContent extends Component {
             this.setState({
                 results: [...results]
             });
+        }
+
+        const result = await axios.get(API + `/api/admin`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        if (result) {
+            const results = result.data.isAdmin;
+            this.setState({
+                isAdmin: results
+            })
         }
     }
 
@@ -45,11 +58,17 @@ export default class ProfileContent extends Component {
     };
 
     render() {
+        let link;
+        if (this.state.isAdmin === 1) {
+            link = <Link to="/adminusers">Kasutajad</Link>;
+        }
+
         return (
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu">
+                            {link}
                             <p>Tulemused</p>
                             <Link to="/andmed">Andmed</Link>
                         </div>
