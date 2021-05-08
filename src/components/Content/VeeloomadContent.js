@@ -26,7 +26,7 @@ export default class VeeloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12" onClick={initial}>
                                     <img src={Whale} alt="vaal"/>
                                     <Link to="/veeloomad-lohistamine">
-                                        <div className="overlay">
+                                        <div className="overlay lohistamine">
                                             <h4>Lohistamine</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
                                         </div>
@@ -35,7 +35,7 @@ export default class VeeloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Dolphin} alt="delfiin"/>
                                     <Link to="/veeloomad-arva-pilt">
-                                        <div className="overlay">
+                                        <div className="overlay piltide-arvamine">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
                                         </div>
@@ -44,7 +44,7 @@ export default class VeeloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Seal} alt="hüljes"/>
                                     <Link to="/veeloomad-test">
-                                        <div className="overlay">
+                                        <div className="overlay test">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>
                                         </div>

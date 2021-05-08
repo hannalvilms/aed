@@ -61,7 +61,7 @@ export default class ProfileDataContent extends Component {
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu">
                             {link}
-                            <Link to="/profile">Tulemused</Link>
+                            <Link to="/tulemused">Tulemused</Link>
                             <Link>Andmed</Link>
                         </div>
                         <div className="row change-profile col-lg-8">

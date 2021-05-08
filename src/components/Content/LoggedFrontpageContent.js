@@ -23,7 +23,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Squirrel} alt="orav"/>
                                 <Link to="/maismaaloomad">
-                                    <div className="overlay">
+                                    <div className="overlay maismaaloomad">
                                         <h4>Maismaaloomad</h4>
                                         <p>Mängud: piltide arvamine, nime lohistamine pildile, memory.</p>
                                     </div>
@@ -32,7 +32,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Bear} alt="karu"/>
                                 <Link to="/metsloomad">
-                                    <div className="overlay">
+                                    <div className="overlay metsloomad">
                                         <h4>Metsloomad</h4>
                                         <p>Mängud: nime lohistamine pildile, piltide arvamine, memory.</p>
                                     </div>
@@ -41,7 +41,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Frog} alt="konn"/>
                                 <Link to="/kahepaiksed">
-                                    <div className="overlay">
+                                    <div className="overlay kahepaiksed">
                                         <h4>Maod, sisalikud ja kahepaiksed</h4>
                                         <p>Mängud: piltide arvamine, test.</p>
                                     </div>
@@ -50,7 +50,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Bird} alt="lind"/>
                                 <Link to="/linnud">
-                                    <div className="overlay">
+                                    <div className="overlay linnud">
                                         <h4>Linnud</h4>
                                         <p>Mängud: piltide arvamine, heli arvamine, poomine, memory.</p>
                                     </div>
@@ -59,7 +59,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Fish} alt="kala"/>
                                 <Link to="/kalad">
-                                    <div className="overlay">
+                                    <div className="overlay kalad">
                                         <h4>Kalad</h4>
                                         <p>Mängud: piltide arvamine, memory, test.</p>
                                     </div>
@@ -68,7 +68,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Seal} alt="hüljes"/>
                                 <Link to="/veeloomad">
-                                    <div className="overlay">
+                                    <div className="overlay veeloomad">
                                         <h4>Veeloomad</h4>
                                         <p>Mängud: nime lohistamine pildile, piltide arvamine, test.</p>
                                     </div>
@@ -77,7 +77,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Dog} alt="koer"/>
                                 <Link to="/koduloomad">
-                                    <div className="overlay">
+                                    <div className="overlay koduloomad">
                                         <h4>Koduloomad</h4>
                                         <p>Mängud: nime lohistamine pildile, piltide arvamine, poomine, memory.</p>
                                     </div>
@@ -86,7 +86,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Fox} alt="rebane"/>
                                 <Link to="/valisehitus">
-                                    <div className="overlay">
+                                    <div className="overlay valisehitus">
                                         <h4>Loomade välisehitus</h4>
                                         <p>Mängud: piltide arvamine, test.</p>
                                     </div>
@@ -95,7 +95,7 @@ export default class FrontpageContent extends Component {
                             <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                 <img src={Hedgehog} alt="siil"/>
                                 <Link to="/toitumine">
-                                    <div className="overlay">
+                                    <div className="overlay toitumine">
                                         <h4>Loomade toitumine ja kasvamine</h4>
                                         <p>Mängud: nime lohistamine pildile, poomine, test.</p>
                                     </div>

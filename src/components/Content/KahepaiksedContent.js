@@ -25,7 +25,7 @@ export default class KahepaiksedContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Snake} alt="madu"/>
                                     <Link to="/kahepaiksed-arva-pilt">
-                                        <div className="overlay">
+                                        <div className="overlay piltide-arvamine">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
                                         </div>
@@ -34,7 +34,7 @@ export default class KahepaiksedContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Geko} alt="geko"/>
                                     <Link to="/maod-sisalikud-test">
-                                        <div className="overlay">
+                                        <div className="overlay test">
                                             <h4>Test (Maod ja sisalikud)</h4>
                                             <p>Vali õige vastus.</p>
                                         </div>
@@ -43,7 +43,7 @@ export default class KahepaiksedContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Frog} alt="konn"/>
                                     <Link to="/kahepaiksed-test">
-                                        <div className="overlay">
+                                        <div className="overlay test-two">
                                             <h4>Test (Kahepaiksed)</h4>
                                             <p>Vali õige vastus.</p>
                                         </div>

@@ -27,7 +27,7 @@ export default class MaismaaloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12" onClick={initial}>
                                     <img src={Rabbits} alt="jänesed"/>
                                     <Link to="/maismaaloomad-lohistamine">
-                                        <div className="overlay">
+                                        <div className="overlay lohistamine-yks">
                                             <h4>Lohistamine 1</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
                                         </div>
@@ -36,7 +36,7 @@ export default class MaismaaloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12" onClick={initial}>
                                     <img src={Horse} alt="jänesed"/>
                                     <Link to="/maismaaloomad-lohistamine-kaks">
-                                        <div className="overlay">
+                                        <div className="overlay lohistamine-kaks">
                                             <h4>Lohistamine 2</h4>
                                             <p>Lohista looma nimi õige pildi peale.</p>
                                         </div>
@@ -45,7 +45,7 @@ export default class MaismaaloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                     <img src={Deer} alt="metskits"/>
                                     <Link to="/maismaaloomad-arva-pilt">
-                                        <div className="overlay">
+                                        <div className="overlay piltide-arvamine">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
                                         </div>
@@ -54,7 +54,7 @@ export default class MaismaaloomadContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-10 col-xs-12">
                                     <img src={Butterfly} alt="liblikas"/>
                                     <Link to="/maismaaloomad-memory">
-                                        <div className="overlay">
+                                        <div className="overlay memory-game">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>
                                         </div>

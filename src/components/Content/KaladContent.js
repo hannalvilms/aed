@@ -25,7 +25,7 @@ export default class KaladContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish1} alt="kala"/>
                                     <Link to="/kalad-arva-pilt">
-                                        <div className="overlay">
+                                        <div className="overlay piltide-arvamine">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
                                         </div>
@@ -34,7 +34,7 @@ export default class KaladContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish2} alt="kala"/>
                                     <Link to="/kalad-memory">
-                                        <div className="overlay">
+                                        <div className="overlay memory-game">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>
                                         </div>
@@ -43,7 +43,7 @@ export default class KaladContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Fish3} alt="kala"/>
                                     <Link to="/kalad-test">
-                                        <div className="overlay">
+                                        <div className="overlay test">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>
                                         </div>

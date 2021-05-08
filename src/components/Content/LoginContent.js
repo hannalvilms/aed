@@ -71,18 +71,18 @@ class Login extends Component {
                             <h3>Logi sisse</h3>
                             <div className="login-input">
                                 <div className="input-group">
-                                    <input placeholder="E-mail" id="email" type="email" ref="email" className="form-control" name="email"  onChange={this.onChange.bind(this)} required />
+                                    <input placeholder="E-mail" id="email" type="email" ref="email" className="form-control login-email" name="email"  onChange={this.onChange.bind(this)} required />
                                 </div>
                             </div>
 
                             <div className="login-input">
                                 <div className="input-group">
-                                    <input placeholder="Parool" id="password" type="password" ref="password" className="form-control" name="password"  onChange={this.onChange.bind(this)}  required />
+                                    <input placeholder="Parool" id="password" type="password" ref="password" className="form-control login-pass" name="password"  onChange={this.onChange.bind(this)}  required />
                                 </div>
                             </div>
 
                                 <div className="col-12">
-                                    <button type="submit">
+                                    <button type="submit" className="login-button">
                                         Logi sisse
                                     </button>
                                 </div>

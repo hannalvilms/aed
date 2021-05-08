@@ -5,18 +5,15 @@ import axios from "axios";
 import {API} from '../../url';
 export default class ProfileContent extends Component {
 
-    constructor(props){
-        super(props);
-        this.state = {
-            results : [],
-            isAdmin: 0
-        };
-    }
+    state = {
+        results : [],
+        isAdmin: 0
+    };
+
 
     async componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
-
 
         const res = await axios.get(API + `/api/results`, {
             headers: {
@@ -30,18 +27,16 @@ export default class ProfileContent extends Component {
             });
         }
 
-        const result = await axios.get(API + `/api/admin`, {
+        const admin = await axios.get(API + `/api/admin`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
         })
-        if(result) {
-            const results = result.data.isAdmin;
-            console.log(results)
+        if(admin) {
+            const admins = admin.data.isAdmin;
             this.setState({
-                isAdmin: results
+                isAdmin: admins
             })
-            console.log(this.state.isAdmin)
         }
     }
 

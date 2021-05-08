@@ -24,9 +24,9 @@ export default class LinnudContent extends Component {
                             </div>
                             <div className="row teemad">
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
-                                    <img src={Bird1} alt="rasvathinae"/>
+                                    <img src={Bird1} alt="rasvatihane"/>
                                     <Link to="/linnud-memory">
-                                        <div className="overlay">
+                                        <div className="overlay memory-game">
                                             <h4>Memory</h4>
                                             <p>Leia õiged paarid.</p>
                                         </div>
@@ -35,7 +35,7 @@ export default class LinnudContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Bird2} alt="lõoke"/>
                                     <Link to="/linnud-arva-heli">
-                                        <div className="overlay">
+                                        <div className="overlay heli-arvamine">
                                             <h4>Heli arvamine</h4>
                                             <p>Kuula heli ning arva, kellele see kuulub.</p>
                                         </div>
@@ -44,7 +44,7 @@ export default class LinnudContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Bird3} alt="rähn"/>
                                     <Link to="/linnud-arva-pilt">
-                                        <div className="overlay">
+                                        <div className="overlay piltide-arvamine">
                                             <h4>Piltide arvamine</h4>
                                             <p>Arva, kes on pildil.</p>
                                         </div>
@@ -53,7 +53,7 @@ export default class LinnudContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Bird4} alt="toonekurg"/>
                                     <Link to="/linnud-poomine">
-                                        <div className="overlay">
+                                        <div className="overlay poomine">
                                             <h4>Poomine</h4>
                                             <p>Arva ära sõna.</p>
                                         </div>

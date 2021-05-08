@@ -44,7 +44,7 @@ export default class ToitumineContent extends Component {
                                 <div className="col-lg-4 col-md-6 col-sm-12 col-xs-12">
                                     <img src={Kitsetall} alt="Kitsetall"/>
                                     <Link to="/toitumine-test">
-                                        <div className="overlay">
+                                        <div className="overlay test">
                                             <h4>Test</h4>
                                             <p>Vali õige vastus.</p>
                                         </div>

@@ -118,7 +118,7 @@ export default class RegisterContent extends Component {
                                     name="email"
                                     ref="myEmail"
                                     onChange={this.handleChange}
-                                    className="form-control"
+                                    className="form-control register-email"
                                     placeholder="E-mail"
                                     id="email" />
 
@@ -133,7 +133,7 @@ export default class RegisterContent extends Component {
                                     placeholder="Ees- ja perekonnanimi"
                                     id="name"
                                     ref="myUsername"
-                                    className="form-control" />
+                                    className="form-control register-name" />
 
                                 <div className="text-danger">{this.state.errors.name}</div>
                             </div>
@@ -146,7 +146,7 @@ export default class RegisterContent extends Component {
                                     id="password"
                                     onChange={this.handleChange}
                                     placeholder="Parool"
-                                    className="form-control" />
+                                    className="form-control register-pass" />
 
                                 <div className="text-danger">{this.state.errors.password}</div>
                             </div>
@@ -156,7 +156,7 @@ export default class RegisterContent extends Component {
                                     type="password"
                                     name="confirm_password"
                                     onChange={this.handleChange}
-                                    className="form-control"
+                                    className="form-control register-pass-check"
                                     ref="confpass"
                                     placeholder="Korda parooli"
                                     id="confirm_password"/>
@@ -177,7 +177,7 @@ export default class RegisterContent extends Component {
                                 </div>
                             </div>
                             <div className="col-12">
-                                <input type="submit" value="Loo konto" className="btn" />
+                                <input type="submit" className="btn register-submit" value="Loo konto"/>
                             </div>
                         </form>
                     </div>
