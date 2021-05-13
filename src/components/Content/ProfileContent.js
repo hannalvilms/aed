@@ -67,12 +67,16 @@ export default class ProfileContent extends Component {
     }
 
     render() {
+        let link;
+        if (this.state.isAdmin === '1') {
+            link = <Link to="/adminusers">Kasutajad</Link>;
+        }
         return (
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu">
-                            {this.renderLink(this.user.isAdmin)}
+                            {link}
                             <p>Tulemused</p>
                             <Link to="/andmed">Andmed</Link>
                         </div>
