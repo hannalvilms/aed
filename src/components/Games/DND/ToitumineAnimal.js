@@ -4,7 +4,7 @@ import { useDrop } from 'react-dnd';
 
 export const ToitumineAnimal = memo(
     function Animals({ accept, lastDroppedItem, onDrop }) {
-        // eslint-disable-next-line jsx-a11y/aria-role
+        // eslint-disable-next-line no-unused-vars
         const [{ isOver, canDrop }, drop] = useDrop(() => ({
             accept,
             drop: onDrop,

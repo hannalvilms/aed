@@ -4,6 +4,7 @@ import { useDrop } from 'react-dnd';
 
 export const MaismaaloomadTwoAnimal = memo(
     function Animals({ accept, lastDroppedItem, onDrop }) {
+        // eslint-disable-next-line no-unused-vars
         const [{ isOver, canDrop }, drop] = useDrop(() => ({
             accept,
             drop: onDrop,
