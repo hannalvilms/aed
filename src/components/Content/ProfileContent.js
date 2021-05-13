@@ -5,39 +5,41 @@ import axios from "axios";
 import {API} from '../../url';
 export default class ProfileContent extends Component {
 
-    state = {
-        results : [],
-        isAdmin: 0
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            results: [],
+        };
+        this.user = {
+            isAdmin: 0
+        }
+    }
 
-
-    async componentDidMount() {
+    componentDidMount() {
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
 
-        const res = await axios.get(API + `/api/results`, {
+        axios.get(API + `/api/results`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
-        })
-        if (res) {
+        }).then((res) => {
             const results = res.data.data;
             this.setState({
                 results: [...results]
             });
-        }
+        })
 
-        const admin = await axios.get(API + `/api/admin`, {
+        axios.get(API + `/api/admin`, {
             headers: {
                 'Authorization': `Bearer ${token}`
             }
-        })
-        if(admin) {
+        }).then((admin) => {
             const admins = admin.data.isAdmin;
-            this.setState({
+            this.user = {
                 isAdmin: admins
-            })
-        }
+            }
+        })
     }
 
     renderResults() {
@@ -53,21 +55,24 @@ export default class ProfileContent extends Component {
                     </div>
                 </div>
             ))
-            : "";
+            : "Laen andmeid..";
     };
 
-    render() {
-        let link;
-        console.log(this.state.isAdmin)
-        if (this.state.isAdmin === 1) {
-            link = <Link to="/adminusers">Kasutajad</Link>;
+    renderLink =(test)=>  {
+        if (test === '1') {
+            return <Link to="/adminusers">Kasutajad</Link>;
+        } else {
+            return "";
         }
+    }
+
+    render() {
         return (
             <div className="container-fluid profile">
                 <div className="container">
                     <div className="row">
                         <div className="col-lg-3 col-sm-12 profile-menu">
-                            {link}
+                            {this.renderLink(this.user.isAdmin)}
                             <p>Tulemused</p>
                             <Link to="/andmed">Andmed</Link>
                         </div>

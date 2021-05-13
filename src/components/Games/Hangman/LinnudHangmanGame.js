@@ -92,57 +92,46 @@ export default class LinnudGuessPictureGame extends Component {
     //Show correct images
     correctImg() {
         if(this.state.answer === "RÄHN") {
-            console.log("rähn");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, rahn1, rahn2, rahn3, rahn4, rahn5, rahn6]
         }
         if (this.state.answer === "TUVI") {
-            console.log("tuvi");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, tuvi1, tuvi2, tuvi3, tuvi4, tuvi5, tuvi6]
         }
         if (this.state.answer === "PÄÄSUKE") {
-            console.log("paasuke");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, paasuke1, paasuke2, paasuke3, paasuke4, paasuke5, paasuke6]
         }
         if (this.state.answer === "LÕOKE") {
-            console.log("looke");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, looke1, looke2, looke3, looke4, looke5, looke6]
         }
         if (this.state.answer === "KULDNOKK") {
-            console.log("kuldnokk");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kuldnokk1, kuldnokk2, kuldnokk3, kuldnokk4, kuldnokk5, kuldnokk6]
         }
         if (this.state.answer === "TOONEKURG") {
-            console.log("toonekurg");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, toonekurg1, toonekurg2, toonekurg3, toonekurg4, toonekurg5, toonekurg6]
         }
         if (this.state.answer === "RASVATIHANE") {
-            console.log("rasvatihane");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, rasvatihane1, rasvatihane2, rasvatihane3, rasvatihane4, rasvatihane5, rasvatihane6]
         }
         if (this.state.answer === "LEEVIKE") {
-            console.log("leevike");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, leevike1, leevike2, leevike3, leevike4, leevike5, leevike6]
         }
         if (this.state.answer === "VARES") {
-            console.log("vares");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, vares1, vares2, vares3, vares4, vares5, vares6]
         }
         if (this.state.answer === "KAJAKAS") {
-            console.log("kajakas");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kajakas1, kajakas2, kajakas3, kajakas4, kajakas5, kajakas6]
         }
         if (this.state.answer === "LUIK") {
-            console.log("luik");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, luik1, luik2, luik3, luik4, luik5, luik6]
         }

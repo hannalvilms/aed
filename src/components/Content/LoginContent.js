@@ -40,7 +40,6 @@ class Login extends Component {
                 window.location.reload();
             })
             .catch(error=> {
-                console.log('error', error);
                 this.refs.email.value="";
                 this.refs.password.value="";
                 this.setState({err: true});

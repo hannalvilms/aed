@@ -16,12 +16,6 @@ export function saveResult(result, newGrade, gameId) {
     data.append('grade', newGrade);
     axios.post(API + `/api/add-result`, data, {
         headers: headers,
-    })
-        .then(response=> {
-            console.log('success', response);
-        })
-        .catch(error=> {
-                console.log('error', error);
         }
     );
 }

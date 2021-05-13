@@ -96,42 +96,34 @@ export default class KoduloomadHangmanGame extends Component {
             this.state.images = [zero, lehm1, lehm2, lehm3, lehm4, lehm5, lehm6]
         }
         if (this.state.answer === "SIGA") {
-            console.log("siga");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, siga1, siga2, siga3, siga4, siga5, siga6]
         }
         if (this.state.answer === "KITS") {
-            console.log("kits");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kits1, kits2, kits3, kits4, kits5, kits6]
         }
         if (this.state.answer === "KANA") {
-            console.log("kana");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kana1, kana2, kana3, kana4, kana5, kana6]
         }
         if (this.state.answer === "HANI") {
-            console.log("hani");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, hani1, hani2, hani3, hani4, hani5, hani6]
         }
         if (this.state.answer === "KALKUN") {
-            console.log("kalkun");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kalkun1, kalkun2, kalkun3, kalkun4, kalkun5, kalkun6]
         }
         if (this.state.answer === "MERISIGA") {
-            console.log("merisiga");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, merisiga1, merisiga2, merisiga3, merisiga4, merisiga5, merisiga6]
         }
         if (this.state.answer === "HAMSTER") {
-            console.log("hamster");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, hamster1, hamster2, hamster3, hamster4, hamster5, hamster6]
         }
         if (this.state.answer === "PAPAGOI") {
-            console.log("papagoi");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, papagoi1, papagoi2, papagoi3, papagoi4, papagoi5, papagoi6]
         }

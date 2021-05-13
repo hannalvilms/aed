@@ -24,7 +24,6 @@ export default class ProfileDataContent extends Component {
             }
         })
             .then((res) => {
-                console.log(res.data);
                 this.setState({
                     name: [res.data.name],
                     email: [res.data.email],
@@ -52,7 +51,7 @@ export default class ProfileDataContent extends Component {
 
     render() {
         let link;
-        if (this.state.isAdmin === 1) {
+        if (this.state.isAdmin === '1') {
             link = <Link to="/adminusers">Kasutajad</Link>;
         }
         return (
@@ -62,7 +61,7 @@ export default class ProfileDataContent extends Component {
                         <div className="col-lg-3 col-sm-12 profile-menu">
                             {link}
                             <Link to="/tulemused">Tulemused</Link>
-                            <Link>Andmed</Link>
+                            <p>Andmed</p>
                         </div>
                         <div className="row change-profile col-lg-8">
                             <form className="row col-lg-12">

@@ -7,7 +7,6 @@ export function isAuthenticated() {
             return value.isLoggedIn;
             }
         } catch (err) {
-            console.log(err)
             return false;
         }
 }

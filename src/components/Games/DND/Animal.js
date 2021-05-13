@@ -13,8 +13,6 @@ export const Animal = memo(
             }),
 
         }), [accept, onDrop]);
-        console.log(isOver);
-        console.log(canDrop);
         return (
             // eslint-disable-next-line jsx-a11y/aria-role
             <div ref={drop} role="Animal" id="Animal"

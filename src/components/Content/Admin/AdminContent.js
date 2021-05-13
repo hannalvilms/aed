@@ -15,7 +15,7 @@ export default class AdminContent extends Component {
     }
 
      componentDidMount() {
-         this.admin();
+        this.admin();
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
         axios.get(API + `/api/all-users`, {
@@ -25,22 +25,6 @@ export default class AdminContent extends Component {
         })
         .then(res => {
             const names = res.data.data;
-            this.setState({ names });
-        })
-    }
-
-    deleteRow(id, e){
-        let user = JSON.parse(localStorage.getItem('appState'))
-        let token = user.user.token;
-        axios.delete(API + `/api/users/${id}`, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        })
-        .then(res => {
-            console.log(res);
-            console.log(res.data.data);
-            const names = this.state.names.filter(item => item.id !== id);
             this.setState({ names });
         })
     }
@@ -55,19 +39,31 @@ export default class AdminContent extends Component {
         })
             .then(result => {
                 const admin = result.data.isAdmin;
-                console.log(admin)
                 this.setState({
                     isAdmin: admin
                 });
             })
-        if (this.state.isAdmin !== 1) {
-             return <Redirect to="/avaleht-logitud" />
+        if (this.state.isAdmin !== '1') {
+            return <Redirect to="/avaleht-logitud" />
         }
+    }
+
+    deleteRow(id, e){
+        let user = JSON.parse(localStorage.getItem('appState'))
+        let token = user.user.token;
+        axios.delete(API + `/api/users/${id}`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        })
+        .then(res => {
+            const names = this.state.names.filter(item => item.id !== id);
+            this.setState({ names });
+        })
     }
 
     render() {
         let i = 1;
-        console.log(this.state.isAdmin)
         return (
             <div className="container-fluid profile">
                 <div className="container">

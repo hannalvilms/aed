@@ -42,7 +42,6 @@ export default class RegisterContent extends Component {
             fd.append('confirm_password', this.refs.confpass.value);
             axios.post(API + '/api/register', fd)
                 .then(res => {
-                    console.log(res);
                     let input = {};
                     input["email"] = "";
                     input["name"] = "";

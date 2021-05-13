@@ -86,47 +86,38 @@ export default class ToitumineHangmanGame extends Component {
     //Show correct images
     correctImg() {
         if(this.state.answer === "VASIKAS") {
-            console.log("vasikas");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, vasikas1, vasikas2, vasikas3, vasikas4, vasikas5, vasikas6]
         }
         if (this.state.answer === "LAMBATALL") {
-            console.log("lambatall");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, lambatall1, lambatall2, lambatall3, lambatall4, lambatall5, lambatall6]
         }
         if (this.state.answer === "KITSETALL") {
-            console.log("kitsetall");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kitsetall1, kitsetall2, kitsetall3, kitsetall4, kitsetall5, kitsetall6]
         }
         if (this.state.answer === "PÕRSAS") {
-            console.log("porsas");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, porsas1, porsas2, porsas3, porsas4, porsas5, porsas6]
         }
         if (this.state.answer === "KANATIBU") {
-            console.log("kanatibu");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, kanatibu1, kanatibu2, kanatibu3, kanatibu4, kanatibu5, kanatibu6]
         }
         if (this.state.answer === "PARDITIBU") {
-            console.log("parditibu");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, parditibu1, parditibu2, parditibu3, parditibu4, parditibu5, parditibu6]
         }
         if (this.state.answer === "VARSS") {
-            console.log("varss");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, varss1, varss2, varss3, varss4, varss5, varss6]
         }
         if (this.state.answer === "KOERAKUTSIKAS") {
-            console.log("koerakutsikas");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, koerakutsikas1, koerakutsikas2, koerakutsikas3, koerakutsikas4, koerakutsikas5, koerakutsikas6]
         }
         if (this.state.answer === "REBASEKUTSIKAS") {
-            console.log("rebasekutsikas");
             // eslint-disable-next-line react/no-direct-mutation-state
             this.state.images = [zero, rebasekutsikas1, rebasekutsikas2, rebasekutsikas3, rebasekutsikas4, rebasekutsikas5, rebasekutsikas6]
         }
