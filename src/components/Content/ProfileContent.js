@@ -55,9 +55,9 @@ export default class ProfileContent extends Component {
             }
         }).then((admin) => {
             const admins = admin.data.isAdmin;
-            this.state = {
+            this.setState({
                 isAdmin: admins
-            }
+            })
         })
     }
 
