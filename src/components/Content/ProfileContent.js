@@ -9,13 +9,12 @@ export default class ProfileContent extends Component {
         super(props);
         this.state = {
             results: [],
-        };
-        this.user = {
             isAdmin: 0
         }
     }
 
     componentDidMount() {
+        this.admin();
         let user = JSON.parse(localStorage.getItem('appState'))
         let token = user.user.token;
 
@@ -28,17 +27,6 @@ export default class ProfileContent extends Component {
             this.setState({
                 results: [...results]
             });
-        })
-
-        axios.get(API + `/api/admin`, {
-            headers: {
-                'Authorization': `Bearer ${token}`
-            }
-        }).then((admin) => {
-            const admins = admin.data.isAdmin;
-            this.user = {
-                isAdmin: admins
-            }
         })
     }
 
@@ -58,12 +46,19 @@ export default class ProfileContent extends Component {
             : "Laen andmeid..";
     };
 
-    renderLink =(test)=>  {
-        if (test === '1') {
-            return <Link to="/adminusers">Kasutajad</Link>;
-        } else {
-            return "";
-        }
+    admin() {
+        let user = JSON.parse(localStorage.getItem('appState'))
+        let token = user.user.token;
+        axios.get(API + `/api/admin`, {
+            headers: {
+                'Authorization': `Bearer ${token}`
+            }
+        }).then((admin) => {
+            const admins = admin.data.isAdmin;
+            this.user = {
+                isAdmin: admins
+            }
+        })
     }
 
     render() {
